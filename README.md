@@ -1,26 +1,27 @@
 # გამარჯობა, მე ვარ achiko10! 👋
 # Hello, I'm achiko10! 👋
 
-### Full-stack & Mobile დეველოპერი | DevOps ენთუზიასტი
-### Full-stack & Mobile Developer | DevOps Enthusiast
+### Full-stack & Mobile დეველოპერი | DevOps ენთუზიასტი | Open Source კონტრიბუტორი
+### Full-stack & Mobile Developer | DevOps Enthusiast | Open Source Contributor
 
 ---
 
 ## ჩემს შესახებ
 ## About Me
 
-მე ვარ გამოცდილი **Full-stack** და **Mobile** დეველოპერი, რომელსაც აქვს მრავალწლიანი გამოცდილება ვებ და მობილური აპლიკაციების შექმნაში. ჩემი ექსპერტიზა მოიცავს **Python/Django**-ს ბექენდისთვის, **JavaScript/React**-ს ფრონტენდისა და მობილური აპლიკაციებისთვის, ასევე **HTML/CSS**-ს ვიზუალურად მიმზიდველი და რეაგირებადი ინტერფეისების შესაქმნელად. აქტიურად ვარ ჩართული **DevOps** პრაქტიკებში, ვფლობ **Docker**-ს და მაქვს გამოცდილება ღრუბლოვან სერვისებთან მუშაობისას. ვმუშაობდი სხვადასხვა პროექტებზე, მათ შორის CRM სისტემებზე, საგანმანათლებლო პლატფორმებზე და მოქნილ მობილურ აპლიკაციებზე. მუდმივად ვცდილობ ახალი ტექნოლოგიების შესწავლას და ჩემი უნარების გაუმჯობესებას, რათა შევქმნა ინოვაციური და მაღალი ხარისხის პროგრამული გადაწყვეტილებები.
+მე ვარ გამოცდილი **Full-stack** და **Mobile** დეველოპერი, რომელსაც აქვს მრავალწლიანი გამოცდილება ვებ და მობილური აპლიკაციების შექმნაში. ჩემი ექსპერტიზა მოიცავს **Python/Django**-ს მძლავრი ბექენდისთვის, **JavaScript/React**-ს დინამიური ფრონტენდისა და მობილური აპლიკაციებისთვის, ასევე **HTML/CSS**-ს ვიზუალურად მიმზიდველი და რეაგირებადი ინტერფეისების შესაქმნელად. აქტიურად ვარ ჩართული **DevOps** პრაქტიკებში, ვფლობ **Docker**-ს, **Kubernetes**-ს და მაქვს გამოცდილება ღრუბლოვან სერვისებთან (AWS, Azure) მუშაობისას. ვმუშაობდი სხვადასხვა პროექტებზე, მათ შორის CRM სისტემებზე, საგანმანათლებლო პლატფორმებზე და მოქნილ მობილურ აპლიკაციებზე. მუდმივად ვცდილობ ახალი ტექნოლოგიების შესწავლას და ჩემი უნარების გაუმჯობესებას, რათა შევქმნა ინოვაციური და მაღალი ხარისხის პროგრამული გადაწყვეტილებები. ჩემი მიზანია, შევქმნა სკალირებადი, უსაფრთხო და მომხმარებელზე ორიენტირებული გადაწყვეტილებები, რომლებიც რეალურ ღირებულებას ქმნის.
 
-I am an experienced **Full-stack** and **Mobile** Developer with several years of experience in building web and mobile applications. My expertise spans **Python/Django** for robust backend development, **JavaScript/React** for dynamic frontends and mobile applications, and **HTML/CSS** for creating visually appealing and responsive user interfaces. I am actively involved in **DevOps** practices, proficient in **Docker**, and have experience working with cloud services. I have worked on diverse projects, including CRM systems, educational platforms, and agile mobile applications. I am continuously eager to learn new technologies and enhance my skills to deliver innovative and high-quality software solutions.
+I am an experienced **Full-stack** and **Mobile** Developer with several years of experience in building web and mobile applications. My expertise spans **Python/Django** for robust backend development, **JavaScript/React** for dynamic frontends and mobile applications, and **HTML/CSS** for creating visually appealing and responsive user interfaces. I am actively involved in **DevOps** practices, proficient in **Docker**, **Kubernetes**, and have experience working with cloud services (AWS, Azure). I have worked on diverse projects, including CRM systems, educational platforms, and agile mobile applications. I am continuously eager to learn new technologies and enhance my skills to deliver innovative and high-quality software solutions. My goal is to create scalable, secure, and user-centric solutions that deliver real value.
 
 ---
 
 ## GitHub სტატისტიკა
 ## GitHub Stats
 
-![achiko10 GitHub Stats](https://github-readme-stats.vercel.app/api?username=achiko10&show_icons=true&theme=tokyonight&locale=en)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=achiko10&layout=compact&theme=tokyonight&locale=en)
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=achiko10&show_icons=true&theme=tokyonight&locale=en" alt="achiko10 GitHub Stats"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=achiko10&layout=compact&theme=tokyonight&locale=en" alt="Top Languages"/>
+</p>
 
 ---
 
@@ -33,14 +34,16 @@ I am an experienced **Full-stack** and **Mobile** Developer with several years o
 ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![React Native](https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 ### მონაცემთა ბაზები | Databases:
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-CC292F?style=for-the-badge&logo=redis&logoColor=white)
 
 ### DevOps & Cloud ინსტრუმენტები | DevOps & Cloud Tools:
 
@@ -57,7 +60,6 @@ I am an experienced **Full-stack** and **Mobile** Developer with several years o
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-CC292F?style=for-the-badge&logo=redis&logoColor=white)
 ![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white)
 
 ---
@@ -65,26 +67,33 @@ I am an experienced **Full-stack** and **Mobile** Developer with several years o
 ## გამორჩეული პროექტები
 ## Featured Projects
 
-აქ წარმოდგენილია ჩემი რამდენიმე გამორჩეული პროექტი, რომლებიც ასახავს ჩემს უნარებსა და გამოცდილებას სხვადასხვა ტექნოლოგიებში, მათ შორის Full-stack, Mobile და DevOps პრაქტიკებში.
-Here are some of my featured projects that showcase my skills and experience across various technologies, including Full-stack, Mobile, and DevOps practices.
+აქ წარმოდგენილია ჩემი რამდენიმე გამორჩეული პროექტი, რომლებიც ასახავს ჩემს უნარებსა და გამოცდილებას სხვადასხვა ტექნოლოგიებში, მათ შორის Full-stack, Mobile და DevOps პრაქტიკებში. თითოეული პროექტი ხაზს უსვამს ჩემს შესაძლებლობებს კონკრეტულ სფეროში და ასახავს ჩემს მიდგომას პრობლემების გადაჭრისადმი.
 
-### [my-django-project-backend](https://github.com/achiko10/my-django-project-backend)
-Robust Django backend API for a custom web application, demonstrating full-stack capabilities and RESTful API design. | მორგებული ვებ აპლიკაციისთვის შექმნილი მძლავრი Django ბექენდ API, რომელიც აჩვენებს Full-stack შესაძლებლობებს და RESTful API დიზაინს.
+Here are some of my featured projects that showcase my skills and experience across various technologies, including Full-stack, Mobile, and DevOps practices. Each project highlights my capabilities in a specific domain and reflects my approach to problem-solving.
 
-### [crm](https://github.com/achiko10/crm)
-JavaScript-based Customer Relationship Management system, showcasing frontend and full-stack development with Supabase integration. | JavaScript-ზე დაფუძნებული მომხმარებელთა ურთიერთობების მართვის სისტემა, რომელიც აჩვენებს ფრონტენდ და Full-stack დეველოპმენტს Supabase ინტეგრაციით.
+### 🚀 [my-django-project-backend](https://github.com/achiko10/my-django-project-backend)
+**Description:** Robust Full-stack Backend API built with Django REST Framework. Features secure authentication, database management, and scalable architecture. | მორგებული ვებ აპლიკაციისთვის შექმნილი მძლავრი Django ბექენდ API. მოიცავს უსაფრთხო ავთენტიფიკაციას, მონაცემთა ბაზის მართვას და სკალირებად არქიტექტურას.
+**Technologies:** `Python`, `Django REST Framework`, `PostgreSQL`, `Docker`
 
-### [zgaprebi](https://github.com/achiko10/zgaprebi)
-JavaScript-based mobile application for Georgian fairy tales, built with React Native/Expo, showcasing mobile development and localization. | JavaScript-ზე დაფუძნებული მობილური აპლიკაცია ქართული ზღაპრებისთვის, შექმნილი React Native/Expo-თი, რომელიც აჩვენებს მობილურ დეველოპმენტს და ლოკალიზაციას.
+### 💼 [crm](https://github.com/achiko10/crm)
+**Description:** Advanced Customer Relationship Management (CRM) system. Built with JavaScript and Supabase for real-time data synchronization and efficient business management. | JavaScript-ზე დაფუძნებული მომხმარებელთა ურთიერთობების მართვის (CRM) სისტემა. შექმნილია Supabase-თან ერთად რეალურ დროში მონაცემთა სინქრონიზაციისა და ეფექტური ბიზნეს მართვისთვის.
+**Technologies:** `JavaScript`, `React`, `Supabase`, `PostgreSQL`, `CRM`
 
-### [LogicLink](https://github.com/achiko10/LogicLink)
-A Python-based logic and connectivity tool, demonstrating backend development skills and complex data handling. | Python-ზე დაფუძნებული ლოგიკური და კავშირის ინსტრუმენტი, რომელიც აჩვენებს ბექენდ დეველოპმენტის უნარებს და მონაცემთა კომპლექსურ დამუშავებას.
+### 📱 [zgaprebi](https://github.com/achiko10/zgaprebi)
+**Description:** Interactive Mobile Application for Georgian Fairy Tales. Developed with React Native/Expo, featuring localization, engaging UI/UX, and cross-platform compatibility. | ინტერაქტიული მობილური აპლიკაცია ქართული ზღაპრებისთვის. შექმნილია React Native/Expo-თი, მოიცავს ლოკალიზაციას, მიმზიდველ UI/UX-ს და მუშაობს სხვადასხვა პლატფორმაზე.
+**Technologies:** `React Native`, `Expo`, `JavaScript`, `Mobile Development`, `Localization`
 
-### [magaziiscrm](https://github.com/achiko10/magaziiscrm)
-Custom CRM system for store management built with Python, highlighting business logic, database management, and web application development. | Python-ზე დაფუძნებული CRM სისტემა მაღაზიის მართვისთვის, რომელიც ხაზს უსვამს ბიზნეს ლოგიკას, მონაცემთა ბაზის მართვას და ვებ აპლიკაციების შექმნას.
+### ✨ [portfolio-react](https://github.com/achiko10/portfolio-react)
+**Description:** Modern, Responsive Portfolio Website. Showcasing frontend expertise with React, Vite, and advanced CSS animations for a visually stunning user experience. | თანამედროვე, რეაგირებადი პორტფოლიო ვებგვერდი. აჩვენებს ფრონტენდ ექსპერტიზას React-ით, Vite-ით და მოწინავე CSS ანიმაციებით ვიზუალურად შთამბეჭდავი მომხმარებლის გამოცდილებისთვის.
+**Technologies:** `React`, `JavaScript`, `Vite`, `HTML5`, `CSS3`, `Frontend`
 
-### [portfolio-react](https://github.com/achiko10/portfolio-react)
-Modern and responsive portfolio website built with React, demonstrating strong frontend development skills and UI/UX design principles. | თანამედროვე და რეაგირებადი პორტფოლიო ვებგვერდი, შექმნილი React-ით, რომელიც აჩვენებს ფრონტენდ დეველოპმენტის ძლიერ უნარებს და UI/UX დიზაინის პრინციპებს.
+### 🛒 [magaziiscrm](https://github.com/achiko10/magaziiscrm)
+**Description:** Specialized Store Management CRM. A Python-based solution for inventory tracking, sales reporting, and business automation, designed for efficiency and scalability. | სპეციალიზებული მაღაზიის მართვის CRM. Python-ზე დაფუძნებული გადაწყვეტა ინვენტარის თვალთვალისთვის, გაყიდვების ანგარიშგებისთვის და ბიზნესის ავტომატიზაციისთვის, შექმნილი ეფექტურობისა და სკალირებადობისთვის.
+**Technologies:** `Python`, `Django`, `CRM`, `Database Management`, `Web Development`
+
+### 🔗 [LogicLink](https://github.com/achiko10/LogicLink)
+**Description:** Logic & Connectivity Tool. A backend-focused Python project demonstrating complex algorithms, data structure handling, and system integration capabilities. | ლოგიკური და კავშირის ინსტრუმენტი. ბექენდზე ორიენტირებული Python პროექტი, რომელიც აჩვენებს კომპლექსურ ალგორითმებს, მონაცემთა სტრუქტურების დამუშავებას და სისტემების ინტეგრაციის შესაძლებლობებს.
+**Technologies:** `Python`, `Algorithms`, `Data Structures`, `Backend Development`
 
 ---
 
@@ -93,3 +102,9 @@ Modern and responsive portfolio website built with React, demonstrating strong f
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/achi-acnfn-41b9b8340)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your.email@example.com) <!-- გთხოვთ, შეცვალოთ თქვენი ელ.ფოსტის მისამართით | Please replace with your email address -->
+
+---
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=achiko10&theme=radical&no-frame=true" alt="GitHub Trophies"/>
+</p>
