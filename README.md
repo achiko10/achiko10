@@ -1,5 +1,4 @@
 # Hello, I'm achiko10! 👋
-# გამარჯობა, მე ვარ achiko10! 👋
 
 ### Full-stack & Mobile Developer | DevOps Enthusiast | Open Source Contributor
 
