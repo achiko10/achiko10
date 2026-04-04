@@ -71,29 +71,29 @@ I am an experienced **Full-stack** and **Mobile** Developer with several years o
 
 Here are some of my featured projects that showcase my skills and experience across various technologies, including Full-stack, Mobile, and DevOps practices. Each project highlights my capabilities in a specific domain and reflects my approach to problem-solving.
 
-### 🚀 [my-django-project-backend](https://github.com/achiko10/my-django-project-backend)
+### 🚀 [my-django-project-backend](https://github.com/achiko10/my-django-project-backend) | [**Live Demo**](https://achi717.pythonanywhere.com/login/?next=/dashboard/)
 **Description:** Robust Full-stack Backend API built with Django REST Framework. Features secure authentication, database management, and scalable architecture. | მორგებული ვებ აპლიკაციისთვის შექმნილი მძლავრი Django ბექენდ API. მოიცავს უსაფრთხო ავთენტიფიკაციას, მონაცემთა ბაზის მართვას და სკალირებად არქიტექტურას.
 **Technologies:** `Python`, `Django REST Framework`, `PostgreSQL`, `Docker`
 
-### 💼 [crm](https://github.com/achiko10/crm)
-**Description:** Advanced Customer Relationship Management (CRM) system. Built with JavaScript and Supabase for real-time data synchronization and efficient business management. | JavaScript-ზე დაფუძნებული მომხმარებელთა ურთიერთობების მართვის (CRM) სისტემა. შექმნილია Supabase-თან ერთად რეალურ დროში მონაცემთა სინქრონიზაციისა და ეფექტური ბიზნეს მართვისთვის.
-**Technologies:** `JavaScript`, `React`, `Supabase`, `PostgreSQL`, `CRM`
+### 📚 [TezeuRusi](https://github.com/achiko10/TezeuRusi) | [**Live Demo**](https://tezeurusi.pythonanywhere.com/)
+**Description:** A web application for managing and interacting with specific content, built with Python and Django. | ვებ აპლიკაცია კონკრეტული კონტენტის სამართავად და მასთან ინტერაქციისთვის, აგებული Python-სა და Django-ზე.
+**Technologies:** `Python`, `Django`, `Web Development`
 
-### 📱 [zgaprebi](https://github.com/achiko10/zgaprebi)
-**Description:** Interactive Mobile Application for Georgian Fairy Tales. Developed with React Native/Expo, featuring localization, engaging UI/UX, and cross-platform compatibility. | ინტერაქტიული მობილური აპლიკაცია ქართული ზღაპრებისთვის. შექმნილია React Native/Expo-თი, მოიცავს ლოკალიზაციას, მიმზიდველ UI/UX-ს და მუშაობს სხვადასხვა პლატფორმაზე.
-**Technologies:** `React Native`, `Expo`, `JavaScript`, `Mobile Development`, `Localization`
-
-### ✨ [portfolio-react](https://github.com/achiko10/portfolio-react)
-**Description:** Modern, Responsive Portfolio Website. Showcasing frontend expertise with React, Vite, and advanced CSS animations for a visually stunning user experience. | თანამედროვე, რეაგირებადი პორტფოლიო ვებგვერდი. აჩვენებს ფრონტენდ ექსპერტიზას React-ით, Vite-ით და მოწინავე CSS ანიმაციებით ვიზუალურად შთამბეჭდავი მომხმარებლის გამოცდილებისთვის.
-**Technologies:** `React`, `JavaScript`, `Vite`, `HTML5`, `CSS3`, `Frontend`
-
-### 🛒 [magaziiscrm](https://github.com/achiko10/magaziiscrm)
-**Description:** Specialized Store Management CRM. A Python-based solution for inventory tracking, sales reporting, and business automation, designed for efficiency and scalability. | სპეციალიზებული მაღაზიის მართვის CRM. Python-ზე დაფუძნებული გადაწყვეტა ინვენტარის თვალთვალისთვის, გაყიდვების ანგარიშგებისთვის და ბიზნესის ავტომატიზაციისთვის, შექმნილი ეფექტურობისა და სკალირებადობისთვის.
-**Technologies:** `Python`, `Django`, `CRM`, `Database Management`, `Web Development`
-
-### 🔗 [LogicLink](https://github.com/achiko10/LogicLink)
+### 🔗 [LogicLink](https://github.com/achiko10/LogicLink) | [**Live Demo**](https://logiklink.pythonanywhere.com/)
 **Description:** Logic & Connectivity Tool. A backend-focused Python project demonstrating complex algorithms, data structure handling, and system integration capabilities. | ლოგიკური და კავშირის ინსტრუმენტი. ბექენდზე ორიენტირებული Python პროექტი, რომელიც აჩვენებს კომპლექსურ ალგორითმებს, მონაცემთა სტრუქტურების დამუშავებას და სისტემების ინტეგრაციის შესაძლებლობებს.
 **Technologies:** `Python`, `Algorithms`, `Data Structures`, `Backend Development`
+
+### 🎓 [academycompass](https://github.com/achiko10/academycompass) | [**Live Demo**](https://academycompass.pythonanywhere.com/)
+**Description:** An educational platform designed to help users navigate academic paths or learn new skills. | საგანმანათლებლო პლატფორმა, შექმნილი იმისთვის, რომ დაეხმაროს მომხმარებლებს აკადემიური გზების ნავიგაციაში ან ახალი უნარების შესწავლაში.
+**Technologies:** `Python`, `Django`, `Web Development`
+
+### 🏛️ [academiccompass](https://github.com/achiko10/academiccompass) | [**Live Demo**](https://academiccompass.pythonanywhere.com/)
+**Description:** An educational platform designed to help users navigate academic paths or learn new skills. | საგანმანათლებლო პლატფორმა, შექმნილი იმისთვის, რომ დაეხმაროს მომხმარებლებს აკადემიური გზების ნავიგაციაში ან ახალი უნარების შესწავლაში.
+**Technologies:** `Python`, `Django`, `Web Development`
+
+### 💻 [Laboratoria](https://github.com/achiko10/Laboratoria) | [**Live Demo**](https://achiko10.github.io/Laboratoria/index.html)
+**Description:** A static web application, likely a portfolio or informational site, built with fundamental web technologies. | სტატიკური ვებ აპლიკაცია, სავარაუდოდ პორტფოლიო ან საინფორმაციო საიტი, რომელიც აგებულია ფუნდამენტურ ვებ ტექნოლოგიებზე.
+**Technologies:** `HTML5`, `CSS3`, `JavaScript`
 
 ---
 
