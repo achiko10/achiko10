@@ -2,12 +2,10 @@
 # გამარჯობა, მე ვარ achiko10! 👋
 
 ### Full-stack & Mobile Developer | DevOps Enthusiast | Open Source Contributor
-### Full-stack & Mobile დეველოპერი | DevOps ენთუზიასტი | Open Source კონტრიბუტორი
 
 ---
 
 ## About Me
-## ჩემს შესახებ
 
 I am an experienced **Full-stack** and **Mobile** Developer with several years of experience in building web and mobile applications. My expertise spans **Python/Django** for robust backend development, **JavaScript/React** for dynamic frontends and mobile applications, and **HTML/CSS** for creating visually appealing and responsive user interfaces. I am actively involved in **DevOps** practices, proficient in **Docker**, **Kubernetes**, and have experience working with cloud services (AWS, Azure). I have worked on diverse projects, including CRM systems, educational platforms, and agile mobile applications. I am continuously eager to learn new technologies and enhance my skills to deliver innovative and high-quality software solutions. My goal is to create scalable, secure, and user-centric solutions that deliver real value.
 
@@ -16,7 +14,6 @@ I am an experienced **Full-stack** and **Mobile** Developer with several years o
 ---
 
 ## GitHub Stats
-## GitHub სტატისტიკა
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=achiko10&show_icons=true&theme=tokyonight&locale=en" alt="achiko10 GitHub Stats"/>
@@ -26,10 +23,8 @@ I am an experienced **Full-stack** and **Mobile** Developer with several years o
 ---
 
 ## My Skills
-## ჩემი უნარები
 
 ### Programming Languages & Frameworks:
-### პროგრამირების ენები და ფრეიმვორკები:
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
@@ -40,7 +35,6 @@ I am an experienced **Full-stack** and **Mobile** Developer with several years o
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 ### Databases:
-### მონაცემთა ბაზები:
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
@@ -48,7 +42,6 @@ I am an experienced **Full-stack** and **Mobile** Developer with several years o
 ![Redis](https://img.shields.io/badge/Redis-CC292F?style=for-the-badge&logo=redis&logoColor=white)
 
 ### DevOps & Cloud Tools:
-### DevOps & Cloud ინსტრუმენტები:
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
@@ -58,7 +51,6 @@ I am an experienced **Full-stack** and **Mobile** Developer with several years o
 ![Jenkins](https://img.shields.io/badge/Jenkins-2C5263?style=for-the-badge&logo=jenkins&logoColor=white)
 
 ### Other Tools & Platforms:
-### სხვა ინსტრუმენტები და პლატფორმები:
 
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
@@ -69,7 +61,6 @@ I am an experienced **Full-stack** and **Mobile** Developer with several years o
 ---
 
 ## Featured Projects
-## გამორჩეული პროექტები
 
 Here are some of my featured projects that showcase my skills and experience across various technologies, including Full-stack, Mobile, and DevOps practices. Each project highlights my capabilities in a specific domain and reflects my approach to problem-solving.
 
@@ -108,7 +99,6 @@ Here are some of my featured projects that showcase my skills and experience acr
 ---
 
 ## Get in Touch
-## დამიკავშირდით
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/achi-acnfn-41b9b8340)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your.email@example.com) <!-- Please replace with your email address | გთხოვთ, შეცვალოთ თქვენი ელ.ფოსტის მისამართით -->
