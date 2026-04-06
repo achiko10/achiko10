@@ -1,14 +1,10 @@
 # Hello, I'm achiko10! 👋
 
 ### Full-stack & Mobile Developer | DevOps Enthusiast | Open Source Contributor
-
 ---
-
 ## About Me
 
 I am an experienced **Full-stack** and **Mobile** Developer with several years of experience in building web and mobile applications. My expertise spans **Python/Django** for robust backend development, **JavaScript/React** for dynamic frontends and mobile applications, and **HTML/CSS** for creating visually appealing and responsive user interfaces. I am actively involved in **DevOps** practices, proficient in **Docker**, **Kubernetes**, and have experience working with cloud services (AWS, Azure). I have worked on diverse projects, including CRM systems, educational platforms, and agile mobile applications. I am continuously eager to learn new technologies and enhance my skills to deliver innovative and high-quality software solutions. My goal is to create scalable, secure, and user-centric solutions that deliver real value.
-
-მე ვარ გამოცდილი **Full-stack** და **Mobile** დეველოპერი, რომელსაც აქვს მრავალწლიანი გამოცდილება ვებ და მობილური აპლიკაციების შექმნაში. ჩემი ექსპერტიზა მოიცავს **Python/Django**-ს მძლავრი ბექენდისთვის, **JavaScript/React**-ს დინამიური ფრონტენდისა და მობილური აპლიკაციებისთვის, ასევე **HTML/CSS**-ს ვიზუალურად მიმზიდველი და რეაგირებადი ინტერფეისების შესაქმნელად. აქტიურად ვარ ჩართული **DevOps** პრაქტიკებში, ვფლობ **Docker**-ს, **Kubernetes**-ს და მაქვს გამოცდილება ღრუბლოვან სერვისებთან (AWS, Azure) მუშაობისას. ვმუშაობდი სხვადასხვა პროექტებზე, მათ შორის CRM სისტემებზე, საგანმანათლებლო პლატფორმებზე და მოქნილ მობილურ აპლიკაციებზე. მუდმივად ვცდილობ ახალი ტექნოლოგიების შესწავლას და ჩემი უნარების გაუმჯობესებას, რათა შევქმნა ინოვაციური და მაღალი ხარისხის პროგრამული გადაწყვეტილებები. ჩემი მიზანია, შევქმნა სკალირებადი, უსაფრთხო და მომხმარებელზე ორიენტირებული გადაწყვეტილებები, რომლებიც რეალურ ღირებულებას ქმნის.
 
 ---
 
@@ -63,40 +59,36 @@ I am an experienced **Full-stack** and **Mobile** Developer with several years o
 
 Here are some of my featured projects that showcase my skills and experience across various technologies, including Full-stack, Mobile, and DevOps practices. Each project highlights my capabilities in a specific domain and reflects my approach to problem-solving.
 
-აქ წარმოდგენილია ჩემი რამდენიმე გამორჩეული პროექტი, რომლებიც ასახავს ჩემს უნარებსა და გამოცდილებას სხვადასხვა ტექნოლოგიებში, მათ შორის Full-stack, Mobile და DevOps პრაქტიკებში. თითოეული პროექტი ხაზს უსვამს ჩემს შესაძლებლობებს კონკრეტულ სფეროში და ასახავს ჩემს მიდგომას პრობლემების გადაჭრისადმი.
-
 ### 🚀 [django-core-api](https://github.com/achiko10/django-core-api)
 **Live Demo:** [https://achi717.pythonanywhere.com/login/?next=/dashboard/](https://achi717.pythonanywhere.com/login/?next=/dashboard/)
-**Description:** Robust Full-stack Backend API built with Django REST Framework. Features secure authentication, database management, and scalable architecture. | მორგებული ვებ აპლიკაციისთვის შექმნილი მძლავრი Django ბექენდ API. მოიცავს უსაფრთხო ავთენტიფიკაციას, მონაცემთა ბაზის მართვას და სკალირებად არქიტექტურას.
+**Description:** Robust Full-stack Backend API built with Django REST Framework. Features secure authentication, database management, and scalable architecture. |
 **Technologies:** `Python`, `Django REST Framework`, `PostgreSQL`, `Docker`
 
 ### 💼 [tezeurusi-web-app](https://github.com/achiko10/tezeurusi-web-app)
 **Live Demo:** [https://tezeurusi.pythonanywhere.com/](https://tezeurusi.pythonanywhere.com/)
-**Description:** Advanced Customer Relationship Management (CRM) system. Built with JavaScript and Supabase for real-time data synchronization and efficient business management. | JavaScript-ზე დაფუძნებული მომხმარებელთა ურთიერთობების მართვის (CRM) სისტემა. შექმნილია Supabase-თან ერთად რეალურ დროში მონაცემთა სინქრონიზაციისა და ეფექტური ბიზნეს მართვისთვის.
+**Description:** Advanced Customer Relationship Management (CRM) system. Built with JavaScript and Supabase for real-time data synchronization and efficient business management. |
 **Technologies:** `JavaScript`, `React`, `Supabase`, `PostgreSQL`, `CRM`
 
 ### 🔗 [logiclink-backend](https://github.com/achiko10/logiclink-backend)
 **Live Demo:** [https://logiklink.pythonanywhere.com/](https://logiklink.pythonanywhere.com/)
-**Description:** Logic & Connectivity Tool. A backend-focused Python project demonstrating complex algorithms, data structure handling, and system integration capabilities. | ლოგიკური და კავშირის ინსტრუმენტი. ბექენდზე ორიენტირებული Python პროექტი, რომელიც აჩვენებს კომპლექსურ ალგორითმებს, მონაცემთა სტრუქტურების დამუშავებას და სისტემების ინტეგრაციის შესაძლებლობებს.
+**Description:** Logic & Connectivity Tool. A backend-focused Python project demonstrating complex algorithms, data structure handling, and system integration capabilities. | 
 **Technologies:** `Python`, `Algorithms`, `Data Structures`, `Backend Development`
 
 ### 🎓 [academy-compass-platform](https://github.com/achiko10/academy-compass-platform)
 **Live Demo:** [https://academycompass.pythonanywhere.com/](https://academycompass.pythonanywhere.com/)
-**Description:** Educational Platform for Academy Management. A comprehensive system for course management, student tracking, and administrative tasks, built with Python/Django. | საგანმანათლებლო პლატფორმა აკადემიის მართვისთვის. ყოვლისმომცველი სისტემა კურსების მართვისთვის, სტუდენტების თვალთვალისთვის და ადმინისტრაციული ამოცანებისთვის, შექმნილი Python/Django-თი.
+**Description:** Educational Platform for Academy Management. A comprehensive system for course management, student tracking, and administrative tasks, built with Python/Django. |
 **Technologies:** `Python`, `Django`, `Education`, `Web Development`
 
 ### 📚 [academic-compass-core](https://github.com/achiko10/academic-compass-core)
 **Live Demo:** [https://academiccompass.pythonanywhere.com/](https://academiccompass.pythonanywhere.com/)
-**Description:** Core Academic Management System. A robust backend solution for managing academic data, user roles, and content delivery, ensuring scalability and data integrity. | ძირითადი აკადემიური მართვის სისტემა. მძლავრი ბექენდ გადაწყვეტა აკადემიური მონაცემების, მომხმარებლის როლების და კონტენტის მიწოდების სამართავად, რაც უზრუნველყოფს სკალირებადობას და მონაცემთა მთლიანობას.
+**Description:** Core Academic Management System. A robust backend solution for managing academic data, user roles, and content delivery, ensuring scalability and data integrity. |
 **Technologies:** `Python`, `Django`, `REST API`, `Database Management`
 
 ### 🌐 [laboratoria-frontend](https://github.com/achiko10/laboratoria-frontend)
 **Live Demo:** [https://achiko10.github.io/Laboratoria/index.html](https://achiko10.github.io/Laboratoria/index.html)
-**Description:** Modern Frontend for a Laboratory Management System. Built with HTML, CSS, and JavaScript, focusing on intuitive UI/UX and responsive design for efficient lab operations. | თანამედროვე ფრონტენდი ლაბორატორიის მართვის სისტემისთვის. შექმნილია HTML-ით, CSS-ით და JavaScript-ით, ფოკუსირებულია ინტუიციურ UI/UX-ზე და რეაგირებად დიზაინზე ეფექტური ლაბორატორიული ოპერაციებისთვის.
+**Description:** Modern Frontend for a Laboratory Management System. Built with HTML, CSS, and JavaScript, focusing on intuitive UI/UX and responsive design for efficient lab operations. | 
 **Technologies:** `HTML5`, `CSS3`, `JavaScript`, `Frontend Development`
-
 ---
-
 ## Get in Touch
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/achi-acnfn-41b9b8340)
