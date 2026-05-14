@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Aetheria | ოთახები</title>
+    <meta name="description" content="Aetheria | ოთახები - ACHIKO10 პრემიუმ პორტფოლიოს პროექტი.">
+<link rel="stylesheet" href="css/design.css">
+
+</head>
+<body>
+
+    <!-- ACHIKO10 GLOBAL PREMIUM BACK BAR -->
+    <div class="portfolio-bar-global shrink-0" style="background: linear-gradient(180deg, #050505 0%, rgba(5,5,5,0.9) 100%); backdrop-filter: blur(20px); padding: 16px 24px; display: flex; justify-content: center; align-items: center; position: relative; z-index: 99999; border-bottom: 1px solid rgba(0, 242, 255, 0.15); box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 32px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.4); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; box-shadow: 0 0 25px rgba(0, 242, 255, 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+
+<header class="site-header">
+<a href="index.html" class="site-logo">AETHERIA</a>
+<nav class="site-nav" id="nav"><a href="index.html" class='active'>ოთახები</a><a href="booking.html" >ჯავშანი</a><a href="rooms.html" >სრული სია</a></nav>
+<div class="header-actions"><a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="holo-dot"></span>ACHIKO10</a><a href="booking.html" class="btn btn-primary">დაჯავშნე</a></div>
+<button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+</header>
+<div id="h-toast" style="display:none;position:fixed;top:100px;left:50%;transform:translateX(-50%);padding:12px 24px;background:rgba(255,255,255,0.95);color:#ff4d6d;border:2px solid #ff4d6d;border-radius:50px;font-weight:900;font-size:.85rem;z-index:99999;box-shadow:0 10px 30px rgba(255,77,109,0.2);animation:slideDown 0.4s ease forwards;">✨ ძებნა დასრულებულია — ნაპოვნია საუკეთესო ვარიანტები!</div>
+<div class="filter-bar">
+  <input type="date" class="form-control" id="d-in" style="width:150px">
+  <input type="date" class="form-control" id="d-out" style="width:150px">
+  <select class="form-control" id="h-guests" style="width:150px">
+    <option value="2">2 სტუმარი</option><option value="4">4 სტუმარი</option><option value="6">6 სტუმარი</option>
+  </select>
+  <button class="btn btn-primary" onclick="searchRooms()">ძიება</button>
+</div>
+<style>@keyframes slideDown{from{top:80px;opacity:0}to{top:100px;opacity:1}}</style>
+<script>
+function searchRooms(){
+  var din=document.getElementById('d-in').value;
+  var dout=document.getElementById('d-out').value;
+  var gst=document.getElementById('h-guests').value;
+  if(!din || !dout){ alert('გთხოვთ აირჩიოთ თარიღი'); return; }
+  
+  var t=document.getElementById('h-toast'); t.style.display='block';
+  setTimeout(()=>t.style.display='none', 4500);
+
+  // Filter logic: show only rooms that match guests (simple mock)
+  document.querySelectorAll('.card').forEach(c => {
+    var sub = c.querySelector('.card-sub').textContent;
+    if(sub.includes(gst) || gst === "2") {
+      c.style.display = '';
+      c.style.animation = 'fadeIn 0.5s ease';
+    } else {
+      c.style.display = 'none';
+    }
+  });
+}
+</script>
+<main class="page-main"><div class="card-grid" id="mainGrid">
+<div class="card" data-t="suite"><img src="https://loremflickr.com/800/600/hotel,suite?lock=1" class="card-img" alt="პანორამული ლუქსი">
+<div class="card-body"><div class="card-cat">Suite</div><div class="card-title">პანორამული ლუქსი</div><div class="card-sub">2 სტუმარი · მთის ხედი</div>
+<div class="card-footer"><span class="card-price">₾ 450 /ღამე</span><a href="booking.html" class="btn btn-outline btn-sm">ჯავშანი</a></div></div></div>
+<div class="card" data-t="villa"><img src="https://loremflickr.com/800/600/resort,pool?lock=2" class="card-img" alt="კერძო ვილა აუზით">
+<div class="card-body"><div class="card-cat">Villa</div><div class="card-title">კერძო ვილა აუზით</div><div class="card-sub">4 სტუმარი</div>
+<div class="card-footer"><span class="card-price">₾ 850 /ღამე</span><a href="booking.html" class="btn btn-outline btn-sm">ჯავშანი</a></div></div></div>
+<div class="card" data-t="lobby"><img src="https://loremflickr.com/800/600/hotel,lobby?lock=3" class="card-img" alt="სპა და დასვენება">
+<div class="card-body"><div class="card-cat">Lobby</div><div class="card-title">სპა და დასვენება</div><div class="card-sub">ულიმიტო წვდომა</div>
+<div class="card-footer"><span class="card-price">₾ 150 /დღე</span><a href="booking.html" class="btn btn-outline btn-sm">ჯავშანი</a></div></div></div>
+<div class="card" data-t="standard"><img src="https://loremflickr.com/800/600/hotel,room?lock=4" class="card-img" alt="სტანდარტული ოთახი">
+<div class="card-body"><div class="card-cat">Standard</div><div class="card-title">სტანდარტული ოთახი</div><div class="card-sub">2 სტუმარი</div>
+<div class="card-footer"><span class="card-price">₾ 200 /ღამე</span><a href="booking.html" class="btn btn-outline btn-sm">ჯავშანი</a></div></div></div>
+<div class="card" data-t="deluxe"><img src="https://loremflickr.com/800/600/hotel,balcony?lock=5" class="card-img" alt="დელუქს ნომერი">
+<div class="card-body"><div class="card-cat">Deluxe</div><div class="card-title">დელუქს ნომერი</div><div class="card-sub">2+1 სტუმარი</div>
+<div class="card-footer"><span class="card-price">₾ 300 /ღამე</span><a href="booking.html" class="btn btn-outline btn-sm">ჯავშანი</a></div></div></div>
+<div class="card" data-t="resort"><img src="https://loremflickr.com/800/600/resort,exterior?lock=6" class="card-img" alt="სასტუმროს ექსტერიერი">
+<div class="card-body"><div class="card-cat">Resort</div><div class="card-title">სასტუმროს ექსტერიერი</div><div class="card-sub">ეზო და ბაღი</div>
+<div class="card-footer"><span class="card-price">უფასო</span><a href="booking.html" class="btn btn-outline btn-sm">ჯავშანი</a></div></div></div>
+<div class="card" data-t="balcony"><img src="https://loremflickr.com/800/600/hotel,mountain?lock=7" class="card-img" alt="ოთახი აივნით">
+<div class="card-body"><div class="card-cat">Balcony</div><div class="card-title">ოთახი აივნით</div><div class="card-sub">2 სტუმარი</div>
+<div class="card-footer"><span class="card-price">₾ 250 /ღამე</span><a href="booking.html" class="btn btn-outline btn-sm">ჯავშანი</a></div></div></div>
+<div class="card" data-t="honeymoon"><img src="https://loremflickr.com/800/600/hotel,honeymoon?lock=8" class="card-img" alt="თაფლობის თვის ლუქსი">
+<div class="card-body"><div class="card-cat">Honeymoon</div><div class="card-title">თაფლობის თვის ლუქსი</div><div class="card-sub">2 სტუმარი</div>
+<div class="card-footer"><span class="card-price">₾ 550 /ღამე</span><a href="booking.html" class="btn btn-outline btn-sm">ჯავშანი</a></div></div></div>
+<div class="card" data-t="presidential"><img src="https://loremflickr.com/800/600/suite,presidential?lock=9" class="card-img" alt="საპრეზიდენტო აპარტამენტი">
+<div class="card-body"><div class="card-cat">Presidential</div><div class="card-title">საპრეზიდენტო აპარტამენტი</div><div class="card-sub">6 სტუმარი</div>
+<div class="card-footer"><span class="card-price">₾ 1500 /ღამე</span><a href="booking.html" class="btn btn-outline btn-sm">ჯავშანი</a></div></div></div>
+<div class="card" data-t="cabin"><img src="https://loremflickr.com/800/600/cabin,forest?lock=10" class="card-img" alt="ტყის კოტეჯი">
+<div class="card-body"><div class="card-cat">Cabin</div><div class="card-title">ტყის კოტეჯი</div><div class="card-sub">4 სტუმარი</div>
+<div class="card-footer"><span class="card-price">₾ 400 /ღამე</span><a href="booking.html" class="btn btn-outline btn-sm">ჯავშანი</a></div></div></div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="footer-grid">
+<div class="footer-col"><div class="footer-col-title">AETHERIA</div><p class="text-muted" style="font-size:.85rem;line-height:1.7">პრემიუმ ვებ პლატფორმა. სრული ციფრული მხარდაჭერა.</p></div>
+<div class="footer-col"><div class="footer-col-title">ნავიგაცია</div><ul><li><a href="index.html">ოთახები</a></li><li><a href="booking.html">ჯავშანი</a></li><li><a href="rooms.html">სრული სია</a></li></ul></div>
+<div class="footer-col"><div class="footer-col-title">იურიდიული</div><ul><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">კონფიდენციალურობა</a></li><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">გაუქმების პოლიტიკა</a></li></ul></div>
+<div class="footer-col"><div class="footer-col-title">კონტაქტი</div><ul><li>📞 +995 32 000 000</li><li>✉️ info@achiko10.ge</li><li>🏢 თბილისი</li></ul></div>
+</div>
+<div class="footer-bottom"><span>&copy; 2026 Premium Portfolio</span><a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="holo-dot"></span>ACHIKO10</a></div>
+</footer>
+<script>window.addEventListener('click',function(e){if(!e.target.closest('.site-header'))document.getElementById('nav').classList.remove('open')})</script>
+
+
+</body>
+</html>

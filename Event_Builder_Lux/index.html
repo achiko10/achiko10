@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETERNAL | Dashboard</title>
+    <meta name="description" content="ETERNAL EVENTS | პრემიუმ ივენთები - ACHIKO10 Platinum Portfolio.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root { 
+            --gold-primary: #D4AF37;
+            --gold-light: #FBF5E5;
+            --gold-gradient: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            --dark-bg: #0A0A0A;
+            --panel-bg: #111111;
+        }
+        body { background-color: var(--dark-bg); color: #fff; font-family: 'Montserrat', sans-serif; letter-spacing: 0.02em; }
+        .serif { font-family: 'Cormorant Garamond', serif; }
+        
+        .text-gold { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* EXACT GLOBAL BACK BAR STYLES */
+        .portfolio-bar { background: rgba(0,0,0,0.8); backdrop-filter: blur(15px); padding: 12px 0; text-align: center; position: sticky; top: 0; z-index: 10000; border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; }
+        .back-btn-holo-global { display: inline-flex; align-items: center; gap: 10px; padding: 8px 24px; background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(0, 242, 255, 0.3); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 800; font-size: 10px; text-transform: uppercase; box-shadow: 0 10px 25px rgba(0,0,0,0.3); animation: holo-float 4s infinite ease-in-out; }
+        @keyframes holo-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+        .glass-panel { background: rgba(17, 17, 17, 0.6); border: 1px solid rgba(212, 175, 55, 0.1); backdrop-filter: blur(10px); }
+        .lux-card { background: var(--panel-bg); border: 1px solid rgba(255,255,255,0.05); transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .lux-card:hover { border-color: rgba(212, 175, 55, 0.3); transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
+        
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+    </style>
+</head>
+<body class="h-screen w-screen overflow-hidden flex flex-col antialiased selection:bg-yellow-900 selection:text-white">
+
+    <!-- ACHIKO10 GLOBAL PREMIUM BACK BAR -->
+    <div class="portfolio-bar-global shrink-0" style="background: linear-gradient(180deg, #050505 0%, rgba(5,5,5,0.9) 100%); backdrop-filter: blur(20px); padding: 16px 24px; display: flex; justify-content: center; align-items: center; position: relative; z-index: 99999; border-bottom: 1px solid rgba(0, 242, 255, 0.15); box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 32px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.4); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; box-shadow: 0 0 25px rgba(0, 242, 255, 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+
+    
+    
+
+    <!-- TOP HEADER -->
+    <header class="h-16 shrink-0 border-b border-[#1a1a1a] bg-[#050505] flex justify-between items-center px-6 z-50">
+        <div class="flex items-center gap-4">
+            <i data-lucide="diamond" class="w-5 h-5 text-yellow-600"></i>
+            <span class="text-xl serif italic tracking-[0.2em] font-light text-gold">ETERNAL</span>
+        </div>
+        <div class="flex items-center gap-4 text-[9px] uppercase tracking-widest font-bold text-stone-500">
+            <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-yellow-600 animate-pulse"></span> Concierge Active</span>
+        </div>
+    </header>
+
+    <!-- MAIN WORKSPACE -->
+    <main class="flex-1 overflow-hidden flex bg-[#080808]">
+        
+        <!-- SIDEBAR -->
+        <aside class="w-64 shrink-0 border-r border-[#1a1a1a] bg-[#050505] flex flex-col justify-between py-8">
+            <nav class="space-y-2 px-6">
+                <p class="text-[8px] uppercase tracking-[0.3em] text-stone-600 font-bold mb-6">მენიუ</p>
+                <a href="index.html" class="flex items-center gap-4 px-4 py-3 bg-[#111] rounded border border-yellow-600/30 text-[10px] font-bold uppercase tracking-widest text-gold shadow-[0_0_15px_rgba(212,175,55,0.05)] transition">
+                    <i data-lucide="layout-grid" class="w-4 h-4"></i> მიმოხილვა
+                </a>
+                <a href="builder.html" class="flex items-center gap-4 px-4 py-3 rounded border border-transparent text-[10px] font-bold uppercase tracking-widest text-stone-500 hover:text-white hover:bg-[#111] transition">
+                    <i data-lucide="sliders" class="w-4 h-4"></i> კონფიგურატორი
+                </a>
+                <a href="packages.html" class="flex items-center gap-4 px-4 py-3 rounded border border-transparent text-[10px] font-bold uppercase tracking-widest text-stone-500 hover:text-white hover:bg-[#111] transition">
+                    <i data-lucide="award" class="w-4 h-4"></i> პაკეტები
+                </a>
+                <a href="contact.html" class="flex items-center gap-4 px-4 py-3 rounded border border-transparent text-[10px] font-bold uppercase tracking-widest text-stone-500 hover:text-white hover:bg-[#111] transition">
+                    <i data-lucide="mail" class="w-4 h-4"></i> კონტაქტი
+                </a>
+            </nav>
+            <div class="px-6">
+                <div class="glass-panel p-5 rounded border border-[#1a1a1a] flex items-center justify-between">
+                    <div>
+                        <p class="text-[8px] text-stone-500 uppercase tracking-widest mb-1">სტატუსი</p>
+                        <p class="text-[10px] font-bold text-white uppercase tracking-widest">VIP კლიენტი</p>
+                    </div>
+                    <i data-lucide="crown" class="w-5 h-5 text-yellow-600"></i>
+                </div>
+            </div>
+        </aside>
+
+        <!-- DASHBOARD CONTENT -->
+        <section class="flex-1 overflow-y-auto p-8 lg:p-12">
+            
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h1 class="text-[10px] uppercase tracking-[0.4em] text-stone-500 mb-2">მთავარი პანელი</h1>
+                    <div class="text-3xl lg:text-4xl serif italic text-gold font-light">პრემიუმ ივენთები</div>
+                </div>
+                <a href="builder.html" class="px-6 py-3 bg-gradient-to-r from-yellow-700 to-yellow-500 text-black text-[9px] uppercase tracking-widest font-bold rounded hover:opacity-90 transition">
+                    ახალი პროექტი
+                </a>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 shrink-0">
+                <!-- Large Image Card -->
+                <div class="md:col-span-2 relative rounded overflow-hidden h-64 group">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1000" class="absolute inset-0 w-full h-full object-cover filter brightness-50 group-hover:scale-105 transition duration-1000">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <span class="text-yellow-500 text-[9px] uppercase tracking-widest border border-yellow-500/50 px-2 py-1 rounded mb-3 inline-block">შექმენი ისტორია</span>
+                        <h2 class="text-2xl serif italic text-white font-light">დაუვიწყარი საქორწილო ცერემონიები</h2>
+                    </div>
+                </div>
+                
+                <!-- Stat Card -->
+                <div class="lux-card p-6 flex flex-col justify-between h-64 rounded">
+                    <div>
+                        <p class="text-[9px] uppercase tracking-widest text-stone-500 mb-4">აქტიური პროექტები</p>
+                        <div class="text-5xl serif italic text-gold">02</div>
+                    </div>
+                    <div class="border-t border-[#1a1a1a] pt-4 mt-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-[10px] text-stone-400">პროგრესი</span>
+                            <span class="text-[10px] text-yellow-600 font-bold">75%</span>
+                        </div>
+                        <div class="w-full bg-[#1a1a1a] h-1 rounded overflow-hidden">
+                            <div class="w-3/4 bg-yellow-600 h-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="packages.html" class="lux-card p-6 flex items-center justify-between rounded group">
+                    <div>
+                        <h3 class="text-lg serif italic text-white group-hover:text-gold transition">ექსკლუზიური პაკეტები</h3>
+                        <p class="text-[9px] text-stone-500 uppercase tracking-widest mt-1">დათვალიერება</p>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-stone-600 group-hover:text-gold transition"></i>
+                </a>
+                <a href="builder.html" class="lux-card p-6 flex items-center justify-between rounded group">
+                    <div>
+                        <h3 class="text-lg serif italic text-white group-hover:text-gold transition">კონფიგურატორი</h3>
+                        <p class="text-[9px] text-stone-500 uppercase tracking-widest mt-1">ააწყვე შენი ივენთი</p>
+                    </div>
+                    <i data-lucide="sliders" class="w-5 h-5 text-stone-600 group-hover:text-gold transition"></i>
+                </a>
+                <a href="contact.html" class="lux-card p-6 flex items-center justify-between rounded group">
+                    <div>
+                        <h3 class="text-lg serif italic text-white group-hover:text-gold transition">კონსიერჟი</h3>
+                        <p class="text-[9px] text-stone-500 uppercase tracking-widest mt-1">დაგვიკავშირდით</p>
+                    </div>
+                    <i data-lucide="mail" class="w-5 h-5 text-stone-600 group-hover:text-gold transition"></i>
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- MINIMAL DASHBOARD FOOTER -->
+    <footer class="h-10 shrink-0 border-t border-[#1a1a1a] bg-[#050505] flex justify-between items-center px-6 z-50">
+        <div class="text-[9px] font-bold uppercase tracking-widest text-stone-600">
+            &copy; 2026 ETERNAL EVENTS
+        </div>
+        <div class="text-[9px] font-bold uppercase tracking-widest text-stone-500">
+            PLATINUM EDITION BY <span class="text-white italic">ACHIKO10</span>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

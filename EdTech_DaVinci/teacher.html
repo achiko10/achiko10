@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>მასწავლებელი | DaVinci</title>
+    <meta name="description" content="მასწავლებელი | DaVinci - ACHIKO10 პრემიუმ პორტფოლიოს პროექტი.">
+<link rel="stylesheet" href="css/design.css">
+
+</head>
+<body>
+
+    <!-- ACHIKO10 GLOBAL PREMIUM BACK BAR -->
+    <div class="portfolio-bar-global shrink-0" style="background: linear-gradient(180deg, #050505 0%, rgba(5,5,5,0.9) 100%); backdrop-filter: blur(20px); padding: 16px 24px; display: flex; justify-content: center; align-items: center; position: relative; z-index: 99999; border-bottom: 1px solid rgba(0, 242, 255, 0.15); box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 32px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.4); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; box-shadow: 0 0 25px rgba(0, 242, 255, 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+
+<header class="site-header">
+<a href="index.html" class="site-logo">DaVinci EDU</a>
+<nav class="site-nav" id="nav"><a href="index.html" >კურსები</a><a href="student.html" >სტუდენტი</a><a href="teacher.html" class='active'>მასწავლებელი</a></nav>
+<div class="header-actions"><a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="holo-dot"></span>ACHIKO10</a><a href="index.html" class="btn btn-primary">გამოსვლა</a></div>
+<button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+</header><main class="page-main">
+<div class="stats-bar mb-24">
+<div class="stat-item"><div class="stat-val">1,240</div><div class="stat-lbl">სტუდენტი</div></div>
+<div class="stat-item"><div class="stat-val">₾ 12,450</div><div class="stat-lbl">შემოსავალი (თვე)</div></div>
+<div class="stat-item"><div class="stat-val">4.9</div><div class="stat-lbl">საშ. რეიტინგი</div></div>
+</div>
+<div class="grid-2">
+<div class="panel"><h2 class="page-title mb-16">ჩემი კურსები</h2>
+<div class="table-wrap"><table class="data-table">
+<tr><th>კურსი</th><th>სტუდენტი</th><th>ფასი</th><th>სტატუსი</th></tr>
+<tr><td>Python პროფ.</td><td>1,240</td><td>₾ 450</td><td><span class="badge badge-g">აქტიური</span></td></tr>
+<tr><td>Django Master</td><td>320</td><td>₾ 300</td><td><span class="badge badge-g">აქტიური</span></td></tr>
+</table></div></div>
+<div class="panel">
+  <h2 class="page-title mb-16">ახალი კურსის დამატება</h2>
+  <div id="course-toast" style="display:none;padding:12px 18px;background:#1a3d1a;color:#4ade80;border:1px solid #4ade80;border-radius:10px;font-weight:700;font-size:.85rem;margin-bottom:16px;">✓ კურსი წარმატებით შეიქმნა! მოდერაციისთვის გაიგზავნა.</div>
+  <div class="form-group"><label class="form-label">კურსის სახელი *</label><input type="text" class="form-control" id="tc-name" placeholder="მაგ. Advanced Django REST API"></div>
+  <div class="form-group"><label class="form-label">კატეგორია *</label>
+    <select class="form-control" id="tc-cat">
+      <option value="">-- კატეგორია --</option>
+      <option>პროგრამირება</option><option>დიზაინი</option>
+      <option>DevOps</option><option>Game Dev</option><option>Cyber Security</option>
+    </select>
+  </div>
+  <div class="form-group"><label class="form-label">ფასი (₾) *</label><input type="number" class="form-control" id="tc-price" placeholder="450" min="0"></div>
+  <div class="form-group"><label class="form-label">მოკლე აღწერა *</label><textarea class="form-control" id="tc-desc" rows="3" placeholder="კურსის შინაარსი..."></textarea></div>
+  <p id="tc-err" style="color:#c0392b;font-size:.8rem;font-weight:700;display:none;margin-bottom:8px;"></p>
+  <button class="btn btn-primary btn-full mt-12" onclick="createCourse()">+ კურსის შექმნა</button>
+</div></div>
+<script>
+function createCourse(){
+  var n=document.getElementById('tc-name').value.trim();
+  var c=document.getElementById('tc-cat').value;
+  var p=document.getElementById('tc-price').value;
+  var d=document.getElementById('tc-desc').value.trim();
+  var err=document.getElementById('tc-err'); err.style.display='none';
+  if(!n){err.textContent='კურსის სახელი სავალდებულოა';err.style.display='block';return;}
+  if(!c){err.textContent='კატეგორია სავალდებულოა';err.style.display='block';return;}
+  if(!p||isNaN(p)||p<0){err.textContent='სწორი ფასი შეიყვანეთ';err.style.display='block';return;}
+  if(!d||d.length<20){err.textContent='აღწერა მინ. 20 სიმბოლო';err.style.display='block';return;}
+  var t=document.getElementById('course-toast'); t.style.display='block';
+  ['tc-name','tc-price','tc-desc'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('tc-cat').value='';
+  setTimeout(function(){t.style.display='none';},4500);
+}
+</script></main>
+<footer class="site-footer">
+<div class="footer-grid">
+<div class="footer-col"><div class="footer-col-title">DaVinci EDU</div><p class="text-muted" style="font-size:.85rem;line-height:1.7">პრემიუმ ვებ პლატფორმა. სრული ციფრული მხარდაჭერა.</p></div>
+<div class="footer-col"><div class="footer-col-title">ნავიგაცია</div><ul><li><a href="index.html">კურსები</a></li><li><a href="student.html">სტუდენტი</a></li><li><a href="teacher.html">მასწავლებელი</a></li></ul></div>
+<div class="footer-col"><div class="footer-col-title">იურიდიული</div><ul><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">კონფიდენციალურობა</a></li><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">წესები</a></li></ul></div>
+<div class="footer-col"><div class="footer-col-title">კონტაქტი</div><ul><li>📞 +995 32 000 000</li><li>✉️ info@achiko10.ge</li><li>🏢 თბილისი</li></ul></div>
+</div>
+<div class="footer-bottom"><span>&copy; 2026 Premium Portfolio</span><a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="holo-dot"></span>ACHIKO10</a></div>
+</footer>
+<script>window.addEventListener('click',function(e){if(!e.target.closest('.site-header'))document.getElementById('nav').classList.remove('open')})</script>
+
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap');
+
+:root {
+    --bg-dark: #08090b; /* Very dark, almost black, elegant */
+    --surface-glass: rgba(20, 22, 26, 0.4);
+    --gold: #d4af37; /* Premium gold */
+    --gold-glow: rgba(212, 175, 55, 0.15);
+    --text-primary: #e0e0e0;
+    --text-secondary: #8c8f96;
+    --border-glass: rgba(255, 255, 255, 0.06);
+    --border-highlight: rgba(212, 175, 55, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; /* Smaller, more elegant font size */
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+}
+
+a { text-decoration: none; }
+
+/* 3D Premium Button */
+.btn-3d {
+    display: inline-block;
+    background: linear-gradient(145deg, #16181c, #0d0f12);
+    color: var(--gold);
+    border: 1px solid var(--border-highlight);
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    box-shadow: 
+        5px 5px 10px rgba(0, 0, 0, 0.6), 
+        -2px -2px 8px rgba(255, 255, 255, 0.03),
+        inset 1px 1px 1px rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.btn-3d:hover {
+    color: #fff;
+    border-color: var(--gold);
+    box-shadow: 
+        5px 5px 15px rgba(212, 175, 55, 0.1), 
+        -2px -2px 8px rgba(255, 255, 255, 0.03),
+        inset 1px 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.btn-3d:active {
+    box-shadow: 
+        inset 4px 4px 8px rgba(0, 0, 0, 0.8), 
+        inset -2px -2px 4px rgba(255, 255, 255, 0.02);
+    transform: translateY(2px);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    border-bottom: 1px solid var(--border-glass);
+    background: rgba(8, 9, 11, 0.8);
+    backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    letter-spacing: 4px;
+}
+
+nav { display: flex; gap: 2.5rem; }
+nav a {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+nav a.active, nav a:hover { color: var(--gold); }
+
+/* Crystal Brick Card (Apartment Card) */
+.crystal-brick {
+    background: var(--surface-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-glass);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-left: 1px solid rgba(255,255,255,0.05);
+    border-radius: 8px;
+    padding: 15px;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    box-shadow: 
+        15px 15px 30px rgba(0, 0, 0, 0.5),
+        inset 2px 2px 10px rgba(255, 255, 255, 0.02);
+}
+
+.crystal-brick:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        20px 20px 40px rgba(0, 0, 0, 0.6),
+        0 0 20px var(--gold-glow),
+        inset 2px 2px 10px rgba(255, 255, 255, 0.05);
+    border-color: var(--border-highlight);
+}
+
+/* Image inside the glass brick */
+.brick-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    filter: contrast(1.1) brightness(0.9);
+}
+
+/* Status Badge inside brick */
+.badge {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border-glass);
+    color: var(--text-primary);
+    padding: 4px 10px;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 2px;
+}
+.badge.available { border-bottom: 1px solid var(--gold); color: var(--gold); }
+.badge.sold { border-bottom: 1px solid #ff4757; color: #ff4757; }
+
+/* Card Content */
+.brick-content h3 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.brick-meta {
+    display: flex;
+    gap: 15px;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-glass);
+    padding-bottom: 10px;
+}
+
+.brick-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brick-price {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+}
+
+/* Grid Layout */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 5%;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border-glass);
+    margin-top: 5rem;
+}
+
+/* Form inputs */
+.premium-input {
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--border-glass);
+    color: var(--text-primary);
+    padding: 12px 15px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+    outline: none;
+}
+.premium-input:focus {
+    border-color: var(--gold);
+}
+/* ===== ACHIKO10 HOLOGRAM BRANDING ===== */
+.hologram-brand {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: linear-gradient(90deg, #7ec8e3, #b8f7f7, #7ec8e3);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: holo-shine 3s linear infinite;
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.3));
+    cursor: pointer;
+}
+@keyframes holo-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+/* Hologram badge in footer */
+.hologram-footer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background-image: linear-gradient(90deg, #7ec8e3, #b8f7f7, #7ec8e3);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: holo-shine 3s linear infinite;
+    text-decoration: none;
+}

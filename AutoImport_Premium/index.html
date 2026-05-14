@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AutoImport | ავტომობილები</title>
+    <meta name="description" content="AutoImport | ავტომობილები - ACHIKO10 პრემიუმ პორტფოლიოს პროექტი.">
+<link rel="stylesheet" href="css/design.css">
+
+</head>
+<body>
+
+    <!-- ACHIKO10 GLOBAL PREMIUM BACK BAR -->
+    <div class="portfolio-bar-global shrink-0" style="background: linear-gradient(180deg, #050505 0%, rgba(5,5,5,0.9) 100%); backdrop-filter: blur(20px); padding: 16px 24px; display: flex; justify-content: center; align-items: center; position: relative; z-index: 99999; border-bottom: 1px solid rgba(0, 242, 255, 0.15); box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 32px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.4); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; box-shadow: 0 0 25px rgba(0, 242, 255, 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+
+<header class="site-header">
+    <a href="index.html" class="site-logo">AUTOIMPORT</a>
+    <nav class="site-nav"><a href="index.html" class='active'>ავტომობილები</a>
+<a href="car-detail.html" >დეტალები</a>
+<a href="calculator.html" >კალკულатори</a></nav>
+    <div class="header-actions">
+        <a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo">
+            <span class="holo-dot"></span>ACHIKO10</a>
+        <a href="calculator.html" class="btn btn-primary">კონსულტაცია</a>
+    </div>
+    <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+<div class="filter-bar">
+<button class="filter-chip active" onclick="flt('all',this)">ყველა</button>
+<button class="filter-chip" onclick="flt('suv',this)">SUV</button>
+<button class="filter-chip" onclick="flt('სედანი',this)">სედანი</button>
+<button class="filter-chip" onclick="flt('კუპე',this)">კუპე</button>
+<button class="filter-chip" onclick="flt('ელ.',this)">ელ. ავტო</button>
+</div>
+<main class="page-main">
+<div class="card-grid" id="mainGrid">
+<div class="card" data-t="suv"><img src="https://loremflickr.com/800/600/car,porsche?lock=1" class="card-img" alt="Porsche Cayenne S">
+<div class="card-body"><div class="card-cat">SUV</div><div class="card-title">Porsche Cayenne S</div><div class="card-sub">2023 · 12,000 კმ</div>
+<div class="card-footer"><span class="card-price">$ 85,000</span><a href="car-detail.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="სედანი"><img src="https://loremflickr.com/800/600/car,mercedes?lock=2" class="card-img" alt="Mercedes E 300">
+<div class="card-body"><div class="card-cat">სედანი</div><div class="card-title">Mercedes E 300</div><div class="card-sub">2022 · 35,000 კმ</div>
+<div class="card-footer"><span class="card-price">$ 52,400</span><a href="car-detail.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="ელ."><img src="https://loremflickr.com/800/600/car,tesla?lock=3" class="card-img" alt="Tesla Model Y">
+<div class="card-body"><div class="card-cat">ელ. ავტო</div><div class="card-title">Tesla Model Y</div><div class="card-sub">2023 · 18,000 კმ</div>
+<div class="card-footer"><span class="card-price">$ 54,000</span><a href="car-detail.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="კუპე"><img src="https://loremflickr.com/800/600/sportscar,porsche?lock=4" class="card-img" alt="Porsche 911">
+<div class="card-body"><div class="card-cat">კუპე</div><div class="card-title">Porsche 911</div><div class="card-sub">2021 · 22,000 კმ</div>
+<div class="card-footer"><span class="card-price">$ 142,000</span><a href="car-detail.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="suv"><img src="https://loremflickr.com/800/600/car,rangerover?lock=5" class="card-img" alt="Range Rover Sport">
+<div class="card-body"><div class="card-cat">SUV</div><div class="card-title">Range Rover Sport</div><div class="card-sub">2023 · 15,000 კმ</div>
+<div class="card-footer"><span class="card-price">$ 98,500</span><a href="car-detail.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="სედანი"><img src="https://loremflickr.com/800/600/car,audi?lock=6" class="card-img" alt="Audi A6 55 TFSI">
+<div class="card-body"><div class="card-cat">სედანი</div><div class="card-title">Audi A6 55 TFSI</div><div class="card-sub">2022 · 41,000 კმ</div>
+<div class="card-footer"><span class="card-price">$ 61,200</span><a href="car-detail.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="სპორტული"><img src="https://loremflickr.com/800/600/car,bmw?lock=7" class="card-img" alt="BMW M4 Competition">
+<div class="card-body"><div class="card-cat">სპორტული</div><div class="card-title">BMW M4 Competition</div><div class="card-sub">2022 · 18,000 კმ</div>
+<div class="card-footer"><span class="card-price">$ 89,000</span><a href="car-detail.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="ლუქს"><img src="https://loremflickr.com/800/600/luxurycar,rollsroyce?lock=8" class="card-img" alt="Rolls Royce Cullinan">
+<div class="card-body"><div class="card-cat">ლუქს SUV</div><div class="card-title">Rolls Royce Cullinan</div><div class="card-sub">2021 · 10,000 კმ</div>
+<div class="card-footer"><span class="card-price">$ 380,000</span><a href="car-detail.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="ელ."><img src="https://loremflickr.com/800/600/electriccar,tesla?lock=9" class="card-img" alt="Tesla Model S Plaid">
+<div class="card-body"><div class="card-cat">ელ. ავტო</div><div class="card-title">Tesla Model S Plaid</div><div class="card-sub">2023 · 8,000 კმ</div>
+<div class="card-footer"><span class="card-price">$ 115,000</span><a href="car-detail.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="სუპერკარი"><img src="https://loremflickr.com/800/600/supercar,mclaren?lock=10" class="card-img" alt="McLaren 720S">
+<div class="card-body"><div class="card-cat">სუპერკარი</div><div class="card-title">McLaren 720S</div><div class="card-sub">2020 · 14,000 კმ</div>
+<div class="card-footer"><span class="card-price">$ 285,000</span><a href="car-detail.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+</div>
+</main>
+<script>function flt(t,el){document.querySelectorAll('.filter-chip').forEach(b=>b.classList.remove('active'));el.classList.add('active');document.querySelectorAll('.card[data-t]').forEach(c=>{c.style.display=(t==='all'||c.dataset.t===t)?'':'none'})}</script>
+<footer class="site-footer">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <div class="footer-col-title">AUTOIMPORT</div>
+            <p class="text-muted" style="font-size:.85rem;line-height:1.7">პრემიუმ ვებ პლატფორმა. სრული ციფრული მხარდაჭერა.</p>
+        </div>
+        <div class="footer-col"><div class="footer-col-title">ნავიგაცია</div><ul><li><a href="index.html">ავტომობილები</a></li>
+<li><a href="calculator.html">კალკულатори</a></li></ul></div>
+        <div class="footer-col"><div class="footer-col-title">იურიდიული</div><ul><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">კონფიდენციალურობა</a></li>
+<li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">მომსახ. პირობები</a></li>
+<li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">Cookies</a></li></ul></div>
+        <div class="footer-col"><div class="footer-col-title">კონტაქტი</div><ul><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">📞 +995 32 000 000</a></li>
+<li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">✉️ info@autoimport.ge</a></li>
+<li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">🏢 თბილისი, ვაკე</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Premium Web Portfolio</span>
+        <a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo">
+            <span class="holo-dot"></span>ACHIKO10</a>
+    </div>
+</footer>
+<script>
+document.querySelector('.menu-toggle').addEventListener('click',function(){
+  document.querySelector('.site-nav').classList.toggle('open');
+});
+</script>
+
+
+</body>
+</html>

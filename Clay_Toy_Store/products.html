@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>კატალოგი | Clay Toys</title>
+    <meta name="description" content="კატალოგი | Clay Toys - ACHIKO10 პრემიუმ პორტფოლიოს პროექტი.">
+<link rel="stylesheet" href="css/design.css">
+
+</head>
+<body>
+
+    <!-- ACHIKO10 GLOBAL PREMIUM BACK BAR -->
+    <div class="portfolio-bar-global shrink-0" style="background: linear-gradient(180deg, #050505 0%, rgba(5,5,5,0.9) 100%); backdrop-filter: blur(20px); padding: 16px 24px; display: flex; justify-content: center; align-items: center; position: relative; z-index: 99999; border-bottom: 1px solid rgba(0, 242, 255, 0.15); box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 32px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.4); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; box-shadow: 0 0 25px rgba(0, 242, 255, 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+
+<header class="site-header">
+<a href="index.html" class="site-logo">CLAY TOYS</a>
+<nav class="site-nav" id="nav"><a href="index.html" >მთავარი</a><a href="products.html" class='active'>კატალოგი</a><a href="contact.html" >კონტაქტი</a></nav>
+<div class="header-actions"><a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="holo-dot"></span>ACHIKO10</a><a href="checkout.html" class="btn btn-primary">🛒 კალათა</a></div>
+<button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+</header><main class="page-main">
+<h1 class="page-title">სრული კატალოგი</h1><p class="page-sub">ყველა ასაკისთვის</p>
+<div class="card-grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1512413914564-168a2ee1c5e6?w=800&q=80" class="card-img" alt="Edu">
+<div class="card-body"><div class="card-cat">სასწავლო</div><div class="card-title">მათემატიკის ბლოკები</div><div class="card-footer"><span class="card-price">₾ 48</span><button class="btn btn-primary btn-sm add-cart" data-name="მათემატიკის ბლოკები" data-price="48">+ კალათა</button></div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?w=800&q=80" class="card-img" alt="Lego">
+<div class="card-body"><div class="card-cat">კონსტრუქტორი</div><div class="card-title">რობოტის სეტი 3D</div><div class="card-footer"><span class="card-price">₾ 120</span><button class="btn btn-primary btn-sm add-cart" data-name="რობოტის სეტი 3D" data-price="120">+ კალათა</button></div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaad5b?w=800&q=80" class="card-img" alt="Soft">
+<div class="card-body"><div class="card-cat">რბილი</div><div class="card-title">კლეი ცხოველი</div><div class="card-footer"><span class="card-price">₾ 35</span><button class="btn btn-primary btn-sm add-cart" data-name="რბილი კლეი ცხოველი" data-price="35">+ კალათა</button></div></div></div>
+</div>
+<div id="clay-toast" style="display:none;position:fixed;bottom:2rem;right:2rem;background:#1e1e1e;color:var(--accent);border:1px solid var(--accent);border-radius:12px;padding:12px 20px;font-weight:700;font-size:.85rem;z-index:99999;box-shadow:0 10px 30px rgba(255,230,109,0.15)">✓ დამატებულია კალათაში</div>
+</main>
+<script>
+document.querySelectorAll('.add-cart').forEach(btn => {
+  btn.onclick = function(){
+    var item = { name: btn.dataset.name, price: btn.dataset.price };
+    var cart = JSON.parse(localStorage.getItem('clay_cart') || '[]');
+    cart.push(item);
+    localStorage.setItem('clay_cart', JSON.stringify(cart));
+    
+    var t = document.getElementById('clay-toast');
+    t.textContent = '✓ ' + item.name + ' დამატებულია';
+    t.style.display = 'block';
+    setTimeout(()=>t.style.display='none', 3500);
+  };
+});
+</script>
+<footer class="site-footer">
+<div class="footer-grid">
+<div class="footer-col"><div class="footer-col-title">CLAY TOYS</div><p class="text-muted" style="font-size:.85rem;line-height:1.7">პრემიუმ ვებ პლატფორმა. სრული ციფრული მხარდაჭერა.</p></div>
+<div class="footer-col"><div class="footer-col-title">ნავიგაცია</div><ul><li><a href="index.html">მთავარი</a></li><li><a href="products.html">კატალოგი</a></li><li><a href="contact.html">კონტაქტი</a></li></ul></div>
+<div class="footer-col"><div class="footer-col-title">იურიდიული</div><ul><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">კონფიდენციალურობა</a></li><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">მიწოდება</a></li></ul></div>
+<div class="footer-col"><div class="footer-col-title">კონტაქტი</div><ul><li>📞 +995 32 000 000</li><li>✉️ info@achiko10.ge</li><li>🏢 თბილისი</li></ul></div>
+</div>
+<div class="footer-bottom"><span>&copy; 2026 Premium Portfolio</span><a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="holo-dot"></span>ACHIKO10</a></div>
+</footer>
+<script>window.addEventListener('click',function(e){if(!e.target.closest('.site-header'))document.getElementById('nav').classList.remove('open')})</script>
+
+
+</body>
+</html>

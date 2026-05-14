@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>თრექინგი | LogisAR</title>
+    <meta name="description" content="თრექინგი | LogisAR - ACHIKO10 პრემიუმ პორტფოლიოს პროექტი.">
+<link rel="stylesheet" href="css/design.css">
+
+</head>
+<body>
+
+    <!-- ACHIKO10 GLOBAL PREMIUM BACK BAR -->
+    <div class="portfolio-bar-global shrink-0" style="background: linear-gradient(180deg, #050505 0%, rgba(5,5,5,0.9) 100%); backdrop-filter: blur(20px); padding: 16px 24px; display: flex; justify-content: center; align-items: center; position: relative; z-index: 99999; border-bottom: 1px solid rgba(0, 242, 255, 0.15); box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 32px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.4); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; box-shadow: 0 0 25px rgba(0, 242, 255, 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+<header class="site-header">
+<a href="index.html" class="site-logo">LOGIS.AR</a>
+<nav class="site-nav" id="nav"><a href="index.html" >მთავარი</a><a href="tracking.html" class='active'>თრექინგი</a><a href="dashboard.html" >კაბინეტი</a></nav>
+<div class="header-actions"><a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="holo-dot"></span>ACHIKO10</a><a href="dashboard.html" class="btn btn-primary">კაბინეტი</a></div>
+<button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+<main class="page-main">
+<div class="panel" style="max-width:700px;margin:0 auto">
+<h1 class="page-title">🔍 გაფართოებული თრექინგი</h1><p class="page-sub">აკონტროლეთ თქვენი ტვირთი რეალურ დროში</p>
+<div class="flex mt-16" style="gap:10px"><input type="text" class="form-control" id="tk" placeholder="GE-448122901" value="GE-448122901"><button class="btn btn-primary" onclick="tt()">ძიება</button></div>
+<div id="tdet" class="mt-24" style="display:none">
+  <div class="flex-between pb-8 mb-16" style="border-bottom:1px solid var(--border)"><span class="text-muted">სტატუსი</span><span class="badge badge-y" style="background:rgba(255,230,109,0.1);color:#ffe66d;border:1px solid #ffe66d">გზაშია</span></div>
+  
+  <div class="timeline mt-24">
+    <div class="timeline-item flex gap-16 mb-24">
+      <div class="tl-dot" style="width:12px;height:12px;background:#00f2ff;border-radius:50%;margin-top:4px;box-shadow:0 0 10px #00f2ff"></div>
+      <div><div style="font-weight:700;font-size:.9rem">Frankfurt Hub (FRA)</div><div class="text-muted" style="font-size:.75rem">May 14, 2026 · 14:20</div></div>
+    </div>
+    <div class="timeline-item flex gap-16 mb-24">
+      <div class="tl-dot" style="width:12px;height:12px;background:rgba(255,255,255,0.2);border-radius:50%;margin-top:4px"></div>
+      <div><div style="font-weight:700;font-size:.9rem">New York Gateway (JFK)</div><div class="text-muted" style="font-size:.75rem">May 12, 2026 · 09:15</div></div>
+    </div>
+    <div class="timeline-item flex gap-16">
+      <div class="tl-dot" style="width:12px;height:12px;background:rgba(255,255,255,0.2);border-radius:50%;margin-top:4px"></div>
+      <div><div style="font-weight:700;font-size:.9rem">Picked Up</div><div class="text-muted" style="font-size:.75rem">May 10, 2026 · 18:00</div></div>
+    </div>
+  </div>
+
+  <div class="panel mt-24" style="background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.05)">
+    <div class="flex-between pb-8"><span class="text-muted">გამომგზავნი</span><span>Amazon US</span></div>
+    <div class="flex-between pb-8"><span class="text-muted">წონა</span><span>4.20 კგ</span></div>
+    <div class="flex-between"><span class="text-muted">სავარაუდო ჩამოსვლა</span><span>24 მაისი, 2026</span></div>
+  </div>
+</div>
+</div></main>
+<script>
+function tt(){
+  var val = document.getElementById('tk').value;
+  if(val.length < 5) return;
+  document.getElementById('tdet').style.display='block';
+  document.getElementById('tdet').style.animation='fadeIn 0.5s ease';
+}
+</script>
+<footer class="site-footer">
+<div class="footer-grid">
+<div class="footer-col"><div class="footer-col-title">LOGIS.AR</div><p class="text-muted" style="font-size:.85rem;line-height:1.7">პრემიუმ ვებ პლატფორმა. სრული ციფრული მხარდაჭერა.</p></div>
+<div class="footer-col"><div class="footer-col-title">ნავიგაცია</div><ul><li><a href="index.html">მთავარი</a></li><li><a href="tracking.html">თრექინგი</a></li><li><a href="dashboard.html">კაბინეტი</a></li></ul></div>
+<div class="footer-col"><div class="footer-col-title">იურიდიული</div><ul><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">კონფიდენციალურობა</a></li><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">პირობები</a></li></ul></div>
+<div class="footer-col"><div class="footer-col-title">კონტაქტი</div><ul><li>📞 +995 32 000 000</li><li>✉️ info@achiko10.ge</li><li>🏢 თბილისი</li></ul></div>
+</div>
+<div class="footer-bottom"><span>&copy; 2026 Premium Portfolio</span><a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="holo-dot"></span>ACHIKO10</a></div>
+</footer>
+<script>window.addEventListener('click',function(e){if(!e.target.closest('.site-header'))document.getElementById('nav').classList.remove('open')})</script>
+
+
+</body>
+</html>

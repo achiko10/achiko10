@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@400;600;800&display=swap');
+
+:root {
+    /* Makoto Shinkai Anime Aesthetic Colors */
+    --anime-sky-top: #0a0e27;
+    --anime-sky-mid: #382c6c;
+    --anime-sky-sunset: #ff7e67;
+    --anime-sky-bottom: #ffd3b6;
+    
+    /* Holographic UI Elements */
+    --holo-bg: rgba(255, 255, 255, 0.1);
+    --holo-border: rgba(255, 255, 255, 0.4);
+    --holo-glow: rgba(0, 243, 255, 0.5);
+    --holo-text: #ffffff;
+    --holo-accent: #00f3ff;
+    --holo-pink: #ff2a85;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--holo-text);
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Cinematic Anime Background */
+    background: linear-gradient(180deg, var(--anime-sky-top) 0%, var(--anime-sky-mid) 40%, var(--anime-sky-sunset) 80%, var(--anime-sky-bottom) 100%);
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Stars overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        radial-gradient(1px 1px at 10% 20%, white, transparent),
+        radial-gradient(1.5px 1.5px at 30% 40%, rgba(255,255,255,0.8), transparent),
+        radial-gradient(2px 2px at 80% 10%, rgba(255,255,255,0.9), transparent),
+        radial-gradient(1px 1px at 60% 50%, white, transparent),
+        radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.6), transparent);
+    background-size: 200px 200px;
+    z-index: -1;
+    opacity: 0.7;
+    animation: twinkle 10s infinite linear;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.5; }
+    50% { opacity: 0.9; }
+    100% { opacity: 0.5; }
+}
+
+.main-content {
+    flex: 1;
+    padding-bottom: 50px;
+}
+
+/* Holographic Glassmorphism Panels */
+.holo-panel {
+    background: var(--holo-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--holo-border);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255,255,255,0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Futuristic Scanline Effect on hover */
+.holo-panel::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: linear-gradient(rgba(255,255,255,0) 0%, rgba(0, 243, 255, 0.1) 50%, rgba(255,255,255,0) 100%);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.holo-panel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), 0 0 30px var(--holo-glow);
+    border-color: var(--holo-accent);
+}
+
+.holo-panel:hover::after {
+    opacity: 1;
+    top: 100%; left: 100%;
+}
+
+.panel-header {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* Holographic Inputs and Buttons */
+.holo-input {
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.holo-input:focus {
+    border-color: var(--holo-accent);
+    box-shadow: 0 0 15px var(--holo-glow), inset 0 0 10px var(--holo-glow);
+    background: rgba(0,0,0,0.5);
+}
+
+.btn-holo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid var(--holo-accent);
+    color: var(--holo-accent);
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(0,243,255,0.2);
+}
+
+.btn-holo:hover {
+    background: var(--holo-accent);
+    color: #000;
+    box-shadow: 0 0 20px var(--holo-glow), 0 0 40px var(--holo-glow);
+    transform: scale(1.05);
+}
+
+.btn-pink {
+    border-color: var(--holo-pink);
+    color: var(--holo-pink);
+    box-shadow: 0 0 10px rgba(255,42,133,0.2);
+}
+.btn-pink:hover {
+    background: var(--holo-pink);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(255,42,133,0.5), 0 0 40px rgba(255,42,133,0.5);
+}
+
+/* Header & Nav */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: linear-gradient(180deg, rgba(10,14,39,0.8) 0%, rgba(10,14,39,0) 100%);
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px var(--holo-accent);
+}
+
+nav { display: flex; gap: 2.5rem; }
+nav a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+nav a:hover, nav a.active {
+    color: #fff;
+    text-shadow: 0 0 10px var(--holo-pink);
+}
+
+/* Layouts */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px var(--holo-pink);
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin-bottom: 50px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+    font-weight: 300;
+}
+
+/* Booking Widget */
+.booking-widget {
+    display: flex;
+    gap: 15px;
+    background: var(--holo-bg);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 8px;
+}
+.input-group label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--holo-accent);
+    font-weight: 800;
+}
+
+/* Footer (Comprehensive) */
+footer {
+    background-color: rgba(10, 14, 39, 0.8);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 40px 5% 20px 5%;
+    margin-top: 60px;
+    color: #a6c0d8;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    z-index: 9999;
+}
+
+.footer-top {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;
+}
+.footer-col { flex: 1; min-width: 250px; }
+.footer-col h3, .footer-col h4 { color: #fff; margin-bottom: 15px; font-family: 'Montserrat'; letter-spacing: 1px; }
+.footer-col h4 { color: var(--holo-accent); font-size: 1rem; text-transform: uppercase; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul a { color: #a6c0d8; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+.footer-col ul a:hover { color: #fff; text-shadow: 0 0 5px var(--holo-glow); }
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 20px; text-align: center; font-size: 0.85rem;
+}
+/* ===== ACHIKO10 HOLOGRAM BRANDING ===== */
+.hologram-brand {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: linear-gradient(90deg, #00f3ff, #ff2a85, #00f3ff);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: holo-shine 3s linear infinite;
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.3));
+    cursor: pointer;
+}
+@keyframes holo-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+/* Hologram badge in footer */
+.hologram-footer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background-image: linear-gradient(90deg, #00f3ff, #ff2a85, #00f3ff);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: holo-shine 3s linear infinite;
+    text-decoration: none;
+}

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAISON | Villa Noir</title>
+    <meta name="description" content="MAISON Architecture – Project Detail. ACHIKO10 Platinum.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root { --bg: #F4F4F5; --surface: #FFFFFF; --text: #18181B; --border: #E4E4E7; }
+        * { box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; }
+        .serif { font-family: 'Playfair Display', serif; }
+
+        .media-img {
+            width: 100%; object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.7s ease, transform 0.5s ease;
+            cursor: zoom-in;
+        }
+        .media-img:hover { filter: grayscale(0%); transform: scale(1.02); }
+
+        /* Lightbox */
+        #lightbox {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.95); z-index: 99999;
+            align-items: center; justify-content: center;
+        }
+        #lightbox.open { display: flex; }
+        #lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; border: 1px solid rgba(255,255,255,0.1); }
+        #lightboxClose { position: absolute; top: 1.5rem; right: 1.5rem; color: #fff; font-size: 2rem; cursor: pointer; background: none; border: none; line-height: 1; }
+
+        /* Share toast */
+        #shareToast {
+            position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(50px);
+            background: #18181B; color: #fff; padding: 0.75rem 1.5rem;
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.1em; border-radius: 4px; opacity: 0;
+            transition: all 0.4s; z-index: 99999;
+        }
+        #shareToast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+        /* Mobile menu */
+        #mobile-menu {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.95); z-index: 99990;
+            flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+        }
+        #mobile-menu.open { display: flex; }
+        #mobile-menu a { color: #fff; font-size: 1.5rem; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 0.2em; }
+        #mobile-menu a:hover { color: #00f2ff; }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: #D4D4D8; border-radius: 4px; }
+
+        /* Thumbnail gallery */
+        .thumb { cursor: pointer; opacity: 0.6; transition: opacity 0.2s, border-color 0.2s; border: 2px solid transparent; }
+        .thumb:hover, .thumb.active { opacity: 1; border-color: #18181B; }
+    </style>
+</head>
+<body class="h-screen w-screen overflow-hidden flex flex-col antialiased selection:bg-black selection:text-white">
+
+    <!-- Lightbox -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <button id="lightboxClose" onclick="closeLightbox()">✕</button>
+        <img id="lightboxImg" src="" alt="Project Photo">
+    </div>
+
+    <!-- Share Toast -->
+    <div id="shareToast">🔗 ლინკი დაკოპირდა!</div>
+
+    <!-- ACHIKO10 GLOBAL PREMIUM BACK BAR -->
+    <div class="shrink-0" style="background: linear-gradient(180deg, #050505 0%, rgba(5,5,5,0.95) 100%); backdrop-filter: blur(20px); padding: 14px 24px; display: flex; justify-content: center; align-items: center; z-index: 99999; border-bottom: 1px solid rgba(0, 242, 255, 0.15); box-shadow: 0 4px 30px rgba(0,0,0,0.8);">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 10px 28px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.4); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+    <!-- HEADER -->
+    <header class="h-16 shrink-0 border-b border-[#E4E4E7] bg-white flex justify-between items-center px-6 md:px-10 z-50">
+        <a href="index.html" class="flex items-center gap-4" style="text-decoration:none;">
+            <span class="text-xl md:text-2xl font-bold tracking-[0.25em] serif uppercase text-black">MAISON</span>
+            <span class="w-px h-6 bg-zinc-200 hidden md:block"></span>
+            <span class="text-[8px] font-bold uppercase tracking-[0.3em] text-zinc-400 hidden md:block">Architecture Studio</span>
+        </a>
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="text-[9px] font-bold uppercase tracking-widest text-zinc-500 hover:text-black transition hidden md:flex items-center gap-1.5">
+                <i data-lucide="arrow-left" class="w-3 h-3"></i> ყველა პროექტი
+            </a>
+            <!-- Share button (functional) -->
+            <button id="shareBtn" onclick="handleShare()" class="w-9 h-9 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600 hover:bg-black hover:text-white transition" title="გაზიარება">
+                <i data-lucide="share-2" class="w-4 h-4"></i>
+            </button>
+            <button id="menuBtn" onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="w-9 h-9 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600 hover:bg-black hover:text-white transition md:hidden">
+                <i data-lucide="menu" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu">
+        <button onclick="document.getElementById('mobile-menu').classList.remove('open')" style="position:absolute;top:1.5rem;right:1.5rem;color:#fff;background:none;border:none;cursor:pointer;font-size:2rem;">✕</button>
+        <a href="index.html">პროექტები</a>
+        <a href="studio.html">სტუდია</a>
+        <a href="contact.html">კონტაქტი</a>
+    </div>
+
+    <main class="flex-1 overflow-hidden flex bg-[#F4F4F5]">
+
+        <!-- PROJECT SPECS SIDEBAR -->
+        <aside class="w-72 md:w-80 shrink-0 border-r border-[#E4E4E7] bg-white flex flex-col py-8 md:py-10 overflow-y-auto hidden md:flex">
+            <div class="px-8 mb-8">
+                <a href="index.html" class="inline-flex items-center gap-2 text-[9px] font-bold uppercase tracking-widest text-zinc-400 hover:text-black transition mb-6">
+                    <i data-lucide="arrow-left" class="w-3 h-3"></i> უკან
+                </a>
+                <h1 id="projectTitle" class="text-3xl md:text-4xl serif font-bold tracking-tight text-black mb-2">Villa Noir</h1>
+                <p id="projectSubtitle" class="text-[10px] uppercase tracking-widest text-zinc-400 font-bold border-b border-zinc-200 pb-4">Residential / 2025</p>
+            </div>
+
+            <div class="px-8 space-y-6 flex-1">
+                <div>
+                    <p class="text-[8px] uppercase tracking-[0.3em] font-bold text-zinc-400 mb-1.5">კლიენტი</p>
+                    <p id="projectClient" class="text-sm font-bold text-black uppercase tracking-widest">Private Estate</p>
+                </div>
+                <div>
+                    <p class="text-[8px] uppercase tracking-[0.3em] font-bold text-zinc-400 mb-1.5">ლოკაცია</p>
+                    <p id="projectLocation" class="text-sm font-bold text-black uppercase tracking-widest">Tsavkisi, Georgia</p>
+                </div>
+                <div>
+                    <p class="text-[8px] uppercase tracking-[0.3em] font-bold text-zinc-400 mb-1.5">ფართობი</p>
+                    <p id="projectArea" class="text-sm font-bold text-black uppercase tracking-widest">1,200 SQM</p>
+                </div>
+                <div>
+                    <p class="text-[8px] uppercase tracking-[0.3em] font-bold text-zinc-400 mb-1.5">სტატუსი</p>
+                    <p class="text-sm font-bold text-black uppercase tracking-widest flex items-center gap-2">
+                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> Completed
+                    </p>
+                </div>
+                <div>
+                    <p class="text-[8px] uppercase tracking-[0.3em] font-bold text-zinc-400 mb-2">პრინციპები</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[8px] uppercase tracking-widest border border-zinc-200 px-2 py-1 font-bold">Minimalism</span>
+                        <span class="text-[8px] uppercase tracking-widest border border-zinc-200 px-2 py-1 font-bold">Concrete</span>
+                        <span class="text-[8px] uppercase tracking-widest border border-zinc-200 px-2 py-1 font-bold">Natural Light</span>
+                    </div>
+                </div>
+
+                <p id="projectDesc" class="text-xs text-zinc-500 leading-relaxed font-light pt-4 border-t border-zinc-100">
+                    Villa Noir წარმოადგენს თანამედროვე მინიმალიზმის ეტალონს, სადაც ბეტონის სიმკაცრე ჰარმონიულად ერწყმის ბუნებრივ სინათლესა და ლანდშაფტს. ყოველი სივრცე ემსახურება ადამიანის გამოცდილებას.
+                </p>
+            </div>
+
+            <div class="px-8 mt-8">
+                <a href="contact.html" class="block w-full py-3 bg-black text-white text-[9px] font-bold uppercase tracking-widest hover:bg-zinc-800 transition text-center">
+                    ამ ტიპის პროექტი →
+                </a>
+            </div>
+        </aside>
+
+        <!-- PROJECT MEDIA -->
+        <section class="flex-1 overflow-y-auto p-4 md:p-8 bg-zinc-50">
+
+            <!-- Image counter / navigation -->
+            <div class="flex justify-between items-center mb-4">
+                <p class="text-[9px] font-bold uppercase tracking-widest text-zinc-400">მედია გალერეა</p>
+                <p class="text-[9px] font-bold uppercase tracking-widest text-zinc-400">
+                    <span id="imgCounter">1</span> / <span id="imgTotal">4</span>
+                </p>
+            </div>
+
+            <!-- Main Photo -->
+            <div class="w-full overflow-hidden border border-zinc-200 bg-white p-1.5 mb-4" style="height: 52vh; min-height: 280px;">
+                <img id="mainImg"
+                     src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85"
+                     class="media-img w-full h-full"
+                     onclick="openLightbox(this.src)"
+                     alt="Villa Noir – Main View">
+            </div>
+
+            <!-- Thumbnails -->
+            <div class="grid grid-cols-4 gap-3 mb-6">
+                <div class="aspect-[4/3] overflow-hidden border border-zinc-200 bg-white p-1 thumb active" onclick="switchImage(0, this)">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=400&q=70" class="w-full h-full object-cover" alt="View 1">
+                </div>
+                <div class="aspect-[4/3] overflow-hidden border border-zinc-200 bg-white p-1 thumb" onclick="switchImage(1, this)">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=70" class="w-full h-full object-cover" alt="View 2">
+                </div>
+                <div class="aspect-[4/3] overflow-hidden border border-zinc-200 bg-white p-1 thumb" onclick="switchImage(2, this)">
+                    <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=400&q=70" class="w-full h-full object-cover" alt="View 3">
+                </div>
+                <div class="aspect-[4/3] overflow-hidden border border-zinc-200 bg-white p-1 thumb" onclick="switchImage(3, this)">
+                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=400&q=70" class="w-full h-full object-cover" alt="View 4">
+                </div>
+            </div>
+
+            <!-- Mobile project info (below images on mobile) -->
+            <div class="md:hidden bg-white border border-zinc-200 p-6 space-y-4 mb-6">
+                <h2 class="text-2xl serif font-bold">Villa Noir</h2>
+                <p class="text-[10px] uppercase tracking-widest text-zinc-400 font-bold">Residential / Tsavkisi, 2025</p>
+                <p class="text-xs text-zinc-500 leading-relaxed">Villa Noir წარმოადგენს თანამედროვე მინიმალიზმის ეტალონს, სადაც ბეტონის სიმკაცრე ჰარმონიულად ერწყმის ბუნებრივ სინათლესა და ლანდშაფტს.</p>
+                <a href="contact.html" class="block w-full py-3 bg-black text-white text-[9px] font-bold uppercase tracking-widest text-center hover:bg-zinc-800 transition">ამ ტიპის პროექტი →</a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="h-12 shrink-0 bg-black text-zinc-500 flex justify-between items-center px-6 md:px-10 z-50 text-[9px] font-bold uppercase tracking-[0.2em]">
+        <div>&copy; 2026 MAISON STUDIO</div>
+        <div>PLATINUM EDITION BY <span class="text-white">ACHIKO10</span></div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // === IMAGE GALLERY ===
+        const images = [
+            'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85',
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85',
+            'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1400&q=85',
+            'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1400&q=85'
+        ];
+
+        const mainImg = document.getElementById('mainImg');
+        const thumbs = document.querySelectorAll('.thumb');
+        const counter = document.getElementById('imgCounter');
+        document.getElementById('imgTotal').textContent = images.length;
+
+        function switchImage(idx, el) {
+            mainImg.style.opacity = '0';
+            setTimeout(() => {
+                mainImg.src = images[idx];
+                mainImg.style.opacity = '1';
+            }, 200);
+            mainImg.style.transition = 'opacity 0.2s ease';
+
+            thumbs.forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+            counter.textContent = idx + 1;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const current = parseInt(counter.textContent) - 1;
+            if (e.key === 'ArrowRight' && current < images.length - 1) {
+                switchImage(current + 1, thumbs[current + 1]);
+            }
+            if (e.key === 'ArrowLeft' && current > 0) {
+                switchImage(current - 1, thumbs[current - 1]);
+            }
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // === LIGHTBOX ===
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            document.getElementById('lightboxImg').src = src;
+            lb.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // === SHARE FUNCTIONALITY ===
+        function handleShare() {
+            const toast = document.getElementById('shareToast');
+            if (navigator.share) {
+                navigator.share({ title: 'MAISON – Villa Noir', url: window.location.href });
+            } else {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    toast.classList.add('show');
+                    setTimeout(() => toast.classList.remove('show'), 3000);
+                });
+            }
+        }
+
+        // Read URL params to show different project data (future extensibility)
+        const params = new URLSearchParams(window.location.search);
+        const projectData = {
+            'apex-tower':      { title: 'Apex Tower',      subtitle: 'Commercial / 2024', client: 'Corporate Client', location: 'Tbilisi CBD, Georgia', area: '8,500 SQM', desc: 'Apex Tower გამოირჩევა კლდოვანი ფასადით და 360° ხედით ქალაქზე. კომერციული სტანდარტების გადააზრება.' },
+            'glass-pavilion':  { title: 'Glass Pavilion',  subtitle: 'Conceptual / 2026', client: 'Municipal Foundation', location: 'Batumi, Georgia', area: '3,200 SQM', desc: 'Glass Pavilion არის მინის და სინათლის ექსპერიმენტი, რომელიც ბუნებასა და ტექნოლოგიას ახამებს.' },
+            'mineral-house':   { title: 'Mineral House',   subtitle: 'Residential / 2024', client: 'Private Client', location: 'Mtskheta, Georgia', area: '680 SQM', desc: 'Mineral House — ბუნებრივი ქვის სახლი, სადაც ტრადიცია შერწყმულია თანამედროვე კომფორტთან.' },
+            'obsidian-loft':   { title: 'Obsidian Loft',   subtitle: 'Commercial / 2025', client: 'Creative Agency', location: 'Vake, Tbilisi', area: '1,100 SQM', desc: 'Obsidian Loft — ღია სივრცის კოლაბორაციული გარემო, სადაც კრეატიულობა არ შეიზღუდება.' },
+            'stone-court':     { title: 'Stone Court',     subtitle: 'Conceptual / 2026', client: 'Cultural Foundation', location: 'Sighnaghi, Georgia', area: '2,400 SQM', desc: 'Stone Court — კულტურული ცენტრი, რომელიც ქვევრის ფორმებს ახლებურად ინტერპრეტირებს.' },
+        };
+
+        const p = params.get('project');
+        if (p && projectData[p]) {
+            const d = projectData[p];
+            document.getElementById('projectTitle').textContent = d.title;
+            document.getElementById('projectSubtitle').textContent = d.subtitle;
+            document.getElementById('projectClient').textContent = d.client;
+            document.getElementById('projectLocation').textContent = d.location;
+            document.getElementById('projectArea').textContent = d.area;
+            document.getElementById('projectDesc').textContent = d.desc;
+            document.title = `MAISON | ${d.title}`;
+        }
+    </script>
+</body>
+</html>

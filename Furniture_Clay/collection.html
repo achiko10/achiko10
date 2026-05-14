@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMA | კოლექცია</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --bg:#e8dfd0;--surface:#f2ebe0;--panel:#f7f2ea;--dark:#2c2a26;--terra:#b87355;--olive:#7a8f6e;--border:#d6ccb8;--muted:#9a9080; }
+        *{box-sizing:border-box;margin:0;padding:0;}
+        body{background:var(--bg);color:var(--dark);font-family:'Space Grotesk',sans-serif;}
+        .nav-link{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:12px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);text-decoration:none;transition:all 0.2s;border:1px solid transparent;}
+        .nav-link:hover{background:var(--bg);color:var(--dark);}
+        .nav-link.active{background:var(--bg);color:var(--terra);border-color:rgba(184,115,85,0.2);box-shadow:inset 2px 2px 5px rgba(0,0,0,0.05);}
+        .clay{background:var(--panel);border:1px solid var(--border);border-radius:20px;box-shadow:4px 4px 12px rgba(0,0,0,0.06),-2px -2px 8px rgba(255,255,255,0.6);transition:all 0.35s;}
+        .product-card{background:var(--panel);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:all 0.35s;text-decoration:none;color:inherit;display:block;}
+        .product-card:hover{transform:translateY(-5px);box-shadow:6px 10px 24px rgba(0,0,0,0.1),-2px -2px 8px rgba(255,255,255,0.7);}
+        .product-card img{transition:transform 0.6s ease;}
+        .product-card:hover img{transform:scale(1.06);}
+        .btn-terra{display:inline-flex;align-items:center;gap:8px;background:var(--terra);color:#fff;padding:11px 22px;border-radius:50px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;text-decoration:none;border:none;cursor:pointer;transition:all 0.25s;}
+        .btn-terra:hover{background:var(--dark);}
+        .filter-btn{padding:7px 16px;border-radius:50px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;border:1.5px solid var(--border);background:none;color:var(--muted);transition:all 0.2s;}
+        .filter-btn.active,.filter-btn:hover{background:var(--terra);color:#fff;border-color:var(--terra);}
+        ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px;}
+    </style>
+</head>
+<body class="h-screen w-screen overflow-hidden flex flex-col">
+
+    <div class="shrink-0" style="background:#1a1714;border-bottom:1px solid rgba(0,242,255,0.12);padding:12px 24px;display:flex;justify-content:center;align-items:center;z-index:99999;">
+        <a href="../index.html" style="display:inline-flex;align-items:center;gap:10px;padding:8px 26px;background:rgba(0,242,255,0.05);border:1px solid rgba(0,242,255,0.35);border-radius:50px;color:#fff;text-decoration:none;font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+    <header class="h-[60px] shrink-0 bg-[#f2ebe0] border-b border-[#d6ccb8] flex justify-between items-center px-6 md:px-8 z-50">
+        <div class="flex items-center gap-3">
+            <span class="text-xl font-bold tracking-tighter">FORMA</span>
+            <span class="hidden md:block px-2 py-0.5 bg-[#2c2a26] text-[#f2ebe0] text-[7px] font-bold uppercase tracking-widest rounded-sm">Studio</span>
+        </div>
+        <a href="configurator.html" class="btn-terra text-[9px] py-2 px-4">3D სტუდია →</a>
+    </header>
+
+    <main class="flex-1 overflow-hidden flex">
+        <aside class="w-[210px] shrink-0 border-r border-[#d6ccb8] bg-[#f2ebe0] flex-col justify-between py-6 hidden md:flex">
+            <nav class="px-4 space-y-1">
+                <p class="text-[8px] uppercase tracking-[0.3em] text-[#b0a898] font-bold mb-5 px-2">ნავიგაცია</p>
+                <a href="index.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>სამუშაო მაგიდა</a>
+                <a href="collection.html" class="nav-link active"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>კოლექცია</a>
+                <a href="configurator.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>3D სტუდია</a>
+                <a href="contact.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>კონტაქტი</a>
+            </nav>
+            <div class="px-4">
+                <div style="background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:14px;">
+                    <p class="text-[8px] text-[#9a9080] uppercase tracking-widest font-bold mb-2">კოლექციები</p>
+                    <p class="text-[11px] font-bold">Terracotta · Linen</p>
+                    <p class="text-[11px] font-bold">Olive · Ebony</p>
+                    <p class="text-[9px] text-[#9a9080] font-bold mt-2">12 პროდუქტი სულ</p>
+                </div>
+            </div>
+        </aside>
+
+        <section class="flex-1 overflow-y-auto p-5 md:p-8">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-7 gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold tracking-tight mb-1">Avant-Garde კოლექცია</h1>
+                    <p class="text-[10px] text-[#9a9080] font-bold uppercase tracking-widest">2026 · სეზონური კოლექცია</p>
+                </div>
+                <div class="flex gap-2 flex-wrap" id="filterBtns">
+                    <button class="filter-btn active" data-cat="all">ყველა</button>
+                    <button class="filter-btn" data-cat="sofa">სავარძელი</button>
+                    <button class="filter-btn" data-cat="table">მაგიდა</button>
+                    <button class="filter-btn" data-cat="chair">სკამი</button>
+                    <button class="filter-btn" data-cat="light">განათება</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="productGrid">
+
+                <a href="configurator.html?item=sofa-m1" class="product-card" data-cat="sofa">
+                    <div class="h-52 overflow-hidden"><img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" style="filter:sepia(15%);" alt="Clay Sofa M1"></div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-1">
+                            <div><p class="text-[8px] font-bold uppercase tracking-widest text-[#9a9080] mb-1">სავარძელი · Terracotta</p><h3 class="font-bold text-base">Clay Sofa M1</h3></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b87355" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+                        </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <div class="flex gap-1.5"><div class="w-4 h-4 rounded-full" style="background:#b87355;"></div><div class="w-4 h-4 rounded-full" style="background:#7a8f6e;"></div><div class="w-4 h-4 rounded-full" style="background:#dcd0c0;"></div></div>
+                            <p class="font-bold text-[#b87355]">₾ 2,450</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="configurator.html?item=table" class="product-card" data-cat="table">
+                    <div class="h-52 overflow-hidden"><img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" style="filter:sepia(15%);" alt="Matte Table"></div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-1">
+                            <div><p class="text-[8px] font-bold uppercase tracking-widest text-[#9a9080] mb-1">მაგიდა · Linen</p><h3 class="font-bold text-base">Matte Table</h3></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b87355" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+                        </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <div class="flex gap-1.5"><div class="w-4 h-4 rounded-full" style="background:#dcd0c0;"></div><div class="w-4 h-4 rounded-full" style="background:#2c2a26;"></div></div>
+                            <p class="font-bold text-[#b87355]">₾ 1,800</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="configurator.html?item=chair" class="product-card" data-cat="chair">
+                    <div class="h-52 overflow-hidden"><img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" style="filter:sepia(15%);" alt="Polymer Chair"></div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-1">
+                            <div><p class="text-[8px] font-bold uppercase tracking-widest text-[#9a9080] mb-1">სკამი · Olive</p><h3 class="font-bold text-base">Polymer Chair</h3></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b87355" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+                        </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <div class="flex gap-1.5"><div class="w-4 h-4 rounded-full" style="background:#7a8f6e;"></div><div class="w-4 h-4 rounded-full" style="background:#b87355;"></div></div>
+                            <p class="font-bold text-[#b87355]">₾ 650</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="configurator.html?item=lamp" class="product-card" data-cat="light">
+                    <div class="h-52 overflow-hidden"><img src="https://images.unsplash.com/photo-1513506003901-1e6a35eded75?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" style="filter:sepia(15%);" alt="Studio Lamp"></div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-1">
+                            <div><p class="text-[8px] font-bold uppercase tracking-widest text-[#9a9080] mb-1">განათება · Ebony</p><h3 class="font-bold text-base">Studio Lamp</h3></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b87355" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+                        </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <div class="flex gap-1.5"><div class="w-4 h-4 rounded-full" style="background:#2c2a26;"></div><div class="w-4 h-4 rounded-full" style="background:#c9b89a;"></div></div>
+                            <p class="font-bold text-[#b87355]">₾ 420</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="configurator.html?item=sofa-l" class="product-card" data-cat="sofa">
+                    <div class="h-52 overflow-hidden"><img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" style="filter:sepia(15%);" alt="Corner Sofa"></div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-1">
+                            <div><p class="text-[8px] font-bold uppercase tracking-widest text-[#9a9080] mb-1">სავარძელი · Linen</p><h3 class="font-bold text-base">Corner Sofa L</h3></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b87355" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+                        </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <div class="flex gap-1.5"><div class="w-4 h-4 rounded-full" style="background:#dcd0c0;"></div><div class="w-4 h-4 rounded-full" style="background:#b87355;"></div></div>
+                            <p class="font-bold text-[#b87355]">₾ 3,800</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="configurator.html?item=shelf" class="product-card" data-cat="table">
+                    <div class="h-52 overflow-hidden"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" style="filter:sepia(15%);" alt="Wall Shelf"></div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-1">
+                            <div><p class="text-[8px] font-bold uppercase tracking-widest text-[#9a9080] mb-1">თარო · Ebony</p><h3 class="font-bold text-base">Float Shelf</h3></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b87355" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+                        </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <div class="flex gap-1.5"><div class="w-4 h-4 rounded-full" style="background:#2c2a26;"></div><div class="w-4 h-4 rounded-full" style="background:#c9b89a;"></div></div>
+                            <p class="font-bold text-[#b87355]">₾ 890</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <div id="emptyMsg" class="hidden text-center py-16 text-[#9a9080]">
+                <p class="text-sm font-bold uppercase tracking-widest">ამ კატეგორიაში პროდუქტი არ მოიძებნა</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="h-10 shrink-0 bg-[#2c2a26] text-[#6a6258] border-t border-[#1a1916] flex justify-between items-center px-6 text-[9px] font-bold uppercase tracking-[0.2em]">
+        <div>&copy; 2026 FORMA STUDIO</div>
+        <div>PLATINUM BY <span class="text-[#f2ebe0]">ACHIKO10</span></div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const cat = btn.dataset.cat;
+                let count = 0;
+                document.querySelectorAll('#productGrid .product-card').forEach(card => {
+                    const show = cat === 'all' || card.dataset.cat === cat;
+                    card.style.display = show ? 'block' : 'none';
+                    if (show) count++;
+                });
+                document.getElementById('emptyMsg').classList.toggle('hidden', count > 0);
+            });
+        });
+    </script>
+</body>
+</html>

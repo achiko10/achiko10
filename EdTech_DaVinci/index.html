@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>DaVinci | კურსები</title>
+    <meta name="description" content="DaVinci | კურსები - ACHIKO10 პრემიუმ პორტფოლიოს პროექტი.">
+<link rel="stylesheet" href="css/design.css">
+
+</head>
+<body>
+
+    <!-- ACHIKO10 GLOBAL PREMIUM BACK BAR -->
+    <div class="portfolio-bar-global shrink-0" style="background: linear-gradient(180deg, #050505 0%, rgba(5,5,5,0.9) 100%); backdrop-filter: blur(20px); padding: 16px 24px; display: flex; justify-content: center; align-items: center; position: relative; z-index: 99999; border-bottom: 1px solid rgba(0, 242, 255, 0.15); box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 32px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.4); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; box-shadow: 0 0 25px rgba(0, 242, 255, 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+
+<header class="site-header">
+<a href="index.html" class="site-logo">DaVinci EDU</a>
+<nav class="site-nav" id="nav"><a href="index.html" class='active'>კურსები</a><a href="student.html" >სტუდენტი</a><a href="teacher.html" >მასწავლებელი</a></nav>
+<div class="header-actions"><a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="holo-dot"></span>ACHIKO10</a><a href="student.html" class="btn btn-primary">დარეგისტრირება</a></div>
+<button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+</header><div class="filter-bar">
+<button class="filter-chip active" onclick="flt('all',this)">ყველა</button>
+<button class="filter-chip" onclick="flt('პროგრამირება',this)">პროგრამირება</button>
+<button class="filter-chip" onclick="flt('დიზაინი',this)">დიზაინი</button>
+<button class="filter-chip" onclick="flt('devops',this)">DevOps</button>
+<button class="filter-chip" onclick="flt('game',this)">Game Dev</button>
+<button class="filter-chip" onclick="flt('cyber',this)">Cyber</button>
+</div><main class="page-main"><div class="card-grid" id="mainGrid">
+<div class="card" data-t="პროგრამირება"><img src="https://loremflickr.com/800/600/programming,code?lock=1" class="card-img" alt="Python პროფესიონალი">
+<div class="card-body"><div class="card-cat">პროგრამირება</div><div class="card-title">Python პროფესიონალი</div><div class="card-sub">48 სთ</div>
+<div class="card-footer"><span class="card-price">₾ 450</span><a href="courses.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="დიზაინი"><img src="https://loremflickr.com/800/600/ui,design?lock=2" class="card-img" alt="Figma Master">
+<div class="card-body"><div class="card-cat">დიზაინი</div><div class="card-title">Figma Master</div><div class="card-sub">32 სთ</div>
+<div class="card-footer"><span class="card-price">₾ 320</span><a href="courses.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="devops"><img src="https://loremflickr.com/800/600/server,cloud?lock=3" class="card-img" alt="AWS Cloud / Docker">
+<div class="card-body"><div class="card-cat">DevOps</div><div class="card-title">AWS Cloud / Docker</div><div class="card-sub">40 სთ</div>
+<div class="card-footer"><span class="card-price">₾ 500</span><a href="courses.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="მარკეტინგი"><img src="https://loremflickr.com/800/600/marketing,digital?lock=4" class="card-img" alt="Digital Marketing">
+<div class="card-body"><div class="card-cat">მარკეტინგი</div><div class="card-title">Digital Marketing</div><div class="card-sub">24 სთ</div>
+<div class="card-footer"><span class="card-price">₾ 250</span><a href="courses.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="მონაცემები"><img src="https://loremflickr.com/800/600/data,science?lock=5" class="card-img" alt="Data Science">
+<div class="card-body"><div class="card-cat">მონაცემები</div><div class="card-title">Data Science</div><div class="card-sub">60 სთ</div>
+<div class="card-footer"><span class="card-price">₾ 650</span><a href="courses.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="პროგრამირება"><img src="https://loremflickr.com/800/600/web,development?lock=6" class="card-img" alt="React / Frontend">
+<div class="card-body"><div class="card-cat">პროგრამირება</div><div class="card-title">React / Frontend</div><div class="card-sub">40 სთ</div>
+<div class="card-footer"><span class="card-price">₾ 400</span><a href="courses.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="პროგრამირება"><img src="https://loremflickr.com/800/600/programming,cplusplus?lock=7" class="card-img" alt="C++ & ალგორითმები">
+<div class="card-body"><div class="card-cat">პროგრამირება</div><div class="card-title">C++ & ალგორითმები</div><div class="card-sub">45 სთ</div>
+<div class="card-footer"><span class="card-price">₾ 450</span><a href="courses.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="დიზაინი"><img src="https://loremflickr.com/800/600/wireframe,ux?lock=8" class="card-img" alt="UX/UI Research">
+<div class="card-body"><div class="card-cat">დიზაინი</div><div class="card-title">UX/UI Research</div><div class="card-sub">20 სთ</div>
+<div class="card-footer"><span class="card-price">₾ 200</span><a href="courses.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="game"><img src="https://loremflickr.com/800/600/game,development?lock=9" class="card-img" alt="Unity 3D">
+<div class="card-body"><div class="card-cat">Game Dev</div><div class="card-title">Unity 3D</div><div class="card-sub">50 სთ</div>
+<div class="card-footer"><span class="card-price">₾ 550</span><a href="courses.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+<div class="card" data-t="cyber"><img src="https://loremflickr.com/800/600/cybersecurity,hacker?lock=10" class="card-img" alt="კიბერუსაფრთხოება">
+<div class="card-body"><div class="card-cat">Cyber</div><div class="card-title">კიბერუსაფრთხოება</div><div class="card-sub">55 სთ</div>
+<div class="card-footer"><span class="card-price">₾ 700</span><a href="courses.html" class="btn btn-outline btn-sm">დეტალები</a></div></div></div>
+</div>
+</main>
+<script>function flt(t,el){document.querySelectorAll('.filter-chip').forEach(b=>b.classList.remove('active'));el.classList.add('active');document.querySelectorAll('.card').forEach(c=>{c.style.display=(t==='all'||c.dataset.t===t)?'':'none'})}</script>
+<footer class="site-footer">
+<div class="footer-grid">
+<div class="footer-col"><div class="footer-col-title">DaVinci EDU</div><p class="text-muted" style="font-size:.85rem;line-height:1.7">პრემიუმ ვებ პლატფორმა. სრული ციფრული მხარდაჭერა.</p></div>
+<div class="footer-col"><div class="footer-col-title">ნავიგაცია</div><ul><li><a href="index.html">კურსები</a></li><li><a href="student.html">სტუდენტი</a></li><li><a href="teacher.html">მასწავლებელი</a></li></ul></div>
+<div class="footer-col"><div class="footer-col-title">იურიდიული</div><ul><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">კონფიდენციალურობა</a></li><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">წესები</a></li></ul></div>
+<div class="footer-col"><div class="footer-col-title">კონტაქტი</div><ul><li>📞 +995 32 000 000</li><li>✉️ info@achiko10.ge</li><li>🏢 თბილისი</li></ul></div>
+</div>
+<div class="footer-bottom"><span>&copy; 2026 Premium Portfolio</span><a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="holo-dot"></span>ACHIKO10</a></div>
+</footer>
+<script>window.addEventListener('click',function(e){if(!e.target.closest('.site-header'))document.getElementById('nav').classList.remove('open')})</script>
+
+
+</body>
+</html>

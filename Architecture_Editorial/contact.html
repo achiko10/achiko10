@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAISON | კონტაქტი</title>
+    <meta name="description" content="MAISON Architecture Studio – Contact & Consultation. ACHIKO10 Platinum.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root { --bg: #F4F4F5; --surface: #FFFFFF; --text: #18181B; --border: #E4E4E7; }
+        * { box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; }
+        .serif { font-family: 'Playfair Display', serif; }
+
+        .input-brutal {
+            background: transparent; border: none;
+            border-bottom: 1px solid #D4D4D8; padding: 14px 0;
+            font-size: 13px; color: #18181B; width: 100%;
+            outline: none; transition: border-color 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        .input-brutal::placeholder { color: #A1A1AA; font-weight: 400; text-transform: uppercase; letter-spacing: 0.08em; font-size: 10px; }
+        .input-brutal:focus { border-color: #18181B; }
+
+        /* Toast notification */
+        #toast {
+            position: fixed; bottom: 2rem; right: 2rem;
+            background: #18181B; color: #fff;
+            padding: 1rem 1.5rem; font-size: 12px;
+            font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.1em; border-radius: 4px;
+            transform: translateY(100px); opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 99999; pointer-events: none;
+        }
+        #toast.show { transform: translateY(0); opacity: 1; }
+
+        /* Mobile menu */
+        #mobile-menu {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.95); z-index: 99990;
+            flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+        }
+        #mobile-menu.open { display: flex; }
+        #mobile-menu a { color: #fff; font-size: 1.5rem; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 0.2em; }
+        #mobile-menu a:hover { color: #00f2ff; }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: #D4D4D8; border-radius: 4px; }
+    </style>
+</head>
+<body class="h-screen w-screen overflow-hidden flex flex-col antialiased selection:bg-black selection:text-white">
+
+    <!-- Toast -->
+    <div id="toast">✓ მოთხოვნა გაიგზავნა!</div>
+
+    <!-- ACHIKO10 GLOBAL PREMIUM BACK BAR -->
+    <div class="shrink-0" style="background: linear-gradient(180deg, #050505 0%, rgba(5,5,5,0.95) 100%); backdrop-filter: blur(20px); padding: 14px 24px; display: flex; justify-content: center; align-items: center; z-index: 99999; border-bottom: 1px solid rgba(0, 242, 255, 0.15); box-shadow: 0 4px 30px rgba(0,0,0,0.8);">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 10px 28px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.4); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+    <!-- HEADER -->
+    <header class="h-16 shrink-0 border-b border-[#E4E4E7] bg-white flex justify-between items-center px-6 md:px-10 z-50">
+        <a href="index.html" class="flex items-center gap-4" style="text-decoration:none;">
+            <span class="text-xl md:text-2xl font-bold tracking-[0.25em] serif uppercase text-black">MAISON</span>
+            <span class="w-px h-6 bg-zinc-200 hidden md:block"></span>
+            <span class="text-[8px] font-bold uppercase tracking-[0.3em] text-zinc-400 hidden md:block">Architecture Studio</span>
+        </a>
+        <button id="menuBtn" onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="w-9 h-9 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600 hover:bg-black hover:text-white transition">
+            <i data-lucide="menu" class="w-4 h-4"></i>
+        </button>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu">
+        <button onclick="document.getElementById('mobile-menu').classList.remove('open')" style="position:absolute;top:1.5rem;right:1.5rem;color:#fff;background:none;border:none;cursor:pointer;font-size:2rem;">✕</button>
+        <a href="index.html">პროექტები</a>
+        <a href="studio.html">სტუდია</a>
+        <a href="contact.html">კონტაქტი</a>
+    </div>
+
+    <main class="flex-1 overflow-hidden flex bg-[#F4F4F5]">
+
+        <!-- SIDEBAR -->
+        <aside class="w-72 shrink-0 border-r border-[#E4E4E7] bg-white flex-col justify-between py-10 hidden md:flex">
+            <nav class="space-y-1 px-8">
+                <p class="text-[9px] uppercase tracking-[0.4em] text-zinc-400 font-bold mb-8">ნავიგაცია</p>
+                <a href="index.html" class="flex items-center gap-4 py-3 border-l-2 border-transparent pl-4 text-[10px] font-bold uppercase tracking-widest text-zinc-500 hover:text-black hover:border-zinc-300 transition">
+                    <i data-lucide="layers" class="w-4 h-4 shrink-0"></i> პროექტები
+                </a>
+                <a href="studio.html" class="flex items-center gap-4 py-3 border-l-2 border-transparent pl-4 text-[10px] font-bold uppercase tracking-widest text-zinc-500 hover:text-black hover:border-zinc-300 transition">
+                    <i data-lucide="compass" class="w-4 h-4 shrink-0"></i> სტუდია
+                </a>
+                <a href="contact.html" class="flex items-center gap-4 py-3 border-l-2 border-black pl-4 text-[10px] font-bold uppercase tracking-widest text-black bg-zinc-50">
+                    <i data-lucide="mail" class="w-4 h-4 shrink-0"></i> კონტაქტი
+                </a>
+            </nav>
+            <div class="px-8 space-y-4">
+                <div class="p-5 border border-zinc-200 bg-zinc-50">
+                    <p class="text-[8px] uppercase tracking-[0.3em] font-bold text-zinc-400 mb-3">პირდაპირი კავშირი</p>
+                    <a href="tel:+995322000000" class="flex items-center gap-2 text-[11px] font-bold text-black hover:text-zinc-600 transition mb-2">
+                        <i data-lucide="phone" class="w-3 h-3"></i> +995 322 00 00 00
+                    </a>
+                    <a href="mailto:contact@maison.ge" class="flex items-center gap-2 text-[11px] font-bold text-black hover:text-zinc-600 transition">
+                        <i data-lucide="at-sign" class="w-3 h-3"></i> contact@maison.ge
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN WORKSPACE -->
+        <section class="flex-1 overflow-y-auto p-6 md:p-10 lg:p-14 flex items-start justify-center">
+            <div class="bg-white border border-zinc-200 w-full max-w-4xl flex flex-col md:flex-row shadow-sm">
+
+                <!-- FORM -->
+                <div class="flex-1 p-8 md:p-12 border-b md:border-b-0 md:border-r border-zinc-200">
+                    <h1 class="text-2xl md:text-3xl serif font-bold tracking-tight text-black mb-2">კონსულტაციის ჯავშანი</h1>
+                    <p class="text-[10px] text-zinc-400 uppercase tracking-widest font-bold mb-8">ჩვენ 48 საათში გიპასუხებთ</p>
+
+                    <form id="contactForm" class="space-y-7" novalidate>
+                        <div>
+                            <input type="text" id="nameField" placeholder="სრული სახელი *" class="input-brutal" required>
+                            <p class="error-msg text-[10px] text-red-500 mt-1 hidden">გთხოვ, შეიყვანე სახელი</p>
+                        </div>
+                        <div>
+                            <input type="email" id="emailField" placeholder="ელ-ფოსტა *" class="input-brutal" required>
+                            <p class="error-msg text-[10px] text-red-500 mt-1 hidden">გთხოვ, შეიყვანე სწორი ელ-ფოსტა</p>
+                        </div>
+                        <div>
+                            <input type="tel" id="phoneField" placeholder="ტელეფონი (+995...)" class="input-brutal">
+                        </div>
+                        <div>
+                            <select id="typeField" class="input-brutal" style="text-transform:uppercase;font-size:10px;letter-spacing:0.08em;color:#A1A1AA;">
+                                <option value="" disabled selected>პროექტის ტიპი</option>
+                                <option value="residential" style="color:#18181B;">საცხოვრებელი</option>
+                                <option value="commercial" style="color:#18181B;">კომერციული</option>
+                                <option value="conceptual" style="color:#18181B;">კონცეფტი</option>
+                                <option value="renovation" style="color:#18181B;">რეკონსტრუქცია</option>
+                                <option value="other" style="color:#18181B;">სხვა</option>
+                            </select>
+                        </div>
+                        <div>
+                            <textarea id="msgField" placeholder="პროექტის მოკლე აღწერა *" class="input-brutal h-24 resize-none" required></textarea>
+                            <p class="error-msg text-[10px] text-red-500 mt-1 hidden">გთხოვ, დაწერე აღწერა</p>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="w-full bg-black text-white py-4 text-[10px] uppercase tracking-[0.25em] font-bold hover:bg-zinc-800 active:scale-[0.98] transition flex items-center justify-center gap-3">
+                            <span id="btnText">მოთხოვნის გაგზავნა</span>
+                            <i data-lucide="send" class="w-3 h-3"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- OFFICES PANEL -->
+                <div class="w-full md:w-80 bg-zinc-50 p-8 md:p-12 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-[10px] uppercase tracking-[0.4em] font-bold text-zinc-400 mb-8 border-l-2 border-black pl-3">ოფისები</h2>
+
+                        <div class="space-y-8">
+                            <div>
+                                <p class="text-[8px] uppercase tracking-widest text-zinc-400 font-bold mb-2">თბილისი — HQ</p>
+                                <p class="serif font-bold text-black text-lg mb-1">ი. ჭავჭავაძის 12</p>
+                                <a href="tel:+995322000000" class="text-[10px] text-zinc-500 font-bold tracking-widest hover:text-black transition block">+995 322 00 00 00</a>
+                                <a href="mailto:tbilisi@maison.ge" class="text-[10px] text-zinc-500 font-bold tracking-widest hover:text-black transition block mt-1">tbilisi@maison.ge</a>
+                            </div>
+
+                            <div>
+                                <p class="text-[8px] uppercase tracking-widest text-zinc-400 font-bold mb-2">ბათუმი — Branch</p>
+                                <p class="serif font-bold text-black text-lg mb-1">რუსთაველის 45</p>
+                                <a href="tel:+995422110000" class="text-[10px] text-zinc-500 font-bold tracking-widest hover:text-black transition block">+995 422 11 00 00</a>
+                                <a href="mailto:batumi@maison.ge" class="text-[10px] text-zinc-500 font-bold tracking-widest hover:text-black transition block mt-1">batumi@maison.ge</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t border-zinc-200">
+                        <p class="text-[8px] uppercase tracking-widest text-zinc-400 font-bold mb-3">სამუშაო საათები</p>
+                        <p class="text-[11px] font-bold text-black">ორშ – პარ: 9:00 – 18:00</p>
+                        <p class="text-[11px] font-bold text-black">შაბ: 10:00 – 14:00</p>
+                        <p class="text-[10px] text-zinc-400 mt-1">კვ: დახურულია</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="h-12 shrink-0 bg-black text-zinc-500 flex justify-between items-center px-6 md:px-10 z-50 text-[9px] font-bold uppercase tracking-[0.2em]">
+        <div>&copy; 2026 MAISON STUDIO</div>
+        <div>PLATINUM EDITION BY <span class="text-white">ACHIKO10</span></div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const form = document.getElementById('contactForm');
+        const toast = document.getElementById('toast');
+
+        function showToast(msg) {
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3500);
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let valid = true;
+
+            // Name validation
+            const name = document.getElementById('nameField');
+            const nameErr = name.nextElementSibling;
+            if (!name.value.trim()) {
+                nameErr.classList.remove('hidden');
+                name.style.borderColor = '#ef4444';
+                valid = false;
+            } else {
+                nameErr.classList.add('hidden');
+                name.style.borderColor = '';
+            }
+
+            // Email validation
+            const email = document.getElementById('emailField');
+            const emailErr = email.nextElementSibling;
+            const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRe.test(email.value)) {
+                emailErr.classList.remove('hidden');
+                email.style.borderColor = '#ef4444';
+                valid = false;
+            } else {
+                emailErr.classList.add('hidden');
+                email.style.borderColor = '';
+            }
+
+            // Message validation
+            const msg = document.getElementById('msgField');
+            const msgErr = msg.nextElementSibling;
+            if (!msg.value.trim() || msg.value.trim().length < 10) {
+                msgErr.classList.remove('hidden');
+                msg.style.borderColor = '#ef4444';
+                valid = false;
+            } else {
+                msgErr.classList.add('hidden');
+                msg.style.borderColor = '';
+            }
+
+            if (valid) {
+                const btn = document.getElementById('submitBtn');
+                btn.disabled = true;
+                btn.style.opacity = '0.6';
+                document.getElementById('btnText').textContent = 'იგზავნება...';
+
+                // Simulate API call
+                setTimeout(() => {
+                    form.reset();
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    document.getElementById('btnText').textContent = 'მოთხოვნის გაგზავნა';
+                    showToast('✓ მოთხოვნა მიღებულია! 48 საათში გიპასუხებთ.');
+                }, 1200);
+            }
+        });
+
+        // Reset field error on input
+        document.querySelectorAll('.input-brutal').forEach(input => {
+            input.addEventListener('input', () => {
+                input.style.borderColor = '';
+                const err = input.nextElementSibling;
+                if (err && err.classList.contains('error-msg')) err.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITPULSE PRO | განრიგი</title>
+    <meta name="description" content="FITPULSE PRO – ვარჯიშების განრიგი. ACHIKO10 Platinum.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --primary: #00ffaa; --cyan: #00f2ff; --bg: #050505; --panel: #111111; --border: #1e1e1e; --muted: #555; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; }
+
+        .nav-item { display:flex;align-items:center;gap:14px;padding:11px 16px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);text-decoration:none;transition:all 0.2s;border:1px solid transparent; }
+        .nav-item:hover { color:#fff;background:rgba(255,255,255,0.04); }
+        .nav-item.active { color:var(--primary);background:rgba(0,255,170,0.07);border-color:rgba(0,255,170,0.18); }
+
+        /* Day tabs */
+        .day-tab { padding:8px 18px;border-radius:8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:all 0.2s;border:1px solid var(--border);color:var(--muted);background:none; }
+        .day-tab:hover { color:#fff;border-color:#333; }
+        .day-tab.active { background:var(--primary);color:#000;border-color:transparent; }
+
+        /* Class cards */
+        .class-card {
+            background: var(--panel); border:1px solid var(--border);
+            border-radius:16px; padding:20px 24px;
+            display:flex;align-items:center;justify-content:space-between;gap:16px;
+            transition:all 0.25s; position:relative; overflow:hidden;
+        }
+        .class-card:hover { border-color:rgba(0,255,170,0.25);transform:translateY(-2px); }
+        .class-card.booked { border-color:rgba(0,255,170,0.3);background:rgba(0,255,170,0.04); }
+        .class-card.full { opacity:0.5; pointer-events:none; }
+
+        /* Category badge */
+        .badge { font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;padding:3px 8px;border-radius:99px; }
+        .badge.yoga { background:rgba(168,85,247,0.15);color:#a855f7; }
+        .badge.crossfit { background:rgba(0,255,170,0.12);color:var(--primary); }
+        .badge.boxing { background:rgba(239,68,68,0.12);color:#ef4444; }
+        .badge.pilates { background:rgba(251,191,36,0.12);color:#fbbf24; }
+        .badge.hiit { background:rgba(0,242,255,0.12);color:var(--cyan); }
+        .badge.spin { background:rgba(249,115,22,0.12);color:#f97316; }
+
+        /* Book button */
+        .book-btn {
+            padding:9px 20px;border-radius:8px;font-size:9px;font-weight:800;
+            text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:all 0.2s;
+            border:1px solid rgba(0,255,170,0.4);color:var(--primary);background:rgba(0,255,170,0.06);
+            white-space:nowrap;
+        }
+        .book-btn:hover { background:var(--primary);color:#000;border-color:var(--primary); }
+        .book-btn.booked-state { background:rgba(0,255,170,0.12);border-color:rgba(0,255,170,0.3);color:var(--primary); }
+
+        /* Toast */
+        #toast { position:fixed;bottom:2rem;right:2rem;background:#111;border:1px solid rgba(0,255,170,0.3);color:var(--primary);padding:12px 20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;border-radius:10px;transform:translateY(60px);opacity:0;transition:all 0.4s;z-index:99999; }
+        #toast.show { transform:translateY(0);opacity:1; }
+
+        ::-webkit-scrollbar { width:4px; }
+        ::-webkit-scrollbar-thumb { background:#222;border-radius:10px; }
+    </style>
+</head>
+<body class="h-screen w-screen overflow-hidden flex flex-col">
+
+    <div id="toast"></div>
+
+    <!-- ACHIKO10 BACK BAR -->
+    <div class="shrink-0" style="background:#030303;border-bottom:1px solid rgba(0,242,255,0.12);padding:13px 24px;display:flex;justify-content:center;align-items:center;z-index:99999;">
+        <a href="../index.html" style="display:inline-flex;align-items:center;gap:10px;padding:9px 28px;background:rgba(0,242,255,0.04);border:1px solid rgba(0,242,255,0.35);border-radius:50px;color:#fff;text-decoration:none;font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+    <!-- HEADER -->
+    <header class="h-[60px] shrink-0 bg-[#0a0a0a] border-b border-[#1a1a1a] flex justify-between items-center px-6 z-50">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-[#00ffaa] rounded-lg flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <span class="text-[15px] font-black tracking-tight">FITPULSE <span class="text-[#00ffaa]">PRO</span></span>
+        </div>
+        <div class="flex items-center gap-2 text-[9px] uppercase tracking-widest font-bold text-[#555]">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#00ffaa] animate-pulse"></span> Live
+        </div>
+    </header>
+
+    <main class="flex-1 overflow-hidden flex">
+
+        <!-- SIDEBAR -->
+        <aside class="w-[220px] shrink-0 border-r border-[#1a1a1a] bg-[#0a0a0a] flex-col justify-between py-6 hidden md:flex">
+            <nav class="px-4 space-y-1">
+                <p class="text-[8px] uppercase tracking-[0.3em] text-[#333] font-bold mb-5 px-2">მენიუ</p>
+                <a href="index.html" class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    დეშბორდი
+                </a>
+                <a href="schedule.html" class="nav-item active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    განრიგი
+                </a>
+                <a href="packages.html" class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    პაკეტები
+                </a>
+                <a href="profile.html" class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    პროფილი
+                </a>
+            </nav>
+            <div class="px-4">
+                <div class="bg-[#111] border border-[#1e1e1e] rounded-xl p-4">
+                    <p class="text-[8px] text-[#555] uppercase tracking-widest font-bold mb-2">ამ კვირაში</p>
+                    <p class="text-[11px] font-black text-white">3 / 5 კლასი</p>
+                    <div class="h-1 bg-[#1e1e1e] rounded-full mt-2 overflow-hidden">
+                        <div class="h-full bg-[#00ffaa] rounded-full" style="width:60%"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- SCHEDULE CONTENT -->
+        <section class="flex-1 overflow-y-auto p-5 md:p-7">
+
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-7 gap-4">
+                <div>
+                    <h1 class="text-xl md:text-2xl font-black tracking-tight">ვარჯიშების განრიგი</h1>
+                    <p class="text-[10px] text-[#555] font-bold uppercase tracking-widest mt-1">კვირა, 19 მაისი 2026</p>
+                </div>
+                <!-- Day selector -->
+                <div class="flex gap-2 flex-wrap" id="dayTabs">
+                    <button class="day-tab active" data-day="mon">ორშ</button>
+                    <button class="day-tab" data-day="tue">სამ</button>
+                    <button class="day-tab" data-day="wed">ოთხ</button>
+                    <button class="day-tab" data-day="thu">ხუთ</button>
+                    <button class="day-tab" data-day="fri">პარ</button>
+                    <button class="day-tab" data-day="sat">შაბ</button>
+                </div>
+            </div>
+
+            <!-- Classes list -->
+            <div class="space-y-3" id="classList">
+                <!-- Filled by JS -->
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="h-10 shrink-0 bg-[#0a0a0a] text-[#444] border-t border-[#1a1a1a] flex justify-between items-center px-6 text-[9px] font-bold uppercase tracking-[0.2em]">
+        <div>&copy; 2026 FITPULSE NEON</div>
+        <div>PLATINUM BY <span class="text-[#00ffaa]">ACHIKO10</span></div>
+    </footer>
+
+    <script>
+        const schedule = {
+            mon: [
+                { name: 'Yoga Flow', time: '07:00', room: 'დარბაზი 3', trainer: 'ნინო კ.', spots: 8, category: 'yoga', duration: '60 წთ' },
+                { name: 'CrossFit Elite', time: '09:30', room: 'დარბაზი 1', trainer: 'გიორგი მ.', spots: 12, category: 'crossfit', duration: '50 წთ' },
+                { name: 'Pilates Core', time: '12:00', room: 'დარბაზი 2', trainer: 'სალომე გ.', spots: 6, category: 'pilates', duration: '45 წთ' },
+                { name: 'Boxing', time: '18:00', room: 'დარბაზი 4', trainer: 'ლევან ბ.', spots: 10, category: 'boxing', duration: '60 წთ' },
+                { name: 'HIIT Burn', time: '20:00', room: 'დარბაზი 1', trainer: 'ანა რ.', spots: 0, category: 'hiit', duration: '40 წთ' },
+            ],
+            tue: [
+                { name: 'Spin Cycle', time: '06:30', room: 'სპინ-ოთახი', trainer: 'დათო ა.', spots: 14, category: 'spin', duration: '45 წთ' },
+                { name: 'HIIT Burn', time: '08:00', room: 'დარბაზი 1', trainer: 'ანა რ.', spots: 5, category: 'hiit', duration: '40 წთ' },
+                { name: 'Boxing', time: '17:30', room: 'დარბაზი 4', trainer: 'ლევან ბ.', spots: 8, category: 'boxing', duration: '60 წთ' },
+                { name: 'Yoga Restore', time: '19:30', room: 'დარბაზი 3', trainer: 'ნინო კ.', spots: 12, category: 'yoga', duration: '75 წთ' },
+            ],
+            wed: [
+                { name: 'CrossFit Elite', time: '07:00', room: 'დარბაზი 1', trainer: 'გიორგი მ.', spots: 12, category: 'crossfit', duration: '50 წთ' },
+                { name: 'Pilates Core', time: '10:00', room: 'დარბაზი 2', trainer: 'სალომე გ.', spots: 4, category: 'pilates', duration: '45 წთ' },
+                { name: 'Spin Cycle', time: '12:30', room: 'სპინ-ოთახი', trainer: 'დათო ა.', spots: 0, category: 'spin', duration: '45 წთ' },
+                { name: 'HIIT Burn', time: '19:00', room: 'დარბაზი 1', trainer: 'ანა რ.', spots: 10, category: 'hiit', duration: '40 წთ' },
+            ],
+            thu: [
+                { name: 'Yoga Flow', time: '08:00', room: 'დარბაზი 3', trainer: 'ნინო კ.', spots: 10, category: 'yoga', duration: '60 წთ' },
+                { name: 'Boxing', time: '10:30', room: 'დარბაზი 4', trainer: 'ლევან ბ.', spots: 7, category: 'boxing', duration: '60 წთ' },
+                { name: 'CrossFit Elite', time: '18:00', room: 'დარბაზი 1', trainer: 'გიორგი მ.', spots: 12, category: 'crossfit', duration: '50 წთ' },
+            ],
+            fri: [
+                { name: 'Spin Cycle', time: '07:00', room: 'სპინ-ოთახი', trainer: 'დათო ა.', spots: 14, category: 'spin', duration: '45 წთ' },
+                { name: 'Pilates Core', time: '09:00', room: 'დარბაზი 2', trainer: 'სალომე გ.', spots: 6, category: 'pilates', duration: '45 წთ' },
+                { name: 'HIIT Burn', time: '17:00', room: 'დარბაზი 1', trainer: 'ანა რ.', spots: 8, category: 'hiit', duration: '40 წთ' },
+                { name: 'Boxing', time: '20:00', room: 'დარბაზი 4', trainer: 'ლევან ბ.', spots: 0, category: 'boxing', duration: '60 წთ' },
+            ],
+            sat: [
+                { name: 'Yoga Flow', time: '09:00', room: 'დარბაზი 3', trainer: 'ნინო კ.', spots: 15, category: 'yoga', duration: '60 წთ' },
+                { name: 'CrossFit Elite', time: '11:00', room: 'დარბაზი 1', trainer: 'გიორგი მ.', spots: 12, category: 'crossfit', duration: '50 წთ' },
+            ],
+        };
+
+        const booked = new Set();
+        const toast = document.getElementById('toast');
+
+        function showToast(msg) {
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2800);
+        }
+
+        function renderClasses(day) {
+            const list = document.getElementById('classList');
+            const classes = schedule[day] || [];
+            list.innerHTML = classes.map((c, i) => {
+                const id = `${day}-${i}`;
+                const isFull = c.spots === 0;
+                const isBooked = booked.has(id);
+                return `
+                <div class="class-card ${isFull ? 'full' : ''} ${isBooked ? 'booked' : ''}">
+                    <div class="flex items-center gap-4 flex-1 min-w-0">
+                        <div class="text-center shrink-0">
+                            <p class="text-lg font-black">${c.time}</p>
+                            <p class="text-[8px] text-[#555] font-bold">${c.duration}</p>
+                        </div>
+                        <div class="w-px h-10 bg-[#1e1e1e] shrink-0"></div>
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                <h3 class="font-black text-[15px] leading-tight">${c.name}</h3>
+                                <span class="badge ${c.category}">${c.category}</span>
+                                ${isBooked ? '<span class="badge" style="background:rgba(0,255,170,0.12);color:#00ffaa;">✓ ჩაწერილი</span>' : ''}
+                            </div>
+                            <p class="text-[10px] text-[#555] font-bold truncate">${c.room} · <span class="text-[#444]">${c.trainer}</span></p>
+                        </div>
+                    </div>
+                    <div class="text-right shrink-0">
+                        <p class="text-[9px] text-[#555] font-bold mb-2">${isFull ? '<span style="color:#ef4444;">სავსეა</span>' : c.spots + ' ადგილი'}</p>
+                        ${!isFull ? `<button class="book-btn ${isBooked ? 'booked-state' : ''}" onclick="toggleBook('${id}', this)">${isBooked ? '✓ გაუქმება' : 'დაჯავშნა'}</button>` : '<span class="text-[9px] text-[#ef4444] font-bold uppercase">სავსეა</span>'}
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        function toggleBook(id, btn) {
+            if (booked.has(id)) {
+                booked.delete(id);
+                btn.textContent = 'დაჯავშნა';
+                btn.classList.remove('booked-state');
+                btn.closest('.class-card').classList.remove('booked');
+                showToast('❌ ჯავშანი გაუქმდა');
+            } else {
+                booked.add(id);
+                btn.textContent = '✓ გაუქმება';
+                btn.classList.add('booked-state');
+                btn.closest('.class-card').classList.add('booked');
+                showToast('✓ წარმატებით დაიჯავშნა!');
+            }
+        }
+
+        // Day tabs
+        document.querySelectorAll('.day-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                renderClasses(tab.dataset.day);
+            });
+        });
+
+        renderClasses('mon');
+    </script>
+</body>
+</html>

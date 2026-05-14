@@ -1,0 +1,411 @@
+<!-- ტესტების კატეგორიები (Categories) -->
+<!DOCTYPE html>
+
+<html lang="ka"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Educational App Categories</title>
+    <meta name="description" content="Educational App Categories - ACHIKO10 პრემიუმ პორტფოლიოს პროექტი.">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'paper-bg': '#f5f0e6',
+            'sketch-blue': '#4a90e2',
+            'sketch-yellow': '#f5a623',
+            'sketch-green': '#7ed321',
+            'sketch-red': '#d0021b',
+          },
+          fontFamily: {
+            'handwritten': ['Caveat', 'cursive'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-sketch-styles">/* Custom hand-drawn border effect */
+.sketch-border {
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px
+    }
+.sketch-border-header {
+    border: 3px solid #333;
+    border-radius: 12px 40px 12px 30px/10px 12px 25px 10px
+    }
+/* Subtle paper texture */
+.paper-texture {
+    background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%), url(https://lh3.googleusercontent.com/aida-public/AB6AXuBQjn6QfTyoKYWlVKloXe1uDyx73fdoBAHzpLaGCe-dPx9rCaWOcfY--8PxNZJw8aPlSvWyiI9-dFWPMnjzbB6-bjqzXc8eeyVmU2EqTDYjxcsRdQouA6tnyChthsbJgPraYbUf9fBdH7fsL_i1MohnUmKybam2HFj7CXthrwlLPjP1N80lsAI7zRf-rFpQ4EkTvp1Y2MkgvdMrDUQt5qzGlq4EISNwCXCfdIRZ7K3BNDHGlrfg-sVUbOy5qyoQB_HhBCshYUQXUrm7);
+    background-color: #f7f3e9
+    }
+/* Corner watercolor decoration simulation */
+.watercolor-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+    background-image: radial-gradient(circle at -10% -10%, #dbeafe 0%, transparent 40%), radial-gradient(circle at 110% 10%, #fef3c7 0%, transparent 40%)
+    }
+/* Rough text styling */
+.georgian-text {
+    font-weight: 700;
+    letter-spacing: 0.02em
+    }
+/* Fixed bottom navigation styling */
+.bottom-nav-border {
+    border-top: 2px solid #ddd;
+    border-radius: 40px 40px 0 0/15px 15px 0 0
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="paper-texture min-h-screen text-slate-800 font-sans selection:bg-yellow-200 overflow-x-hidden">
+<div class="watercolor-overlay"></div>
+<!-- BEGIN: MainContent -->
+<main class="relative z-10 p-4 pb-24">
+<!-- BEGIN: Header -->
+<header class="flex justify-center mt-6 mb-8">
+<div class="sketch-border-header px-8 py-2 bg-white/30 backdrop-blur-sm">
+<h1 class="text-2xl md:text-3xl font-bold georgian-text">ტესტების კატეგორიები</h1>
+</div>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: HorizontalScrollCategories -->
+<!-- Mimicking the top row which seems to be scrollable or 3-column in the prompt -->
+<div class="flex overflow-x-auto gap-4 pb-4 mb-4 scrollbar-hide no-scrollbar">
+<!-- Science Card -->
+<div class="min-w-[160px] flex-shrink-0 bg-white/40 p-4 sketch-border border-blue-400 relative">
+<div class="aspect-square mb-2 flex items-center justify-center">
+<img alt="Science" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100?text=🧪'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ3WhZuGiFxXBbF2DS-_Uc6B2jtorAjpk0PeQwLxnoYKJFoU2Ype1wQZyD0P62WMv-LepdbALfnhoSVKSau9ZacK39CUnyoQkpu5DSecnIsXqmNSMoOrQhagTEp-XFxEn2XTfkwErlvwieBEc_G1Ey37nzxz-a3L682yBoCaG2iNzNVvkmwnVkNvglUsaXfchBBLKpG81sBiE5RZuNMFnrcUyhYjoXpHIm3ha0kx1YbjpZ19QdXE3DRBqe7stVQIZGof1sidvVxvTV"/>
+</div>
+<div class="text-center">
+<p class="font-bold text-lg georgian-text">მეცნიერება</p>
+<div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-yellow-100 border-2 border-slate-700 px-3 py-0.5 rounded-full text-xs font-bold whitespace-nowrap">
+            ახალი
+          </div>
+</div>
+</div>
+<!-- Logic Card -->
+<div class="min-w-[160px] flex-shrink-0 bg-white/40 p-4 sketch-border border-yellow-400">
+<div class="aspect-square mb-2 flex items-center justify-center">
+<img alt="Logic" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100?text=⚙️'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJOFi-RjbeKpbco4mQdoYoURBdSUBR-F9mljFOHddFsHBndLmZBRH8lMDyMTQyVIdY5mXXKAfk34q8oiKik4e02si9EeYNK7zptqI_ZXPSSAUFA1SCZ1vSVMYpbbOJYP4M2UYOJSIxWNkb1Ab0FDKqENDBZ5ERjJwWJzFWYG19E_vUYJDrFs4dC8GbOkks7EiN2xNwU1vvbALMXG9AmbIZlfHESkrWWWFpj3bzf61d-hykqsbaTOQzMVjNxfe2OmnRKV5TFPlh3CEg"/>
+</div>
+<div class="text-center">
+<p class="font-bold text-lg georgian-text">ლოგიკა</p>
+</div>
+</div>
+<!-- Geography Card -->
+<div class="min-w-[160px] flex-shrink-0 bg-white/40 p-4 sketch-border border-green-500">
+<div class="aspect-square mb-2 flex items-center justify-center">
+<img alt="Geography" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100?text=🌍'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR5UOnhuw2nHRcml4Dapj9FU-fjnqsEdVqrz0RzSEsAOg32GsEzHp5VJPWv1x6dSEp-Q7FYao2NSoQ6fWewpa4GBbMyPYlQKsbRwLLGZFLJPuQvlHDXtii6OOgtVYxRCaK0EjcuI1MDk5Bu0RN0O6NmoXGLM53w5bJPtHrEiIMKv42P0NQDOMU3X0tff_AxfyMcmSY_oeGxgot02Mwso8tGls29JFDDroRvckPrKNy_IlFL48Thou-axdkuz7gY_k9DMfzntj1JzZb"/>
+</div>
+<div class="text-center">
+<p class="font-bold text-lg georgian-text">გეოგრაფია</p>
+</div>
+</div>
+</div>
+<!-- END: HorizontalScrollCategories -->
+<!-- BEGIN: GridCategories -->
+<div class="grid grid-cols-2 gap-6">
+<!-- Multiple Choice Card -->
+<div class="bg-white/40 p-4 sketch-border border-blue-500 flex flex-col items-center">
+<p class="font-bold text-base md:text-lg mb-2 georgian-text text-center">მრავალარჩევანი</p>
+<div class="w-24 h-24 mb-3">
+<img alt="Quiz" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100?text=❓'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP6pCmq6QYeb4z9K1otjJ6cZWN_TvTV5VoPILc0dFYDki2WfXt0IyPedSvPNQrjtK_KOyp1nOx3Kw3JkWVEzrIaxsJHUr9mvOfEOENGDlfdU0w31vfwQ1PHHfNYfi8rCC55i7BtxHBdXrfSa2Jmpkj6AGi-ypSAIGRYDKkXGlQk9ckmbePmhgoCJjMeRHAdLMzabM9_eVGCxQCUsDCgoVIGYoT4PMSqdkafF1KOfSRH3_Q3Y1UiAfmX-luCtNez4afzuQ3IRzrjO8u"/>
+</div>
+<p class="text-sm font-semibold opacity-70 georgian-text">250+ კითხვა</p>
+</div>
+<!-- Drag & Drop Card -->
+<div class="bg-white/40 p-4 sketch-border border-green-500 flex flex-col items-center">
+<p class="font-bold text-base md:text-lg mb-2 georgian-text text-center">გადაადგილება</p>
+<div class="w-24 h-24 mb-3">
+<img alt="Interactive" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100?text=👆'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD47-clP4rAOAqp6AJbs-P5A4FYWX4tyUN1yo9_SCDK-ZszUpJcJFwpiqXfoqOmBLCWqUBwW2BND6jPibbjr4O9w20WQHHewHxC9aD2-hscz3Uk2Q_xA5xWfLHyvNN1KkQsU-Pu0kgPVm1eZmeC66aH8I3fjnDloh4fyLwKtmKTb8LeO5ahd4HQH35u5kfC1X-QuhGho_GpQsl4nPMBh-xlIErtdhd8xAf1nCbzICjGZn2B57IiOizLSTcakzHDdCIPg2V9erPSFpwz"/>
+</div>
+<p class="text-sm font-semibold opacity-70 georgian-text">ინტერაქტიული</p>
+</div>
+<!-- Matching Card -->
+<div class="bg-white/40 p-4 sketch-border border-yellow-500 flex flex-col items-center">
+<p class="font-bold text-base md:text-lg mb-2 georgian-text text-center">შესაბამისობა</p>
+<div class="w-24 h-24 mb-3">
+<img alt="Matching" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100?text=🔗'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwaDAW2yen_JLKTmS-NwXYt93LjtpHWpIcu5RB3qDWhEk8FO7p_Kz-CaNY3GR0GoVLM3ePvYQXM6IJNyqFIxgVEvej0Gd571cC9m4vdGLwJK2t0GqyjS1Pz61QLqSvVyY1UdQmdtDvE9pzelvbrY_pELyGeREW0kQl-b4EER5tWBoedrM9F1RqbMFAx50w347Fk4xKzLiyXUeYwUK0Z2DhtVHUDsfUhZGFPbvod9GTAaASwR2p4wkv2ASgpuiiH_7jBqOWGKrEQMyk"/>
+</div>
+<p class="text-sm font-semibold opacity-70 georgian-text">სახალისო კავშირები</p>
+</div>
+<!-- Puzzles Card -->
+<div class="bg-white/40 p-4 sketch-border border-red-400 flex flex-col items-center">
+<p class="font-bold text-base md:text-lg mb-2 georgian-text text-center">თავსატეხები</p>
+<div class="w-24 h-24 mb-3">
+<img alt="Challenge" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100?text=🧩'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzprRGCmE2araA8aLH1Oh_fD6UFPMRekjfwbEDB5tgBnDJMEjEY-tAIO4GBv6WnSZuJu1FPsDhfafKlkovZTdfi9IAIbPsRsTPc8up7kWuZJNT56Pb5upRjhxg4-9prJzpCV-wzbYGygE5WE1C_zmBKJOUgyl0C2jOpCiRJmQhwlgGzeQ3_r_yc-E-sxv6U4T8NH0kisuktMHFrqs--Z55hghIbWquCAlEaNoKAnk7kPY8HYhoKfawKsBE1t1wuy1gaQDunJuyBwtT"/>
+</div>
+<p class="text-sm font-semibold opacity-70 georgian-text">გამოწვევა</p>
+</div>
+</div>
+<!-- END: GridCategories -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: BottomNavigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md bottom-nav-border h-24 z-50 flex items-center justify-around px-2 shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
+<!-- Home Tab -->
+<div class="flex flex-col items-center justify-center p-2 cursor-pointer transition-transform active:scale-90">
+<div class="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center mb-1 sketch-border border-orange-400">
+<img alt="Home" class="w-6 h-6" onerror="this.src='https://placehold.co/40x40?text=🏠'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAXKw8dpxER34FX62EFKvk_jEjlGZuuzuUR3etp4XzHsKBAdMXVUVNVOxsz9y0dB8cMCcXI1UQwjJ_FOVzfjtwiP3MBVt0M81s10yT2aL3tJM3Mw2eSNlqePx3cQgxnDsaVNGrg1iW_6UXbYiA4L0-q9OdZ_1TtxTXYRw29VYwv4wmrup8BBCQfO4ZI8MBJZWEb20CxAEMpqTapsRa0YzxU39gn-89TXdZxfxw8WyB6YEKcmCqtYdBDi2bAfO049nPX9mY4d-koptM"/>
+</div>
+<span class="text-[10px] font-bold georgian-text">მთავარი</span>
+</div>
+<!-- Progress Tab -->
+<div class="flex flex-col items-center justify-center p-2 cursor-pointer transition-transform active:scale-90">
+<div class="w-10 h-10 flex items-center justify-center mb-1">
+<img alt="Stats" class="w-8 h-8" onerror="this.src='https://placehold.co/40x40?text=📊'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiXS5JPdaR08J3OeY4IhynvZWdvntfDpT8ZQ4NWwofosqUT5_3AwY7-nDuQWqMkPRlHzh1Gi_VHviOZONJcOAG14X77xvlhHp2SYKc_K3nuF0xy6RcmsAyzsPAng8XzpbUoonzh0oksZHCaqeShZ5hjTCKGnuuD_gVUxBdUnAUM0DTQW0XHVuQ-Toie9zSStQc238ZLsXNEOtSbtYuzD4gayb2BoJ94KEc_2DCPkJFbnSvg8aiT9aDgcOSxD83-Awoo16oaw2LB_kN"/>
+</div>
+<span class="text-[10px] font-bold georgian-text opacity-60">ჩემი პროგრესი</span>
+</div>
+<!-- Leaderboard Tab -->
+<div class="flex flex-col items-center justify-center p-2 cursor-pointer transition-transform active:scale-90">
+<div class="w-10 h-10 flex items-center justify-center mb-1">
+<img alt="Leaderboard" class="w-8 h-8" onerror="this.src='https://placehold.co/40x40?text=🏆'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBURXMZL__eqLDGuATyWMZ10r3PyYNPjKOXyJrOHJx4su5MnwY0485YqcKIvkgxhBX6CXtqfGeh2SjWjaEKxMRHOGnQi1xQC6LQVZdBqoh2BnFC7fFQHmAZCVuTAH_ds14-3-Yf-rdJBIzE0tTbP5xBDQjZrO_m1kfd5J2v8mYgdjkOAhpl8YnI218IM54l-nHe3l7ZRur5pz4qR_F5oSmXR7C3sIOrG4zpFOvHkiLk6xbdngPQD-5BhuO_p0PxMKWhqOqJgcPSkElz"/>
+</div>
+<span class="text-[10px] font-bold georgian-text opacity-60 text-center">ლიდერთა დაფა</span>
+</div>
+<!-- Profile Tab -->
+<div class="flex flex-col items-center justify-center p-2 cursor-pointer transition-transform active:scale-90">
+<div class="w-10 h-10 flex items-center justify-center mb-1">
+<img alt="Profile" class="w-8 h-8" onerror="this.src='https://placehold.co/40x40?text=👤'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYQVjhWV9NZEJyppZNU5OiZD_GpO38NvsFd6HOwZi2pFt4jvYtJbPPZCW4qbbWDl1XBq4NDyVx70MpTncCr9Atj3K3XzqGpEMIR__axXzadWB8_zevwODCz2ZaCYQ1HpS4e9xzBr3r5M5eyds2Av0Lvp386mVj8EFhntMuVlqWWhkL3gBREty1CYGccLWBsmlTlNpf-87TwA_AZpud_5JM2FAzHtL4wmkH58XLgwf9C0ezkhdHTOOWTBt5gfyUz1VnPkISSjngsMLk"/>
+</div>
+<span class="text-[10px] font-bold georgian-text opacity-60">პროფილი</span>
+</div>
+</nav>
+<!-- END: BottomNavigation -->
+<style data-purpose="utility-overrides">
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  </style>
+
+
+</body></html><!-- MISSING_IMAGES:
+- TEMP_ICON_1: Hand-drawn science beaker and magnifying glass icon
+- TEMP_ICON_2: Hand-drawn gears and lightbulb icon
+- TEMP_ICON_3: Hand-drawn globe and compass icon
+- TEMP_ICON_4: Hand-drawn quiz checkboxes and question mark icon
+- TEMP_ICON_5: Hand-drawn interactive drag-and-drop squares icon
+- TEMP_ICON_6: Hand-drawn matching blocks connected with lines icon
+- TEMP_ICON_7: Hand-drawn colorful jigsaw puzzle icon
+- TEMP_ICON_8: Hand-drawn home icon
+- TEMP_ICON_9: Hand-drawn bar chart progress icon
+- TEMP_ICON_10: Hand-drawn leaderboard/podium icon
+- TEMP_ICON_11: Hand-drawn user profile avatar icon
+-->
+
+<!-- ტესტების კატეგორიები (Categories) -->
+<!DOCTYPE html>
+
+<html lang="ka"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ტესტების კატეგორიები</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Load a handwriting-style Georgian font if possible, or fallback to system cursive -->
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="custom-fonts">
+    @import url('https://fonts.cdnfonts.com/css/alk-sanet'); /* Georgian handwritten font */
+    
+    body {
+      font-family: 'ALK Sanet', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fcf6e8;
+      color: #333;
+    }
+  </style>
+<style data-purpose="sketchy-effects">
+    .sketch-border {
+      border: 3px solid #333;
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      transition: all 0.2s ease;
+      box-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+    }
+    
+    .card-science { border-color: #8bb3d1; background-color: #f6f9fc; }
+    .card-logic { border-color: #e5b369; background-color: #fdfaf3; }
+    .card-geography { border-color: #8dbb96; background-color: #f4fcf6; }
+    .card-multiple { border-color: #6294be; background-color: #f6f9fc; }
+    .card-move { border-color: #85b88c; background-color: #f4fcf6; }
+    .card-match { border-color: #e6b85e; background-color: #fdfaf3; }
+    .card-puzzle { border-color: #d17575; background-color: #fcf4f4; }
+
+    .bg-texture {
+      background-color: #fdfaf3;
+      background-image: 
+        url('data:image/svg+xml;utf8,<svg viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feturbulence basefrequency="0.8" numoctaves="3" stitchtiles="stitch" type="fractalNoise"></feturbulence></filter><rect filter="url(%23noiseFilter)" height="100%" opacity="0.04" width="100%"></rect></svg>');
+      background-attachment: fixed;
+    }
+
+    .sketch-shadow {
+      box-shadow: 3px 4px 0px rgba(0,0,0,0.08);
+    }
+
+    .badge-sketch {
+      border: 2px solid #333;
+      border-radius: 12px 14px 10px 12px / 12px 10px 14px 12px;
+      background-color: #fcd34d;
+      color: #000;
+      padding: 2px 16px;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-texture min-h-screen flex flex-col pb-24">
+<!-- BEGIN: MainHeader -->
+<header class="pt-8 px-4 flex justify-center w-full">
+<div class="sketch-border bg-[#fdfaf3] px-6 py-2 sketch-shadow rounded-2xl border-4 border-[#333]" data-purpose="header-container">
+<div class="border-[3px] border-[#333] rounded-[10px] p-0.5 bg-transparent w-full">
+<div class="border-2 border-[#333] rounded-[8px] bg-[#fdfaf3] px-8 py-3">
+<h1 class="text-[24px] font-black text-center tracking-wide text-[#222]">ტესტების კატეგორიები</h1>
+</div>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: CategoriesGrid -->
+<main class="px-4 flex-grow mt-12">
+<!-- First Row (Horizontal Scrolling or Partial View simulation) -->
+<div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
+<!-- Card: Science -->
+<div class="flex-shrink-0 w-44" data-purpose="category-card">
+<div class="sketch-border card-science bg-white p-3 aspect-[4/5] flex flex-col items-center justify-between relative">
+<div class="w-24 h-24 mt-2">
+<img alt="Science Icon" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG8NfB-GfVDwBidC9EfuL0Jk0iYSaUkThTAAv7c_Y_jrI_bIroF-KOhw3sPEWGWkTOR3speOqwfPYf1PHMkkCclorSv6-zzAZfyPeQLcHdrt8NapCKQ-VsJZjPiZPIJ9WwvaE0abfo9zp7WQsrWEvIt7gMcfjsYKid7zi9p3iQwMgeij5s1JlQqMY43pjVsPWYxQPxAd5eFkOi8HzIvWq2mpZH4k9ijLnByE-B4X4boD8_Dqhof6gulVtrY56g2WpBg-t4IpjVR3Oa"/>
+</div>
+<div class="text-center">
+<h2 class="font-bold text-lg leading-tight font-black">მეცნიერება</h2>
+</div>
+<div class="absolute -bottom-3 left-1/2 -translate-x-1/2">
+<span class="badge-sketch px-3 py-0.5 text-sm font-bold border-2 border-slate-700">ახალი</span>
+</div>
+</div>
+</div>
+<!-- Card: Logic -->
+<div class="flex-shrink-0 w-44" data-purpose="category-card">
+<div class="sketch-border card-logic bg-white p-3 aspect-[4/5] flex flex-col items-center justify-between">
+<div class="w-24 h-24 mt-2">
+<img alt="Logic Icon" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZXlRo-8Fh7uZ4p_Do1xOjb-_n7ClrVxYTe_ysvcxq1aWjnEUbrjPdgCFTGboA8u-WdTrLiimCnTxynFRHJHxzOZn1gk13Loh9Y0k_BqZILnl10qp3R85IeS-m9aAfxAi7ydoVk2l9WFW6lUZrTgOLWvNZ4wBGMFUDjr3STwsAGVYc0z9C9WATGa05HAVMPp5DAWkIBmvdm1lWifv76OpqZCalt2s6V5aqziTGEptkZWtrISs3ASWdar13q0BtLYZk5L8hQtGQMx6j"/>
+</div>
+<div class="text-center">
+<h2 class="font-bold text-lg font-black">ლოგიკა</h2>
+</div>
+</div>
+</div>
+<!-- Card: Geography (Partial) -->
+<div class="flex-shrink-0 w-44 opacity-80" data-purpose="category-card">
+<div class="sketch-border card-geography bg-white p-3 aspect-[4/5] flex flex-col items-center justify-between">
+<div class="w-24 h-24 mt-2">
+<img alt="Geography Icon" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTRLN3SsG4xtV1ZjM0w1IdjjPgh7Ig2KWLPRBBgyplVPFdBP4S86b8SDMojhYfgJ0cMXWZDnnUQ5M7-TlaMd_oT-u-JbnGLYIaYNuNSXvoGEx26pPfo36L3Xhdy3Dz3xUwK5fZYcjDNpbxsA-jFGxsn35TA3mt8vpwOkTWgn71qmsbU50xlXom5nVtvcRhkMF05mIj4EvmvwnYplS-z2Volm7LzUNxyfYoRTtVRgGe6xGDYYBRP1xiWrVhZQHje2qL1XSWEdsEV3HA"/>
+</div>
+<div class="text-center">
+<h2 class="font-bold text-lg font-black">გეოგრა</h2>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Vertical Grid -->
+<div class="grid grid-cols-2 gap-4 mt-6">
+<!-- Card: Multiple Choice -->
+<div class="sketch-border card-multiple bg-white p-3 flex flex-col items-center aspect-[4/5]" data-purpose="category-card">
+<div class="flex-grow flex items-center justify-center">
+<img alt="Multiple Choice Icon" class="w-20 h-20 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc_1bRCVuZjuzjRGwSzg1us_NO71xFMgcdgrJmJZiQI1EaJu0Dbj57EYCisfsXX_N1mAr-nEbDOstF_v3W4ma2UKcBF6Rm1-gH1zmOBvpqQ3r3ksZ3dZ-89k0dHLiETFmql_kSjKmgdTHQfj9J3E4nsyMBInpqDbqbRn9TGza4l8LxihCuK-Z6a242_RwfPN6-O_oFtW9WXfELkQLhlsWAvgaKnfAbjlYfeXeShJaNh-ru6PdTU4UtoyyI8WsJuDi8vXmWKWCt2st6"/>
+</div>
+<div class="text-center mt-2">
+<h2 class="font-bold text-base leading-tight font-black">მრავალარჩევანი</h2>
+<p class="text-xs text-gray-600 mt-1">250+ კითხვა</p>
+</div>
+</div>
+<!-- Card: Movement -->
+<div class="sketch-border card-move bg-white p-3 flex flex-col items-center aspect-[4/5]" data-purpose="category-card">
+<div class="flex-grow flex items-center justify-center">
+<img alt="Movement Icon" class="w-20 h-20 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBriWHX57QQFgVRCE5syqfZ9RJ8IbF-9Vph6-utleYEdl_4M_EYK0JI4U-fpqV6QJbougnBerO4ihCH9PX2rFipVxMrk5KTHdPrz5ayxxpGpIliIGAgTz8KqhyuYdK82XPSwnfuQd_PLWxMbO3GNVzOzBmBZWZxJ35HJy1vqIsTQxjAYwQ5EU0_DpuMUdchfpSOk0OLVtbEpgEGSQDqocPHyhNPPx5u30GvjU8qRGOXO-603F07R9U9Pcxbl-gKeR38jgmTUldTtHpK"/>
+</div>
+<div class="text-center mt-2">
+<h2 class="font-bold text-base leading-tight font-black">გადაადგილება</h2>
+<p class="text-xs text-gray-600 mt-1">ინტერაქტიული</p>
+</div>
+</div>
+<!-- Card: Matching -->
+<div class="sketch-border card-match bg-white p-3 flex flex-col items-center aspect-[4/5]" data-purpose="category-card">
+<div class="flex-grow flex items-center justify-center">
+<img alt="Matching Icon" class="w-20 h-20 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyP6YAbuwUjrG1W3Xv0KMfCpSV4GLuMJt0WD7-l6JFTyarc52iGVW8sbFwiHCPbHCf35ujG_hmoeQic4BU6ReU_pXkwvEaqma4mHY1JXUn8Jar1CwAoAHLzrf_CoEkSRiyPNmjWoHa3e-iG-F0Qp04XC-C8cNwzw7JEiHlDptAhLEDLdoBFkJ-tW3M4L0UfigEACFXWLOOUK1amzQ16ET4uXRRIAJNAQaGKkrYp-VA09T_mnp5pxyQvZShYmnBTtIVQfSFskpmkDGV"/>
+</div>
+<div class="text-center mt-2">
+<h2 class="font-bold text-base leading-tight font-black">შესაბამისობა</h2>
+<p class="text-xs text-gray-600 mt-1">სახალისო კავშირები</p>
+</div>
+</div>
+<!-- Card: Puzzles -->
+<div class="sketch-border card-puzzle bg-white p-3 flex flex-col items-center aspect-[4/5]" data-purpose="category-card">
+<div class="flex-grow flex items-center justify-center">
+<img alt="Puzzle Icon" class="w-20 h-20 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgbrSQuyhhhuSb_vJsWAiRGGxgUDTJmLDIAvUUwog02uZ27C4j8_x7fT-v0D5iwLrRa77PX5cEoFKsUKOgUQIah51AD8yTI0s6VyrKVPHw7oxSsW-4ftSsiQzm8naNYnuoo0I-ROtNaE7mKx5JdCR1ERSRJ7LKmKE0OGV4sXjnTC9wK1K7P_fgqcvjgqUjtho17fPWGDhZYvyMpb7c_e4U7GP6oGukmpW284mJ0Z5BMC6LGTLeZW23M8-7wbgTP23B4nrxPaTav4RG"/>
+</div>
+<div class="text-center mt-2">
+<h2 class="font-bold text-base leading-tight font-black">თავსატეხები</h2>
+<p class="text-xs text-gray-600 mt-1">გამოწვევა</p>
+</div>
+</div>
+</div>
+</main>
+<!-- END: CategoriesGrid -->
+<!-- BEGIN: BottomNavigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-[#fdf6e3] border-t-2 border-[#e0d6c5] px-4 py-3 flex justify-between items-end z-50">
+<!-- Home -->
+<div class="flex flex-col items-center space-y-1"><div class="w-12 h-12 overflow-hidden relative flex-shrink-0 bg-[#fbefd6] sketch-border border-[#e4a86b]">
+<img alt="Home" class="absolute w-[200%] max-w-none h-[200%] top-0 left-0 scale-75 origin-top-left" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzA_B-oH_MMhgH_CnXpKwMPdPX0HmZoZYtKOIB-mKsdBrYtwxS8cBqXHUmcLCgYnM0L_skAMnxlpW_QuTUzZ8i33BeKmbTt_Dgf1zRSlESP3PRmkCAhVSLRInOoF8AiymOlTOn3ANqtfeypGhFB0xUXIjeiE6_jsE1FB0wV6mUeiMNNRNjKDMaxy_ohvXxEfnn1jQs52sL4qJMKfqnKy85aCsc8O6sGSxyu9AJk3uSWLnpXj4ZmElfsMwEg6bg1HGJ07AQ4dxdCE5B"/>
+</div>
+<span class="text-[12px] font-bold mt-1 text-[#333]">მთავარი</span></div>
+<!-- Progress -->
+<div class="flex flex-col items-center space-y-1"><div class="w-12 h-12 overflow-hidden relative flex-shrink-0">
+<img alt="Progress" class="absolute w-[200%] max-w-none h-[200%] top-0 -left-[100%] scale-[0.85] origin-top-left" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzA_B-oH_MMhgH_CnXpKwMPdPX0HmZoZYtKOIB-mKsdBrYtwxS8cBqXHUmcLCgYnM0L_skAMnxlpW_QuTUzZ8i33BeKmbTt_Dgf1zRSlESP3PRmkCAhVSLRInOoF8AiymOlTOn3ANqtfeypGhFB0xUXIjeiE6_jsE1FB0wV6mUeiMNNRNjKDMaxy_ohvXxEfnn1jQs52sL4qJMKfqnKy85aCsc8O6sGSxyu9AJk3uSWLnpXj4ZmElfsMwEg6bg1HGJ07AQ4dxdCE5B"/>
+</div>
+<span class="text-[12px] font-bold mt-1 text-[#333]">ჩემი პროგრესი</span></div>
+<!-- Leaderboard -->
+<div class="flex flex-col items-center space-y-1"><div class="w-12 h-12 overflow-hidden relative flex-shrink-0">
+<img alt="Leaderboard" class="absolute w-[200%] max-w-none h-[200%] -top-[100%] left-0 scale-[0.85] origin-top-left" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzA_B-oH_MMhgH_CnXpKwMPdPX0HmZoZYtKOIB-mKsdBrYtwxS8cBqXHUmcLCgYnM0L_skAMnxlpW_QuTUzZ8i33BeKmbTt_Dgf1zRSlESP3PRmkCAhVSLRInOoF8AiymOlTOn3ANqtfeypGhFB0xUXIjeiE6_jsE1FB0wV6mUeiMNNRNjKDMaxy_ohvXxEfnn1jQs52sL4qJMKfqnKy85aCsc8O6sGSxyu9AJk3uSWLnpXj4ZmElfsMwEg6bg1HGJ07AQ4dxdCE5B"/>
+</div>
+<span class="text-[12px] font-bold mt-1 text-[#333]">ლიდერთა დაფა</span></div>
+<!-- Profile -->
+<div class="flex flex-col items-center space-y-1"><div class="w-12 h-12 overflow-hidden relative flex-shrink-0">
+<img alt="Profile" class="absolute w-[200%] max-w-none h-[200%] -top-[100%] -left-[100%] scale-[0.85] origin-top-left" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzA_B-oH_MMhgH_CnXpKwMPdPX0HmZoZYtKOIB-mKsdBrYtwxS8cBqXHUmcLCgYnM0L_skAMnxlpW_QuTUzZ8i33BeKmbTt_Dgf1zRSlESP3PRmkCAhVSLRInOoF8AiymOlTOn3ANqtfeypGhFB0xUXIjeiE6_jsE1FB0wV6mUeiMNNRNjKDMaxy_ohvXxEfnn1jQs52sL4qJMKfqnKy85aCsc8O6sGSxyu9AJk3uSWLnpXj4ZmElfsMwEg6bg1HGJ07AQ4dxdCE5B"/>
+</div>
+<span class="text-[12px] font-bold mt-1 text-[#333]">პროფილი</span></div>
+</nav>
+<!-- END: BottomNavigation -->
+<style data-purpose="scrollbar-hide">
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  </style>
+
+
+</body></html>

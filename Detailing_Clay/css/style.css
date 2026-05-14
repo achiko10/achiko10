@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital@1&display=swap');
+
+:root {
+    --bg-dark: #121212;
+    --clay-dark: #1e1e24;
+    --clay-accent: #2b2b36;
+    --text-main: #f0f0f0;
+    --text-muted: #888899;
+    --ceramic-white: #f8f9fa;
+    --toxic-green: #39ff14; /* Accent for cleanliness */
+    --toxic-glow: rgba(57, 255, 20, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.main-content {
+    flex: 1;
+    padding-bottom: 60px;
+}
+
+/* Typography */
+h1, h2, h3 { font-weight: 800; letter-spacing: -0.5px; }
+.italic-serif { font-family: 'Playfair Display', serif; font-style: italic; color: var(--text-muted); font-weight: 400; }
+
+/* 3D Clay / Ceramic Elements */
+.clay-card {
+    background: var(--clay-dark);
+    border-radius: 30px;
+    padding: 35px;
+    /* Soft Studio Lighting effect */
+    box-shadow: 
+        20px 20px 40px rgba(0,0,0,0.5), 
+        -10px -10px 30px rgba(255,255,255,0.03),
+        inset 2px 2px 5px rgba(255,255,255,0.05);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.02);
+}
+
+.clay-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        25px 25px 50px rgba(0,0,0,0.6), 
+        -15px -15px 35px rgba(255,255,255,0.05),
+        inset 2px 2px 8px rgba(57, 255, 20, 0.1);
+}
+
+/* Clay Inputs */
+.clay-input {
+    width: 100%;
+    background: var(--bg-dark);
+    border: none;
+    padding: 18px 25px;
+    border-radius: 20px;
+    color: var(--text-main);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    box-shadow: 
+        inset 8px 8px 15px rgba(0,0,0,0.6), 
+        inset -5px -5px 10px rgba(255,255,255,0.03);
+    outline: none;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+}
+
+.clay-input:focus {
+    box-shadow: 
+        inset 8px 8px 15px rgba(0,0,0,0.6), 
+        inset -5px -5px 10px rgba(255,255,255,0.03),
+        0 0 0 2px var(--toxic-green);
+}
+
+/* Clay Buttons */
+.btn-clay {
+    display: inline-block;
+    background: var(--clay-accent);
+    color: var(--text-main);
+    padding: 15px 35px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    box-shadow: 
+        8px 8px 15px rgba(0,0,0,0.4), 
+        -5px -5px 10px rgba(255,255,255,0.05),
+        inset 1px 1px 2px rgba(255,255,255,0.1);
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.btn-clay:active {
+    box-shadow: 
+        inset 8px 8px 15px rgba(0,0,0,0.4), 
+        inset -5px -5px 10px rgba(255,255,255,0.05);
+    transform: scale(0.98);
+}
+
+.btn-toxic {
+    background: var(--toxic-green);
+    color: #000;
+    box-shadow: 
+        8px 8px 20px var(--toxic-glow), 
+        -5px -5px 10px rgba(255,255,255,0.1),
+        inset 2px 2px 5px rgba(255,255,255,0.5);
+}
+
+/* Header & Nav */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--ceramic-white);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+.logo span {
+    color: var(--toxic-green);
+}
+
+nav { display: flex; gap: 3rem; }
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+nav a:hover, nav a.active {
+    color: var(--ceramic-white);
+}
+
+/* Footer (Comprehensive) */
+footer {
+    background-color: var(--clay-dark);
+    padding: 40px 5% 20px 5%;
+    margin-top: 60px;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+    border-radius: 40px 40px 0 0; /* Clay smooth top edges */
+}
+
+.footer-top {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;
+}
+.footer-col { flex: 1; min-width: 250px; }
+.footer-col h3, .footer-col h4 { color: var(--ceramic-white); margin-bottom: 15px; font-family: 'Outfit'; }
+.footer-col h4 { color: var(--toxic-green); font-size: 1rem; text-transform: uppercase; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+.footer-col ul a:hover { color: var(--ceramic-white); }
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 20px; text-align: center; font-size: 0.85rem;
+}
+/* ===== ACHIKO10 HOLOGRAM BRANDING ===== */
+.hologram-brand {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: linear-gradient(90deg, #39ff14, #b0ff60, #39ff14);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: holo-shine 3s linear infinite;
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.3));
+    cursor: pointer;
+}
+@keyframes holo-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+/* Hologram badge in footer */
+.hologram-footer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background-image: linear-gradient(90deg, #39ff14, #b0ff60, #39ff14);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: holo-shine 3s linear infinite;
+    text-decoration: none;
+}

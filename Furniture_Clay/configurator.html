@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMA | 3D სტუდია</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root{--bg:#e8dfd0;--surface:#f2ebe0;--panel:#f7f2ea;--dark:#2c2a26;--terra:#b87355;--olive:#7a8f6e;--border:#d6ccb8;--muted:#9a9080;}
+        *{box-sizing:border-box;margin:0;padding:0;}
+        body{background:var(--bg);color:var(--dark);font-family:'Space Grotesk',sans-serif;}
+        .nav-link{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:12px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);text-decoration:none;transition:all 0.2s;border:1px solid transparent;}
+        .nav-link:hover{background:var(--bg);color:var(--dark);}
+        .nav-link.active{background:var(--bg);color:var(--terra);border-color:rgba(184,115,85,0.2);box-shadow:inset 2px 2px 5px rgba(0,0,0,0.05);}
+
+        /* Viewer */
+        .viewer{background:linear-gradient(145deg,#f0e8d8,#ddd0ba);border-radius:20px;border:1px solid var(--border);position:relative;overflow:hidden;box-shadow:inset 0 8px 24px rgba(0,0,0,0.06);}
+        .viewer img{transition:all 0.5s ease;}
+
+        /* Color dots */
+        .cdot{width:28px;height:28px;border-radius:50%;cursor:pointer;transition:all 0.25s;border:2px solid transparent;position:relative;}
+        .cdot:hover,.cdot.active{transform:scale(1.25);border-color:var(--dark);box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+        .cdot.active::after{content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:rgba(255,255,255,0.9);}
+
+        /* Material select */
+        .mat-option{padding:12px 16px;border-radius:10px;cursor:pointer;font-size:11px;font-weight:600;border:1.5px solid var(--border);transition:all 0.2s;background:var(--panel);}
+        .mat-option:hover{border-color:var(--terra);}
+        .mat-option.active{border-color:var(--terra);background:rgba(184,115,85,0.08);color:var(--terra);}
+
+        /* CTA */
+        .btn-terra{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--terra);color:#fff;padding:14px 28px;border-radius:14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;border:none;cursor:pointer;transition:all 0.25s;width:100%;}
+        .btn-terra:hover{background:var(--dark);transform:translateY(-1px);}
+        .btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:transparent;color:var(--dark);padding:13px 28px;border-radius:14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;border:1.5px solid var(--border);cursor:pointer;transition:all 0.25s;width:100%;}
+        .btn-outline:hover{border-color:var(--terra);color:var(--terra);}
+
+        /* Toast */
+        #toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--dark);color:#f2ebe0;padding:12px 20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;border-radius:12px;transform:translateY(50px);opacity:0;transition:all 0.4s;z-index:99999;}
+        #toast.show{transform:translateY(0);opacity:1;}
+
+        ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px;}
+    </style>
+</head>
+<body class="h-screen w-screen overflow-hidden flex flex-col">
+
+    <div id="toast"></div>
+
+    <div class="shrink-0" style="background:#1a1714;border-bottom:1px solid rgba(0,242,255,0.12);padding:12px 24px;display:flex;justify-content:center;align-items:center;z-index:99999;">
+        <a href="../index.html" style="display:inline-flex;align-items:center;gap:10px;padding:8px 26px;background:rgba(0,242,255,0.05);border:1px solid rgba(0,242,255,0.35);border-radius:50px;color:#fff;text-decoration:none;font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+    <header class="h-[60px] shrink-0 bg-[#f2ebe0] border-b border-[#d6ccb8] flex justify-between items-center px-6 md:px-8 z-50">
+        <div class="flex items-center gap-3">
+            <a href="index.html" style="text-decoration:none;color:inherit;" class="text-xl font-bold tracking-tighter">FORMA</a>
+            <span class="hidden md:block px-2 py-0.5 bg-[#2c2a26] text-[#f2ebe0] text-[7px] font-bold uppercase tracking-widest rounded-sm">Studio</span>
+        </div>
+        <div class="flex items-center gap-2 text-[9px] font-bold uppercase tracking-widest text-[#9a9080]">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#7a8f6e] animate-pulse"></span> 3D ძრავი აქტიური
+        </div>
+    </header>
+
+    <main class="flex-1 overflow-hidden flex">
+        <aside class="w-[210px] shrink-0 border-r border-[#d6ccb8] bg-[#f2ebe0] flex-col justify-between py-6 hidden md:flex">
+            <nav class="px-4 space-y-1">
+                <p class="text-[8px] uppercase tracking-[0.3em] text-[#b0a898] font-bold mb-5 px-2">ნავიგაცია</p>
+                <a href="index.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>სამუშაო მაგიდა</a>
+                <a href="collection.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>კოლექცია</a>
+                <a href="configurator.html" class="nav-link active"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>3D სტუდია</a>
+                <a href="contact.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>კონტაქტი</a>
+            </nav>
+            <div class="px-4">
+                <div style="background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:14px;">
+                    <p class="text-[8px] text-[#9a9080] uppercase tracking-widest font-bold mb-2">მითითება</p>
+                    <p class="text-[11px] font-bold leading-snug">ფერსა და მასალაზე დაჭირება ცვლის სავარძელს</p>
+                </div>
+            </div>
+        </aside>
+
+        <section class="flex-1 overflow-y-auto p-5 md:p-8">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 h-full">
+
+                <!-- Viewer (3 cols) -->
+                <div class="lg:col-span-3 flex flex-col gap-4">
+                    <div class="viewer flex-1 flex items-center justify-center p-8" style="min-height:300px;">
+                        <img id="productImg"
+                             src="https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=700&q=85"
+                             class="w-full max-w-sm object-contain drop-shadow-2xl"
+                             style="filter:sepia(20%);" alt="Clay Sofa">
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span style="background:rgba(255,255,255,0.6);backdrop-filter:blur(8px);padding:4px 10px;border-radius:99px;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;">360° View</span>
+                            <span style="background:rgba(255,255,255,0.6);backdrop-filter:blur(8px);padding:4px 10px;border-radius:99px;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;">AR Ready</span>
+                        </div>
+                    </div>
+                    <!-- Thumbnails -->
+                    <div class="grid grid-cols-4 gap-3">
+                        <div onclick="switchProduct(0)" class="rounded-14px overflow-hidden cursor-pointer border-2 border-[#b87355] rounded-xl">
+                            <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=200&q=70" class="w-full aspect-square object-cover" style="filter:sepia(15%);">
+                        </div>
+                        <div onclick="switchProduct(1)" class="rounded-xl overflow-hidden cursor-pointer border-2 border-transparent hover:border-[#b87355] transition">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=200&q=70" class="w-full aspect-square object-cover" style="filter:sepia(15%);">
+                        </div>
+                        <div onclick="switchProduct(2)" class="rounded-xl overflow-hidden cursor-pointer border-2 border-transparent hover:border-[#b87355] transition">
+                            <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=200&q=70" class="w-full aspect-square object-cover" style="filter:sepia(15%);">
+                        </div>
+                        <div onclick="switchProduct(3)" class="rounded-xl overflow-hidden cursor-pointer border-2 border-transparent hover:border-[#b87355] transition">
+                            <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=200&q=70" class="w-full aspect-square object-cover" style="filter:sepia(15%);">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Config panel (2 cols) -->
+                <div class="lg:col-span-2 bg-[#f2ebe0] border border-[#d6ccb8] rounded-20px p-6 flex flex-col justify-between" style="border-radius:20px;">
+                    <div class="space-y-6">
+                        <div>
+                            <p class="text-[9px] font-bold uppercase tracking-widest text-[#9a9080] mb-1">კონფიგურაცია</p>
+                            <h2 class="text-2xl font-bold tracking-tight" id="productName">Clay Sofa M1</h2>
+                        </div>
+
+                        <!-- Color -->
+                        <div>
+                            <p class="text-[10px] font-bold uppercase tracking-widest text-[#9a9080] mb-3">ფერი</p>
+                            <div class="flex gap-3">
+                                <div class="cdot active" style="background:#b87355;" data-color="Terracotta" onclick="selectColor(this)"></div>
+                                <div class="cdot" style="background:#7a8f6e;" data-color="Olive" onclick="selectColor(this)"></div>
+                                <div class="cdot" style="background:#dcd0c0;" data-color="Linen" onclick="selectColor(this)"></div>
+                                <div class="cdot" style="background:#2c2a26;" data-color="Ebony" onclick="selectColor(this)"></div>
+                                <div class="cdot" style="background:#c9b89a;" data-color="Sand" onclick="selectColor(this)"></div>
+                            </div>
+                            <p class="text-[10px] text-[#9a9080] font-bold mt-2" id="colorLabel">Terracotta</p>
+                        </div>
+
+                        <!-- Material -->
+                        <div>
+                            <p class="text-[10px] font-bold uppercase tracking-widest text-[#9a9080] mb-3">მასალა</p>
+                            <div class="space-y-2">
+                                <div class="mat-option active" onclick="selectMat(this,'Polymer Clay (Matte)',0)">Polymer Clay <span class="text-[9px] text-[#9a9080]">· მატი</span></div>
+                                <div class="mat-option" onclick="selectMat(this,'Natural Wood',200)">Natural Wood <span class="text-[9px] text-[#9a9080]">· +₾200</span></div>
+                                <div class="mat-option" onclick="selectMat(this,'Soft Velvet',350)">Soft Velvet <span class="text-[9px] text-[#9a9080]">· +₾350</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Size -->
+                        <div>
+                            <p class="text-[10px] font-bold uppercase tracking-widest text-[#9a9080] mb-3">ზომა</p>
+                            <div class="flex gap-2">
+                                <button onclick="selectSize(this,'S',-200)" class="size-btn px-4 py-2 border border-[#d6ccb8] rounded-lg text-[10px] font-bold hover:border-[#b87355] transition">S</button>
+                                <button onclick="selectSize(this,'M',0)" class="size-btn px-4 py-2 border-2 border-[#b87355] rounded-lg text-[10px] font-bold text-[#b87355]">M</button>
+                                <button onclick="selectSize(this,'L',300)" class="size-btn px-4 py-2 border border-[#d6ccb8] rounded-lg text-[10px] font-bold hover:border-[#b87355] transition">L</button>
+                                <button onclick="selectSize(this,'XL',600)" class="size-btn px-4 py-2 border border-[#d6ccb8] rounded-lg text-[10px] font-bold hover:border-[#b87355] transition">XL</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-[#d6ccb8] pt-5 space-y-3">
+                        <div class="flex justify-between items-end">
+                            <p class="text-[9px] text-[#9a9080] uppercase tracking-widest font-bold">სრული ფასი</p>
+                            <div class="text-right">
+                                <p class="text-2xl font-bold tracking-tight" id="totalPrice">₾ 2,450</p>
+                                <p class="text-[9px] text-[#9a9080] font-bold" id="configSummary">Terracotta · Polymer Clay · M</p>
+                            </div>
+                        </div>
+                        <button class="btn-terra" onclick="addToCart()">შეკვეთა გაფორმება</button>
+                        <button class="btn-outline" onclick="saveDesign()">დიზაინის შენახვა ♡</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="h-10 shrink-0 bg-[#2c2a26] text-[#6a6258] border-t border-[#1a1916] flex justify-between items-center px-6 text-[9px] font-bold uppercase tracking-[0.2em]">
+        <div>&copy; 2026 FORMA STUDIO</div>
+        <div>PLATINUM BY <span class="text-[#f2ebe0]">ACHIKO10</span></div>
+    </footer>
+
+    <script>
+        const toast = document.getElementById('toast');
+        function showToast(msg) { toast.textContent = msg; toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),2800); }
+
+        const basePrice = 2450;
+        let matExtra = 0, sizeExtra = 0, selectedColor = 'Terracotta', selectedMat = 'Polymer Clay', selectedSize = 'M';
+
+        const imgs = [
+            'https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=700&q=85',
+            'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=700&q=85',
+            'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=700&q=85',
+            'https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=700&q=85',
+        ];
+        const names = ['Clay Sofa M1','Corner Sofa XL','Studio Bench','Matte Table'];
+        const prices = [2450, 3800, 1200, 1800];
+
+        function switchProduct(i) {
+            document.getElementById('productImg').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('productImg').src = imgs[i];
+                document.getElementById('productName').textContent = names[i];
+                baseP = prices[i];
+                updatePrice();
+                document.getElementById('productImg').style.opacity = '1';
+            }, 200);
+            document.getElementById('productImg').style.transition = 'opacity 0.2s';
+            document.querySelectorAll('.viewer ~ div .rounded-xl, .viewer ~ div .rounded-14px').forEach((t,j) => {
+                t.style.borderColor = j===i ? '#b87355' : 'transparent';
+            });
+        }
+
+        let baseP = 2450;
+        function updatePrice() {
+            document.getElementById('totalPrice').textContent = '₾ ' + (baseP + matExtra + sizeExtra).toLocaleString();
+            document.getElementById('configSummary').textContent = `${selectedColor} · ${selectedMat} · ${selectedSize}`;
+        }
+
+        function selectColor(el) {
+            document.querySelectorAll('.cdot').forEach(d => d.classList.remove('active'));
+            el.classList.add('active');
+            selectedColor = el.dataset.color;
+            document.getElementById('colorLabel').textContent = el.dataset.color;
+            updatePrice();
+        }
+        function selectMat(el, name, extra) {
+            document.querySelectorAll('.mat-option').forEach(m => m.classList.remove('active'));
+            el.classList.add('active');
+            matExtra = extra; selectedMat = name.split(' ')[0] + ' ' + (name.split(' ')[1]||'');
+            updatePrice();
+        }
+        function selectSize(el, size, extra) {
+            document.querySelectorAll('.size-btn').forEach(b => { b.classList.remove('border-2','border-[#b87355]','text-[#b87355]'); b.classList.add('border','border-[#d6ccb8]'); });
+            el.classList.add('border-2','border-[#b87355]','text-[#b87355]');
+            el.classList.remove('border','border-[#d6ccb8]');
+            sizeExtra = extra; selectedSize = size;
+            updatePrice();
+        }
+        function addToCart() {
+            const btn = event.target; btn.textContent = '✓ შეკვეთა მიღებულია!'; btn.style.background = '#7a8f6e';
+            setTimeout(()=>{ btn.textContent = 'შეკვეთა გაფორმება'; btn.style.background=''; }, 2500);
+            showToast('✓ დიზაინი გაიგზავნა შოურუმში!');
+        }
+        function saveDesign() {
+            showToast('♡ დიზაინი შენახულია!');
+        }
+    </script>
+</body>
+</html>

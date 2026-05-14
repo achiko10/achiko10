@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallets | TITAN FINANCE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root { --titanium-bg: #0a0b0d; --titanium-surface: #14161a; --titanium-border: #2d3139; --titanium-silver: #e2e8f0; }
+        body { background-color: var(--titanium-bg); color: var(--titanium-silver); font-family: 'Inter', sans-serif; letter-spacing: -0.02em; }
+        .titanium-glass { background: rgba(255,255,255,0.02); border: 1px solid var(--titanium-border); backdrop-filter: blur(10px); }
+        .titanium-panel { background: var(--titanium-surface); border: 1px solid var(--titanium-border); }
+        .back-bar { background: rgba(0,0,0,0.8); backdrop-filter: blur(15px); padding: 12px 0; text-align: center; position: sticky; top: 0; z-index: 10000; border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; }
+        .back-btn-holo-global { display: inline-flex; align-items: center; gap: 10px; padding: 8px 24px; background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(0, 242, 255, 0.3); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 800; font-size: 10px; text-transform: uppercase; box-shadow: 0 10px 25px rgba(0,0,0,0.3); animation: holo-float 4s infinite ease-in-out; }
+        @keyframes holo-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        .btn-titan { background: var(--titanium-silver); color: black; font-weight: 900; font-size: 10px; text-transform: uppercase; padding: 10px 20px; border-radius: 4px; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-titan:hover { background: white; transform: translateY(-1px); }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--titanium-border); border-radius: 10px; }
+    </style>
+</head>
+<body class="h-screen w-screen overflow-hidden flex flex-col selection:bg-blue-500/30">
+
+    <!-- ACHIKO10 GLOBAL PREMIUM BACK BAR -->
+    <div class="portfolio-bar-global shrink-0" style="background: linear-gradient(180deg, #050505 0%, rgba(5,5,5,0.9) 100%); backdrop-filter: blur(20px); padding: 16px 24px; display: flex; justify-content: center; align-items: center; position: relative; z-index: 99999; border-bottom: 1px solid rgba(0, 242, 255, 0.15); box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 32px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.4); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; box-shadow: 0 0 25px rgba(0, 242, 255, 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+
+    
+
+    <header class="h-14 shrink-0 border-b border-[#2d3139] bg-[#0a0b0d] flex justify-between items-center px-6 z-50">
+        <div class="flex items-center gap-6">
+            <a href="index.html" class="text-xl font-black tracking-tighter italic text-white flex items-center gap-2"><i data-lucide="hexagon" class="w-5 h-5 text-blue-400"></i> TITAN</a>
+            <div class="h-4 w-px bg-[#2d3139]"></div>
+            <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-stone-500 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> SYSTEM ONLINE</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="w-8 h-8 rounded-full bg-[#14161a] border border-[#2d3139] flex items-center justify-center text-stone-400 hover:text-white transition"><i data-lucide="bell" class="w-4 h-4"></i></button>
+            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 border border-[#2d3139] overflow-hidden"><img src="https://i.pravatar.cc/100?img=11" alt="User" class="w-full h-full object-cover"></div>
+        </div>
+    </header>
+
+    <main class="flex-1 overflow-hidden flex bg-[#0a0b0d]">
+        <aside class="w-64 shrink-0 border-r border-[#2d3139] bg-[#0a0b0d] flex flex-col justify-between py-6">
+            <nav class="space-y-2 px-4">
+                <p class="text-[9px] uppercase tracking-widest text-stone-600 font-bold px-4 mb-4">მენიუ</p>
+                <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg border border-transparent text-[10px] font-bold uppercase tracking-widest text-stone-500 hover:text-white hover:bg-[#14161a]/50 transition"><i data-lucide="layout-dashboard" class="w-4 h-4"></i> დეშბორდი</a>
+                <a href="exchange.html" class="flex items-center gap-3 px-4 py-3 rounded-lg border border-transparent text-[10px] font-bold uppercase tracking-widest text-stone-500 hover:text-white hover:bg-[#14161a]/50 transition"><i data-lucide="arrow-left-right" class="w-4 h-4"></i> ექსჩეინჯი</a>
+                <a href="wallets.html" class="flex items-center gap-3 px-4 py-3 bg-[#14161a] rounded-lg border border-[#2d3139] text-[10px] font-bold uppercase tracking-widest text-white shadow-[0_0_15px_rgba(0,100,255,0.05)] transition"><i data-lucide="wallet" class="w-4 h-4 text-blue-400"></i> საფულეები</a>
+                <a href="profile.html" class="flex items-center gap-3 px-4 py-3 rounded-lg border border-transparent text-[10px] font-bold uppercase tracking-widest text-stone-500 hover:text-white hover:bg-[#14161a]/50 transition"><i data-lucide="user" class="w-4 h-4"></i> პროფილი</a>
+            </nav>
+            <div class="px-8"><div class="titanium-panel p-4 rounded-lg flex items-center justify-between"><div><p class="text-[9px] text-stone-500 uppercase tracking-widest font-bold mb-1">PRO სტატუსი</p><p class="text-xs font-black text-white">აქტიური</p></div><i data-lucide="zap" class="w-5 h-5 text-yellow-500"></i></div></div>
+        </aside>
+
+        <section class="flex-1 overflow-y-auto p-6 md:p-8">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h1 class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-500 mb-2">აქტივები</h1>
+                    <div class="text-3xl font-black italic text-white tracking-tight">საფულეები</div>
+                </div>
+                <button class="btn-titan"><i data-lucide="plus" class="w-4 h-4"></i> დეპოზიტი</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+                <!-- Wallet 1 -->
+                <div class="titanium-glass p-8 rounded-xl flex justify-between items-center group cursor-pointer hover:border-stone-600 transition">
+                    <div class="flex items-center gap-6">
+                        <div class="w-14 h-14 bg-orange-500/10 border border-orange-500/20 rounded-full flex items-center justify-center text-orange-500"><i data-lucide="bitcoin" class="w-6 h-6"></i></div>
+                        <div>
+                            <h3 class="text-xl font-black uppercase tracking-tighter italic text-white group-hover:text-orange-400 transition">Bitcoin</h3>
+                            <p class="text-[10px] text-stone-500 font-mono mt-1">1.24050000 BTC</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-2xl font-black italic text-white mb-1">$79,608.20</div>
+                        <div class="text-[10px] text-stone-500 uppercase tracking-widest flex items-center justify-end gap-2"><i data-lucide="shield-check" class="w-3 h-3 text-green-500"></i> დაცული</div>
+                    </div>
+                </div>
+                <!-- Wallet 2 -->
+                <div class="titanium-glass p-8 rounded-xl flex justify-between items-center group cursor-pointer hover:border-stone-600 transition">
+                    <div class="flex items-center gap-6">
+                        <div class="w-14 h-14 bg-purple-500/10 border border-purple-500/20 rounded-full flex items-center justify-center text-purple-500"><i data-lucide="gem" class="w-6 h-6"></i></div>
+                        <div>
+                            <h3 class="text-xl font-black uppercase tracking-tighter italic text-white group-hover:text-purple-400 transition">Ethereum</h3>
+                            <p class="text-[10px] text-stone-500 font-mono mt-1">14.50000000 ETH</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-2xl font-black italic text-white mb-1">$50,027.00</div>
+                        <div class="text-[10px] text-stone-500 uppercase tracking-widest flex items-center justify-end gap-2"><i data-lucide="shield-check" class="w-3 h-3 text-green-500"></i> დაცული</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-500 mt-12 mb-6">ბოლო ტრანზაქციები</h2>
+            <div class="titanium-panel rounded-xl overflow-hidden max-w-4xl">
+                <div class="grid grid-cols-4 p-4 border-b border-[#2d3139] text-[9px] uppercase tracking-widest text-stone-500 font-bold">
+                    <div>ტიპი</div><div>ვალუტა</div><div>რაოდენობა</div><div class="text-right">სტატუსი</div>
+                </div>
+                <div class="grid grid-cols-4 p-4 border-b border-[#2d3139] items-center">
+                    <div class="flex items-center gap-2 text-xs font-bold text-white"><i data-lucide="arrow-down-left" class="w-4 h-4 text-green-400"></i> დეპოზიტი</div>
+                    <div class="text-xs text-white font-mono">BTC</div>
+                    <div class="text-xs text-green-400 font-mono">+0.5000</div>
+                    <div class="text-right"><span class="px-2 py-1 bg-green-500/10 text-green-400 text-[9px] rounded uppercase tracking-widest font-bold">დასრულებული</span></div>
+                </div>
+                <div class="grid grid-cols-4 p-4 items-center">
+                    <div class="flex items-center gap-2 text-xs font-bold text-white"><i data-lucide="arrow-up-right" class="w-4 h-4 text-red-400"></i> გატანა</div>
+                    <div class="text-xs text-white font-mono">ETH</div>
+                    <div class="text-xs text-red-400 font-mono">-2.0000</div>
+                    <div class="text-right"><span class="px-2 py-1 bg-green-500/10 text-green-400 text-[9px] rounded uppercase tracking-widest font-bold">დასრულებული</span></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="h-10 shrink-0 border-t border-[#2d3139] bg-[#0a0b0d] flex justify-between items-center px-6 z-50">
+        <div class="flex items-center gap-4 text-[9px] font-bold uppercase tracking-widest text-stone-600"><span>&copy; 2026 TITAN FINANCE</span></div>
+        <div class="text-[9px] font-bold uppercase tracking-widest text-stone-500">PLATINUM EDITION BY <span class="text-white italic">ACHIKO10</span></div>
+    </footer>
+
+    <!-- Send Modal -->
+    <div id="send-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:99998;align-items:center;justify-content:center;">
+      <div style="background:#14161a;border:1px solid #2d3139;border-radius:12px;padding:32px;width:380px;max-width:90vw;">
+        <h3 style="font-size:12px;font-weight:900;letter-spacing:0.15em;text-transform:uppercase;color:#e2e8f0;margin-bottom:20px;">გაგზავნა</h3>
+        <div style="margin-bottom:12px;"><label style="font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:6px;">მიმღების მისამართი *</label>
+          <input id="send-addr" type="text" placeholder="1A2B3C..." style="background:#0a0b0d;border:1px solid #2d3139;color:#e2e8f0;border-radius:6px;padding:10px;width:100%;font-size:11px;box-sizing:border-box;outline:none;">
+        </div>
+        <div style="margin-bottom:12px;"><label style="font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:6px;">რაოდენობა (BTC) *</label>
+          <input id="send-amt" type="number" step="0.0001" min="0.0001" placeholder="0.0500" style="background:#0a0b0d;border:1px solid #2d3139;color:#e2e8f0;border-radius:6px;padding:10px;width:100%;font-size:11px;box-sizing:border-box;outline:none;">
+        </div>
+        <p id="send-err" style="color:#ef4444;font-size:10px;font-weight:700;display:none;margin-bottom:10px;"></p>
+        <div style="display:flex;gap:12px;">
+          <button onclick="closeSend()" style="flex:1;padding:10px;background:transparent;border:1px solid #2d3139;color:#6b7280;border-radius:6px;font-size:10px;font-weight:700;cursor:pointer;text-transform:uppercase;">გაუქმება</button>
+          <button onclick="confirmSend()" style="flex:1;padding:10px;background:#e2e8f0;color:black;border:none;border-radius:6px;font-size:10px;font-weight:900;cursor:pointer;text-transform:uppercase;">გაგზავნა</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    lucide.createIcons();
+    
+    // Toast
+    const wToast = document.createElement('div');
+    wToast.style.cssText = 'position:fixed;bottom:1.5rem;right:1.5rem;background:#14161a;border:1px solid #2d3139;color:#00ffaa;padding:12px 20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;border-radius:8px;transform:translateY(50px);opacity:0;transition:all 0.4s;z-index:99999;';
+    document.body.appendChild(wToast);
+    function showWToast(msg){wToast.textContent=msg;wToast.style.opacity='1';wToast.style.transform='translateY(0)';setTimeout(()=>{wToast.style.opacity='0';wToast.style.transform='translateY(50px)';},3500);}
+
+    // Deposit button
+    document.querySelector('.btn-titan').addEventListener('click', () => showWToast('✓ დეპოზიტის მოთხოვნა გაიგზავნა'));
+
+    // Wallet cards -> open send modal
+    document.querySelectorAll('.titanium-glass').forEach(card=>{
+      card.addEventListener('click', ()=>{
+        document.getElementById('send-modal').style.display='flex';
+        document.getElementById('send-addr').value='';
+        document.getElementById('send-amt').value='';
+        document.getElementById('send-err').style.display='none';
+      });
+    });
+    
+    function closeSend(){document.getElementById('send-modal').style.display='none';}
+    function confirmSend(){
+      var addr=document.getElementById('send-addr').value.trim();
+      var amt=document.getElementById('send-amt').value;
+      var err=document.getElementById('send-err'); err.style.display='none';
+      if(!addr||addr.length<10){err.textContent='სწორი მისამართი შეიყვანეთ (მინ. 10 სიმბ.)';err.style.display='block';return;}
+      if(!amt||parseFloat(amt)<=0){err.textContent='რაოდენობა სავალდებულოა';err.style.display='block';return;}
+      closeSend();
+      showWToast('✓ ' + parseFloat(amt).toFixed(4) + ' BTC გაიგზავნა');
+    }
+    
+    // Close modal on backdrop click
+    document.getElementById('send-modal').addEventListener('click', function(e){if(e.target===this)closeSend();});
+    </script>
+</body>
+</html>

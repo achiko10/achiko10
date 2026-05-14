@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>B2B | პარტნიორები</title>
+    <meta name="description" content="B2B | პარტნიორები - ACHIKO10 პრემიუმ პორტფოლიოს პროექტი.">
+<link rel="stylesheet" href="css/design.css">
+
+</head>
+<body>
+
+    <!-- ACHIKO10 GLOBAL PREMIUM BACK BAR -->
+    <div class="portfolio-bar-global shrink-0" style="background: linear-gradient(180deg, #050505 0%, rgba(5,5,5,0.9) 100%); backdrop-filter: blur(20px); padding: 16px 24px; display: flex; justify-content: center; align-items: center; position: relative; z-index: 99999; border-bottom: 1px solid rgba(0, 242, 255, 0.15); box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 32px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.4); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; box-shadow: 0 0 25px rgba(0, 242, 255, 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+
+<header class="site-header">
+<a href="index.html" class="site-logo">B2B PORTAL</a>
+<nav class="site-nav" id="nav"><a href="index.html" >მარაგები</a><a href="dashboard.html" >დეშბორდი</a><a href="partners.html" class='active'>პარტნიორები</a><a href="inventory.html" >ინვენტარი</a></nav>
+<div class="header-actions"><a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="holo-dot"></span>ACHIKO10</a><a href="dashboard.html" class="btn btn-primary">კაბინეტი</a></div>
+<button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+</header><main class='page-main'>
+<div class='panel mb-24'><h1 class='page-title'>🤝 სტრატეგიული პარტნიორები</h1><p class='text-muted'>სისტემაში ჩართულია 142 აქტიური B2B პარტნიორი...</p></div>
+<div class="grid-2">
+  <div class="panel flex items-center justify-between">
+    <div><div class="stat-val" style="font-size:1.2rem;color:#00f2ff">ALCO GLOBAL</div><div class="stat-lbl">Premium Wine Dist.</div></div>
+    <button class="btn btn-primary btn-sm" onclick="showB2BToast('✓ დაკავშირება ALCO-სთან...')">Contact</button>
+  </div>
+  <div class="panel flex items-center justify-between">
+    <div><div class="stat-val" style="font-size:1.2rem;color:#00f2ff">GEORGIAN FOODS</div><div class="stat-lbl">FMCG Logistics</div></div>
+    <button class="btn btn-primary btn-sm" onclick="showB2BToast('✓ დაკავშირება GF-სთან...')">Contact</button>
+  </div>
+  <div class="panel flex items-center justify-between">
+    <div><div class="stat-val" style="font-size:1.2rem;color:#00f2ff">TITAN LOGISTICS</div><div class="stat-lbl">Global Shipping</div></div>
+    <button class="btn btn-primary btn-sm" onclick="showB2BToast('✓ დაკავშირება TITAN-თან...')">Contact</button>
+  </div>
+  <div class="panel flex items-center justify-between">
+    <div><div class="stat-val" style="font-size:1.2rem;color:#00f2ff">CRYSTAL REALTY</div><div class="stat-lbl">Asset Management</div></div>
+    <button class="btn btn-primary btn-sm" onclick="showB2BToast('✓ დაკავშირება CRYSTAL-თან...')">Contact</button>
+  </div>
+</div>
+<div id="b2b-toast" style="display:none;position:fixed;bottom:2rem;right:2rem;padding:12px 18px;background:rgba(0,242,255,0.1);color:#00f2ff;border:1px solid rgba(0,242,255,0.4);border-radius:10px;font-weight:700;font-size:.85rem;z-index:99999;">✓ მოთხოვნა გაიგზავნა</div>
+</main>
+<script>
+function showB2BToast(msg){
+  var t=document.getElementById('b2b-toast'); t.textContent=msg; t.style.display='block';
+  setTimeout(()=>t.style.display='none', 4000);
+}
+</script>
+<footer class="site-footer">
+<div class="footer-grid">
+<div class="footer-col"><div class="footer-col-title">B2B PORTAL</div><p class="text-muted" style="font-size:.85rem;line-height:1.7">პრემიუმ ვებ პლატფორმა. სრული ციფრული მხარდაჭერა.</p></div>
+<div class="footer-col"><div class="footer-col-title">ნავიგაცია</div><ul><li><a href="index.html">მარაგები</a></li><li><a href="dashboard.html">დეშბორდი</a></li><li><a href="partners.html">პარტნიორები</a></li><li><a href="inventory.html">ინვენტარი</a></li></ul></div>
+<div class="footer-col"><div class="footer-col-title">იურიდიული</div><ul><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">კონფიდენციალურობა</a></li><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">მიწოდების პირობები</a></li></ul></div>
+<div class="footer-col"><div class="footer-col-title">კონტაქტი</div><ul><li>📞 +995 32 000 000</li><li>✉️ info@achiko10.ge</li><li>🏢 თბილისი</li></ul></div>
+</div>
+<div class="footer-bottom"><span>&copy; 2026 Premium Portfolio</span><a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="holo-dot"></span>ACHIKO10</a></div>
+</footer>
+<script>window.addEventListener('click',function(e){if(!e.target.closest('.site-header'))document.getElementById('nav').classList.remove('open')})</script>
+
+
+</body>
+</html>

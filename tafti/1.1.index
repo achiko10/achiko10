@@ -1,0 +1,244 @@
+<!-- Achiko10 Portfolio - Final Fully Functional Version -->
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Achiko10 Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'paper-bg': '#f5f0e6',
+                        'sketch-blue': '#4a90e2',
+                        'sketch-yellow': '#f5a623',
+                        'sketch-green': '#7ed321',
+                        'sketch-red': '#d0021b',
+                    },
+                    fontFamily: {
+                        'handwritten': ['Caveat', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style data-purpose="custom-sketch-styles">
+        .sketch-border {
+            border-width: 3px;
+            border-style: solid;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px
+        }
+        .sketch-border-header {
+            border: 3px solid #333;
+            border-radius: 12px 40px 12px 30px/10px 12px 25px 10px
+        }
+        .paper-texture {
+            background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%), url(https://www.transparenttextures.com/patterns/felt.png);
+            background-color: #f7f3e9
+        }
+        .watercolor-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0; opacity: 0.3;
+            background-image: radial-gradient(circle at -5% -5%, #dbeafe 0%, transparent 30%), radial-gradient(circle at 105% 5%, #fef3c7 0%, transparent 30%)
+        }
+        .georgian-text { font-weight: 700; letter-spacing: 0.01em }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .project-card { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .project-card:hover { transform: scale(1.03) rotate(1deg); }
+        
+        .section-hidden { display: none; }
+        .nav-active { background-color: #fcd34d !important; border-color: #333 !important; transform: scale(1.1); }
+        
+        .post-it {
+            background: #fff9a6;
+            padding: 2rem;
+            transform: rotate(-2deg);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+        }
+    </style>
+</head>
+<body class="paper-texture min-h-screen text-slate-800 font-sans selection:bg-yellow-200 overflow-x-hidden">
+    <div class="watercolor-overlay"></div>
+    
+    <main class="relative z-10 max-w-5xl mx-auto p-4 pb-24">
+        <!-- Header -->
+        <header class="flex justify-center mt-4 mb-10">
+            <div class="sketch-border-header px-6 py-2 bg-white/40 backdrop-blur-sm">
+                <h1 class="text-xl md:text-3xl font-bold georgian-text">ACHIKO10 PORTFOLIO</h1>
+            </div>
+        </header>
+
+        <!-- HOME/PROJECTS SECTION -->
+        <section id="section-home">
+            <h2 class="text-lg font-bold georgian-text mb-4 ml-2 opacity-70 italic">რჩეული პროექტები</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+                <a href="../AutoImport_Premium/index.html" class="project-card bg-white/50 p-3 sketch-border border-blue-400 flex flex-col items-center">
+                    <div class="w-full aspect-video overflow-hidden rounded-lg mb-2"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover"></div>
+                    <p class="font-bold text-base georgian-text">AutoImport</p>
+                </a>
+                <a href="../B2B_Bioluminescent/index.html" class="project-card bg-white/50 p-3 sketch-border border-yellow-400 flex flex-col items-center">
+                    <div class="w-full aspect-video overflow-hidden rounded-lg mb-2"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover"></div>
+                    <p class="font-bold text-base georgian-text">B2B Bio</p>
+                </a>
+                <a href="../Clay_Toy_Store/index.html" class="project-card bg-white/50 p-3 sketch-border border-green-500 flex flex-col items-center">
+                    <div class="w-full aspect-video overflow-hidden rounded-lg mb-2"><img src="https://images.unsplash.com/photo-1558060370-d644479cb6f7?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover"></div>
+                    <p class="font-bold text-base georgian-text">Toy Store</p>
+                </a>
+            </div>
+
+            <h2 class="text-lg font-bold georgian-text mb-4 ml-2 opacity-70 italic">ყველა ნამუშევარი</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <a href="../Detailing_Clay/index.html" class="project-card bg-white/50 p-4 sketch-border border-blue-500 flex flex-col">
+                    <div class="w-full aspect-video overflow-hidden rounded-lg mb-3"><img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div>
+                    <h3 class="font-bold text-lg georgian-text mb-1">Detailing Clay</h3>
+                    <div class="flex gap-2 mb-2"><span class="text-[10px] bg-blue-100 px-2 py-0.5 rounded-full border border-blue-300">UX/UI</span><span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded-full border border-slate-300">Service</span></div>
+                </a>
+                <a href="../EdTech_DaVinci/index.html" class="project-card bg-white/50 p-4 sketch-border border-green-500 flex flex-col">
+                    <div class="w-full aspect-video overflow-hidden rounded-lg mb-3"><img src="https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div>
+                    <h3 class="font-bold text-lg georgian-text mb-1">EdTech DaVinci</h3>
+                    <div class="flex gap-2 mb-2"><span class="text-[10px] bg-green-100 px-2 py-0.5 rounded-full border border-green-300">LMS</span><span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded-full border border-slate-300">Art</span></div>
+                </a>
+                <a href="../Export_Editorial/index.html" class="project-card bg-white/50 p-4 sketch-border border-yellow-500 flex flex-col">
+                    <div class="w-full aspect-video overflow-hidden rounded-lg mb-3"><img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div>
+                    <h3 class="font-bold text-lg georgian-text mb-1">Export Edit</h3>
+                    <div class="flex gap-2 mb-2"><span class="text-[10px] bg-yellow-100 px-2 py-0.5 rounded-full border border-yellow-300">B2B</span><span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded-full border border-slate-300">Logistics</span></div>
+                </a>
+                <a href="../HoReCa_Anime/index.html" class="project-card bg-white/50 p-4 sketch-border border-red-400 flex flex-col">
+                    <div class="w-full aspect-video overflow-hidden rounded-lg mb-3"><img src="https://images.unsplash.com/photo-1514516313544-7ed21b7f7461?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div>
+                    <h3 class="font-bold text-lg georgian-text mb-1">HoReCa Anime</h3>
+                    <div class="flex gap-2 mb-2"><span class="text-[10px] bg-red-100 px-2 py-0.5 rounded-full border border-red-300">Visual</span><span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded-full border border-slate-300">Food</span></div>
+                </a>
+                <a href="../Logistics_AR/index.html" class="project-card bg-white/50 p-4 sketch-border border-blue-400 flex flex-col">
+                    <div class="w-full aspect-video overflow-hidden rounded-lg mb-3"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div>
+                    <h3 class="font-bold text-lg georgian-text mb-1">Logistics AR</h3>
+                    <div class="flex gap-2 mb-2"><span class="text-[10px] bg-blue-100 px-2 py-0.5 rounded-full border border-blue-300">Tech</span><span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded-full border border-slate-300">AR</span></div>
+                </a>
+                <a href="../RealEstate_Crystal/index.html" class="project-card bg-white/50 p-4 sketch-border border-green-500 flex flex-col">
+                    <div class="w-full aspect-video overflow-hidden rounded-lg mb-3"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div>
+                    <h3 class="font-bold text-lg georgian-text mb-1">Real Estate</h3>
+                    <div class="flex gap-2 mb-2"><span class="text-[10px] bg-green-100 px-2 py-0.5 rounded-full border border-green-300">Luxury</span><span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded-full border border-slate-300">PropTech</span></div>
+                </a>
+                <a href="../Fitness_Bento_Neon/index.html" class="project-card bg-white/50 p-4 sketch-border border-lime-500 flex flex-col">
+                    <div class="w-full aspect-video overflow-hidden rounded-lg mb-3"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div>
+                    <h3 class="font-bold text-lg georgian-text mb-1">FitPulse</h3>
+                    <div class="flex gap-2 mb-2"><span class="text-[10px] bg-lime-100 px-2 py-0.5 rounded-full border border-lime-300">Fitness</span><span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded-full border border-slate-300">Bento UI</span></div>
+                </a>
+                <a href="../Architecture_Editorial/index.html" class="project-card bg-white/50 p-4 sketch-border border-slate-900 flex flex-col">
+                    <div class="w-full aspect-video overflow-hidden rounded-lg mb-3"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div>
+                    <h3 class="font-bold text-lg georgian-text mb-1">Maison Studio</h3>
+                    <div class="flex gap-2 mb-2"><span class="text-[10px] bg-slate-200 px-2 py-0.5 rounded-full border border-slate-400">Arch</span><span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded-full border border-slate-300">Editorial</span></div>
+                </a>
+                <a href="../FinTech_Titanium/index.html" class="project-card bg-white/50 p-4 sketch-border border-stone-800 flex flex-col">
+                    <div class="w-full aspect-video overflow-hidden rounded-lg mb-3"><img src="https://images.unsplash.com/photo-1611974717484-7bc74c2bb60d?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover grayscale"></div>
+                    <h3 class="font-bold text-lg georgian-text mb-1">Titan Finance</h3>
+                    <div class="flex gap-2 mb-2"><span class="text-[10px] bg-stone-200 px-2 py-0.5 rounded-full border border-stone-400">FinTech</span><span class="text-[10px] bg-stone-100 px-2 py-0.5 rounded-full border border-stone-300">Titanium</span></div>
+                </a>
+                <a href="../Vet_Clinic_Toy/index.html" class="project-card bg-white/50 p-4 sketch-border border-pink-400 flex flex-col">
+                    <div class="w-full aspect-video overflow-hidden rounded-lg mb-3"><img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div>
+                    <h3 class="font-bold text-lg georgian-text mb-1">Pet Toy Clinic</h3>
+                    <div class="flex gap-2 mb-2"><span class="text-[10px] bg-pink-100 px-2 py-0.5 rounded-full border border-pink-300">Vet</span><span class="text-[10px] bg-blue-100 px-2 py-0.5 rounded-full border border-blue-300">Toy UI</span></div>
+                </a>
+                <a href="../Event_Builder_Lux/index.html" class="project-card bg-white/50 p-4 sketch-border border-amber-600 flex flex-col">
+                    <div class="w-full aspect-video overflow-hidden rounded-lg mb-3"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div>
+                    <h3 class="font-bold text-lg georgian-text mb-1">Eternal Events</h3>
+                    <div class="flex gap-2 mb-2"><span class="text-[10px] bg-amber-100 px-2 py-0.5 rounded-full border border-amber-300">Wedding</span><span class="text-[10px] bg-stone-100 px-2 py-0.5 rounded-full border border-stone-300">Luxury</span></div>
+                </a>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="section-about" class="section-hidden py-10">
+            <div class="post-it max-w-2xl mx-auto sketch-border border-slate-300">
+                <h2 class="text-3xl font-bold font-handwritten mb-4">გამარჯობა! მე ვარ აჩიკო.</h2>
+                <p class="text-lg leading-relaxed mb-6 georgian-text">
+                    მე ვარ UI/UX დიზაინერი და ფრონტენდ დეველოპერი. მიყვარს კრეატიული და არაორდინალური ციფრული გამოცდილებების შექმნა. ჩემი მიზანია, თითოეული პროექტი იყოს უნიკალური და მომხმარებლისთვის დასამახსოვრებელი.
+                </p>
+                <div class="grid grid-cols-2 gap-4 mt-8">
+                    <div class="p-4 border-2 border-dashed border-slate-400 rounded-lg">
+                        <h4 class="font-bold mb-2">უნარები:</h4>
+                        <ul class="text-sm list-disc list-inside">
+                            <li>UI/UX დიზაინი</li>
+                            <li>React / Next.js</li>
+                            <li>Tailwind CSS</li>
+                            <li>3D ვიზუალიზაცია</li>
+                        </ul>
+                    </div>
+                    <div class="p-4 border-2 border-dashed border-slate-400 rounded-lg">
+                        <h4 class="font-bold mb-2">ინსტრუმენტები:</h4>
+                        <ul class="text-sm list-disc list-inside">
+                            <li>Figma</li>
+                            <li>VS Code</li>
+                            <li>Adobe CC</li>
+                            <li>Blender</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="section-contact" class="section-hidden py-10">
+            <div class="max-w-md mx-auto bg-white/60 p-8 sketch-border border-blue-400">
+                <h2 class="text-2xl font-bold georgian-text mb-6 text-center">დამიკავშირდით</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-bold georgian-text mb-1">სახელი</label>
+                        <input type="text" class="w-full bg-white/50 border-2 border-slate-300 rounded px-3 py-2 outline-none focus:border-blue-400">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold georgian-text mb-1">ელ-ფოსტა</label>
+                        <input type="email" class="w-full bg-white/50 border-2 border-slate-300 rounded px-3 py-2 outline-none focus:border-blue-400">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold georgian-text mb-1">შეტყობინება</label>
+                        <textarea class="w-full bg-white/50 border-2 border-slate-300 rounded px-3 py-2 h-32 outline-none focus:border-blue-400"></textarea>
+                    </div>
+                    <button type="button" class="w-full bg-blue-500 text-white font-bold py-3 sketch-border border-blue-600 hover:bg-blue-600 active:scale-95 transition-all">გაგზავნა 🚀</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-md border-t-2 border-slate-200 h-20 z-50 flex items-center justify-around px-4">
+        <div id="nav-home" onclick="showSection('home')" class="flex flex-col items-center cursor-pointer p-2 rounded-xl transition-all nav-active">
+            <div class="w-8 h-8 flex items-center justify-center">🏠</div>
+            <span class="text-[10px] font-bold georgian-text mt-1">მთავარი</span>
+        </div>
+        <div id="nav-about" onclick="showSection('about')" class="flex flex-col items-center cursor-pointer p-2 rounded-xl transition-all">
+            <div class="w-8 h-8 flex items-center justify-center">👤</div>
+            <span class="text-[10px] font-bold georgian-text mt-1">ჩემს შესახებ</span>
+        </div>
+        <div id="nav-contact" onclick="showSection('contact')" class="flex flex-col items-center cursor-pointer p-2 rounded-xl transition-all">
+            <div class="w-8 h-8 flex items-center justify-center">✉️</div>
+            <span class="text-[10px] font-bold georgian-text mt-1">კონტაქტი</span>
+        </div>
+    </nav>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.getElementById('section-home').classList.add('section-hidden');
+            document.getElementById('section-about').classList.add('section-hidden');
+            document.getElementById('section-contact').classList.add('section-hidden');
+            
+            // Show target section
+            document.getElementById('section-' + sectionId).classList.remove('section-hidden');
+            
+            // Update nav styles
+            document.querySelectorAll('nav > div').forEach(nav => nav.classList.remove('nav-active'));
+            document.getElementById('nav-' + sectionId).classList.add('nav-active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

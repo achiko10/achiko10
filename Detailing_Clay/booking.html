@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mirror | ჯავშანი</title>
+    <meta name="description" content="Mirror | ჯავშანი - ACHIKO10 პრემიუმ პორტფოლიოს პროექტი.">
+<link rel="stylesheet" href="css/design.css">
+
+</head>
+<body>
+
+    <!-- ACHIKO10 GLOBAL PREMIUM BACK BAR -->
+    <div class="portfolio-bar-global shrink-0" style="background: linear-gradient(180deg, #050505 0%, rgba(5,5,5,0.9) 100%); backdrop-filter: blur(20px); padding: 16px 24px; display: flex; justify-content: center; align-items: center; position: relative; z-index: 99999; border-bottom: 1px solid rgba(0, 242, 255, 0.15); box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 32px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.4); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; box-shadow: 0 0 25px rgba(0, 242, 255, 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+
+<header class="site-header">
+<a href="index.html" class="site-logo">MIRROR.</a>
+<nav class="site-nav" id="nav"><a href="index.html" >სერვისები</a><a href="booking.html" class='active'>ჯავშანი</a><a href="services.html" >კატალოგი</a></nav>
+<div class="header-actions"><a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="holo-dot"></span>ACHIKO10</a><a href="booking.html" class="btn btn-primary">ვიზიტი</a></div>
+<button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+</header><main class="page-main">
+<div class="panel" style="max-width:620px;margin:0 auto">
+  <h1 class="page-title">ვიზიტის დაჯავშნა</h1>
+  <div id="toast-det" style="display:none;padding:12px 18px;background:#1a3a2a;color:#4ade80;border:1px solid #4ade80;border-radius:10px;font-weight:700;font-size:.85rem;margin-bottom:16px;">✓ ჯავშანი გაგზავნილია! ოპერატორი დაგიკავშირდებათ 1 სთ-ში.</div>
+  <div class="form-group mt-16">
+    <label class="form-label">სერვისი *</label>
+    <select class="form-control" id="dt-svc">
+      <option value="">-- სერვისი --</option>
+      <option value="ker">კერამიკული დაფარვა 9H (₾890)</option>
+      <option value="ppf">PPF ფილი — სრული კორპუსი (₾2,400)</option>
+      <option value="pol">პოლირება + ვარნიშის კორექცია (₾450)</option>
+      <option value="tnt">ფანჯრების გაბნელება (₾250)</option>
+      <option value="cln">პრემიუმ კომპლექსური სუფთავება (₾180)</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label class="form-label">მანქანის მარკა/მოდელი *</label>
+    <input type="text" class="form-control" id="dt-car" placeholder="მაგ. BMW 5-Series 2022">
+  </div>
+  <div class="form-row">
+    <div class="form-group"><label class="form-label">თარიღი *</label><input type="date" class="form-control" id="dt-date"></div>
+    <div class="form-group"><label class="form-label">დრო</label>
+      <select class="form-control" id="dt-time">
+        <option>09:00</option><option>10:00</option><option>11:00</option>
+        <option selected>12:00</option><option>13:00</option><option>14:00</option>
+        <option>15:00</option><option>16:00</option><option>17:00</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="form-label">სახელი და გვარი *</label>
+    <input type="text" class="form-control" id="dt-name" placeholder="ვასილ ბერიძე">
+  </div>
+  <div class="form-group">
+    <label class="form-label">ტელ. ნომერი *</label>
+    <input type="tel" class="form-control" id="dt-phone" placeholder="+995 5XX XXX XXX">
+  </div>
+  <p id="dt-err" style="color:#c0392b;font-size:.8rem;font-weight:700;display:none;margin-bottom:8px;"></p>
+  <button class="btn btn-primary btn-full mt-16" onclick="submitDet()">დაჯავშნა</button>
+</div></main>
+<script>
+function submitDet(){
+  var svc=document.getElementById('dt-svc').value;
+  var car=document.getElementById('dt-car').value.trim();
+  var date=document.getElementById('dt-date').value;
+  var name=document.getElementById('dt-name').value.trim();
+  var phone=document.getElementById('dt-phone').value.trim();
+  var err=document.getElementById('dt-err');
+  err.style.display='none';
+  if(!svc){err.textContent='გთხოვთ აირჩიოთ სერვისი';err.style.display='block';return;}
+  if(!car){err.textContent='მანქანის მოდელი სავალდებულოა';err.style.display='block';return;}
+  if(!date){err.textContent='გთხოვთ მიუთითოთ თარიღი';err.style.display='block';return;}
+  if(new Date(date)<new Date()){err.textContent='გთხოვთ მომავალი თარიღი მიუთითოთ';err.style.display='block';return;}
+  if(!name){err.textContent='სახელი სავალდებულოა';err.style.display='block';return;}
+  if(!phone){err.textContent='ტელ. ნომერი სავალდებულოა';err.style.display='block';return;}
+  var t=document.getElementById('toast-det');
+  t.style.display='block';
+  ['dt-svc','dt-car','dt-date','dt-name','dt-phone'].forEach(id=>{
+    var el=document.getElementById(id);
+    el.value='';
+  });
+  setTimeout(function(){t.style.display='none';},4000);
+}
+</script>
+<footer class="site-footer">
+<div class="footer-grid">
+<div class="footer-col"><div class="footer-col-title">MIRROR.</div><p class="text-muted" style="font-size:.85rem;line-height:1.7">პრემიუმ ვებ პლატფორმა. სრული ციფრული მხარდაჭერა.</p></div>
+<div class="footer-col"><div class="footer-col-title">ნავიგაცია</div><ul><li><a href="index.html">სერვისები</a></li><li><a href="booking.html">ჯავშანი</a></li><li><a href="services.html">კატალოგი</a></li></ul></div>
+<div class="footer-col"><div class="footer-col-title">იურიდიული</div><ul><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">კონფიდენციალურობა</a></li><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">გარანტიის პირობები</a></li></ul></div>
+<div class="footer-col"><div class="footer-col-title">კონტაქტი</div><ul><li>📞 +995 32 000 000</li><li>✉️ info@achiko10.ge</li><li>🏢 თბილისი</li></ul></div>
+</div>
+<div class="footer-bottom"><span>&copy; 2026 Premium Portfolio</span><a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="holo-dot"></span>ACHIKO10</a></div>
+</footer>
+<script>window.addEventListener('click',function(e){if(!e.target.closest('.site-header'))document.getElementById('nav').classList.remove('open')})</script>
+
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>კალათა - პლასტილინის სამყარო</title>
+    <meta name="description" content="კალათა - პლასტილინის სამყარო - ACHIKO10 პრემიუმ პორტფოლიოს პროექტი.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            text-align: center;
+            padding: 3rem 5%;
+        }
+        
+        .page-header h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3rem;
+            color: var(--secondary);
+        }
+
+        .cart-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 5% 4rem 5%;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            gap: 2rem;
+        }
+
+        .item-icon {
+            font-size: 3rem;
+            background: var(--bg-color);
+            width: 80px; height: 80px;
+            display: flex; justify-content: center; align-items: center;
+            border-radius: 20px;
+            box-shadow: inset 3px 3px 6px rgba(0,0,0,0.05), inset -3px -3px 6px rgba(255,255,255,0.8);
+        }
+
+        .item-details { flex: 1; }
+        .item-details h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+        
+        .item-price {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .quantity {
+            display: flex; align-items: center; gap: 1rem;
+        }
+
+        .qty-btn {
+            width: 35px; height: 35px;
+            border-radius: 50%;
+            border: none;
+            background: var(--bg-color);
+            font-weight: bold; cursor: pointer;
+            box-shadow: 3px 3px 6px rgba(0,0,0,0.1), -3px -3px 6px rgba(255,255,255,0.8);
+        }
+
+        .cart-summary {
+            margin-top: 3rem;
+            padding: 2rem;
+            text-align: right;
+        }
+
+        .total-price {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        @media (max-width: 600px) {
+            .cart-item { flex-direction: column; text-align: center; }
+            .cart-summary { text-align: center; }
+        }
+    </style>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+    <!-- ACHIKO10 GLOBAL PREMIUM BACK BAR -->
+    <div class="portfolio-bar-global shrink-0" style="background: linear-gradient(180deg, #050505 0%, rgba(5,5,5,0.9) 100%); backdrop-filter: blur(20px); padding: 16px 24px; display: flex; justify-content: center; align-items: center; position: relative; z-index: 99999; border-bottom: 1px solid rgba(0, 242, 255, 0.15); box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 32px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.4); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; box-shadow: 0 0 25px rgba(0, 242, 255, 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+
+    <header>        <a href="index.html" class="logo">
+            <span>🧸</span> თიხის სამყარო
+        </a>
+        <nav>
+            <a href="index.html">მთავარი</a>
+            <a href="products.html">მაღაზია</a>
+            <a href="contact.html">კონტაქტი</a>
+            <a href="cart.html" class="clay-btn clay-green" style="padding: 0.5rem 1.5rem; font-size: 1rem;">კალათა (2)</a>
+        </nav>
+        
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>შენი კალათა</h1>
+        </section>
+
+        <section class="cart-container">
+            <div class="clay cart-item" id="item-1" data-price="45">
+                <div class="item-icon">🧸</div>
+                <div class="item-details">
+                    <h3>რბილი დათუნია</h3>
+                    <div class="item-price">45.00 ₾</div>
+                </div>
+                <div class="quantity">
+                    <button class="qty-btn" onclick="changeQty('item-1',-1)">-</button>
+                    <span id="qty-item-1">1</span>
+                    <button class="qty-btn" onclick="changeQty('item-1',1)">+</button>
+                </div>
+                <button onclick="removeItem('item-1')" style="background:none;border:none;font-size:1.2rem;cursor:pointer;opacity:0.5;padding:0 4px;" title="ამოშლა">✕</button>
+            </div>
+
+            <div class="clay cart-item" id="item-2" data-price="55">
+                <div class="item-icon">🚀</div>
+                <div class="item-details">
+                    <h3>კოსმოსური რაკეტა</h3>
+                    <div class="item-price">55.00 ₾</div>
+                </div>
+                <div class="quantity">
+                    <button class="qty-btn" onclick="changeQty('item-2',-1)">-</button>
+                    <span id="qty-item-2">1</span>
+                    <button class="qty-btn" onclick="changeQty('item-2',1)">+</button>
+                </div>
+                <button onclick="removeItem('item-2')" style="background:none;border:none;font-size:1.2rem;cursor:pointer;opacity:0.5;padding:0 4px;" title="ამოშლა">✕</button>
+            </div>
+
+            <div class="clay cart-summary">
+                <div class="total-price" id="cart-total">ჯამი: 100.00 ₾</div>
+                <a href="checkout.html" class="clay-btn clay-yellow" style="font-size: 1.3rem;">გადახდა</a>
+            </div>
+        </section>
+        <script>
+        var qtys = {'item-1': 1, 'item-2': 1};
+        var prices = {'item-1': 45, 'item-2': 55};
+        function recalc() {
+          var total = 0;
+          Object.keys(qtys).forEach(function(id) { total += (qtys[id] || 0) * prices[id]; });
+          document.getElementById('cart-total').textContent = 'ჯამი: ' + total.toFixed(2) + ' ₾';
+        }
+        function changeQty(id, delta) {
+          if (!qtys[id] && delta < 0) return;
+          qtys[id] = Math.max(0, (qtys[id] || 1) + delta);
+          document.getElementById('qty-' + id).textContent = qtys[id];
+          if (qtys[id] === 0) removeItem(id);
+          recalc();
+        }
+        function removeItem(id) {
+          var el = document.getElementById(id);
+          if (el) { el.style.opacity='0'; el.style.transition='opacity 0.3s'; setTimeout(function(){ el.remove(); qtys[id]=0; recalc(); }, 300); }
+        }
+        </script>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 პლასტილინის სამყარო. ყველა უფლება დაცულია.</p>
+    </footer>
+
+
+    
+    <!-- COMPREHENSIVE FOOTER -->
+    <footer style="background-color: rgba(10, 15, 25, 0.95); backdrop-filter: blur(10px); border-top: 1px solid rgba(255,255,255,0.1); padding: 40px 5% 20px 5%; margin-top: 60px; color: #a6c0d8; font-family: sans-serif; display: flex; flex-direction: column; gap: 30px; position: relative; z-index: 9999; width: 100%; box-sizing: border-box;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="color: #ffffff; margin-bottom: 15px; font-size: 1.2rem; letter-spacing: 1px;">პრემიუმ არქიტექტურა</h3>
+                <p style="font-size: 0.9rem; line-height: 1.6; color: #a6c0d8;">
+                    ინოვაციური ვებ-სისტემები, რეალურ დროში ინტეგრირებული მონაცემთა ბაზები და უმაღლესი სტანდარტის UI/UX დიზაინი პრემიუმ სეგმენტისთვის.
+                </p>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <h4 style="color: #4ecdc4; margin-bottom: 15px; font-size: 1rem; text-transform: uppercase;">იურიდიული / ლიცენზია</h4>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+                    <li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;" style="color: #a6c0d8; text-decoration: none; font-size: 0.9rem;">კონფიდენციალურობის პოლიტიკა (კონფიდენციალურობა)</a></li>
+                    <li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;" style="color: #a6c0d8; text-decoration: none; font-size: 0.9rem;">მომსახურების პირობები (პირობები)</a></li>
+                    <li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;" style="color: #a6c0d8; text-decoration: none; font-size: 0.9rem;">მონაცემთა დაცვა (Cookies)</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <h4 style="color: #4ecdc4; margin-bottom: 15px; font-size: 1rem; text-transform: uppercase;">კონტაქტი და მხარდაჭერა</h4>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem;">
+                    <li>📞 +995 500 00 00 00</li>
+                    <li>✉️ dev@achiko10.ge</li>
+                    <li>🏢 საქართველო, თბილისი</li>
+                </ul>
+            </div>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; text-align: center; font-size: 0.85rem; margin-top: 10px;">
+            &copy; 2026 პრემიუმ ვებ პორტფოლიო. ყველა უფლება დაცულია. ლიცენზირებულია.<br>
+            პროგრამული არქიტექტურა და დიზაინი:        </div>
+    </footer>
+
+
+    <div class="achiko-footer-row">&copy; 2026 &nbsp;|&nbsp; პრემიუმ ვებ პორტფოლიო &nbsp;|&nbsp; by <a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="achiko-dot"></span>ACHIKO10</a></div>
+
+
+</body>
+</html>

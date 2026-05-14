@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>კალკულатори | AutoImport</title>
+    <meta name="description" content="კალკულатори | AutoImport - ACHIKO10 პრემიუმ პორტფოლიოს პროექტი.">
+<link rel="stylesheet" href="css/design.css">
+
+</head>
+<body>
+
+    <!-- ACHIKO10 GLOBAL PREMIUM BACK BAR -->
+    <div class="portfolio-bar-global shrink-0" style="background: linear-gradient(180deg, #050505 0%, rgba(5,5,5,0.9) 100%); backdrop-filter: blur(20px); padding: 16px 24px; display: flex; justify-content: center; align-items: center; position: relative; z-index: 99999; border-bottom: 1px solid rgba(0, 242, 255, 0.15); box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 32px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.4); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; box-shadow: 0 0 25px rgba(0, 242, 255, 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+
+<header class="site-header">
+    <a href="index.html" class="site-logo">AUTOIMPORT</a>
+    <nav class="site-nav"><a href="index.html" class='active'>ავტომობილები</a>
+<a href="car-detail.html" >დეტალები</a>
+<a href="calculator.html" >კალკულатори</a></nav>
+    <div class="header-actions">
+        <a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo">
+            <span class="holo-dot"></span>ACHIKO10</a>
+        <a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;" class="btn btn-primary">კონსულტაცია</a>
+    </div>
+    <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+<main class="page-main">
+<div style="max-width:600px;margin:0 auto">
+<h1 class="page-title">ფასის კალკულატორი</h1>
+<p class="page-sub">საბაჟო, ტრანსპორტი და დღგ — ავტომატური გამოთვლა</p>
+<div class="panel">
+<div class="form-group"><label class="form-label">მანქანის ღირებულება (USD)</label>
+<input type="number" class="form-control" id="carPrice" value="50000" oninput="calc()"></div>
+<div class="form-row">
+<div class="form-group"><label class="form-label">წელი</label>
+<select class="form-control" id="carYear" onchange="calc()">
+<option value="0.1">2020-2024</option><option value="0.15">2015-2019</option><option value="0.2">2010-2014</option>
+</select></div>
+<div class="form-group"><label class="form-label">ძრავის მოცულობა</label>
+<select class="form-control" id="engineVol" onchange="calc()">
+<option value="0.05">1.0-2.0 ლ</option><option value="0.07">2.1-3.0 ლ</option><option value="0.09">3.0+ ლ</option>
+</select></div>
+</div>
+<div class="form-group"><label class="form-label">ტრანსპორტი</label>
+<select class="form-control" id="transport" onchange="calc()">
+<option value="1200">ავიატრანსპორტი ($ 1,200)</option><option value="800">ზღვით ($ 800)</option>
+</select></div>
+<div class="panel mt-16" style="background:#222">
+<div style="display:flex;flex-direction:column;gap:8px;font-size:.9rem">
+<div class="flex-between"><span class="text-muted">მანქ. ღირებულება</span><span id="r1">$ 50,000</span></div>
+<div class="flex-between"><span class="text-muted">საბაჟო</span><span id="r2">$ 5,000</span></div>
+<div class="flex-between"><span class="text-muted">ტრანსპ.</span><span id="r3">$ 1,200</span></div>
+<div class="flex-between"><span class="text-muted">დღგ (18%)</span><span id="r4">$ 9,000</span></div>
+<div class="flex-between" style="border-top:1px solid rgba(255,255,255,0.08);padding-top:8px;font-weight:800;font-size:1.1rem"><span>სულ</span><span id="rTotal" style="color:#e74c3c">$ 65,200</span></div>
+</div>
+</div>
+    <div class="panel mt-24">
+      <h3 class="page-title mb-16" style="font-size:1rem">უფასო კონსულტაცია</h3>
+      <div id="ai-toast" style="display:none;padding:12px 18px;background:#1a0a0a;color:#ff4d4d;border:1px solid #ff4d4d;border-radius:8px;font-weight:700;font-size:.85rem;margin-bottom:16px;">✓ მოთხოვნა გაიგზავნა! მენეჯერი დაგიკავშირდებათ.</div>
+      <div class="form-group"><label class="form-label">სახელი გვარი *</label><input type="text" class="form-control" id="ai-name" placeholder="გიორგი გიორგაძე"></div>
+      <div class="form-group"><label class="form-label">ტელეფონი *</label><input type="tel" class="form-control" id="ai-phone" placeholder="+995 5XX XXX XXX"></div>
+      <p id="ai-err" style="color:#e74c3c;font-size:.8rem;font-weight:700;display:none;margin-bottom:8px;"></p>
+      <button class="btn btn-primary btn-full mt-12" onclick="sendAiConsult()">მოითხოვე კონსულტაცია</button>
+    </div>
+</div>
+</div>
+<script>
+function sendAiConsult(){
+  var name=document.getElementById('ai-name').value.trim();
+  var phone=document.getElementById('ai-phone').value.trim();
+  var err=document.getElementById('ai-err'); err.style.display='none';
+  if(!name){err.textContent='სახელი სავალდებულოა';err.style.display='block';return;}
+  if(!phone){err.textContent='ტელეფონი სავალდებულოა';err.style.display='block';return;}
+  var t=document.getElementById('ai-toast'); t.style.display='block';
+  document.getElementById('ai-name').value='';
+  document.getElementById('ai-phone').value='';
+  setTimeout(function(){t.style.display='none';},4500);
+}
+</script></main>
+<script>
+function calc(){
+var p=parseFloat(document.getElementById('carPrice').value)||0;
+var customs=parseFloat(document.getElementById('carYear').value);
+var eng=parseFloat(document.getElementById('engineVol').value);
+var tr=parseFloat(document.getElementById('transport').value);
+var customsAmt=p*(customs+eng);
+var vat=(p+customsAmt+tr)*0.18;
+var total=p+customsAmt+tr+vat;
+document.getElementById('r1').textContent='$ '+p.toLocaleString();
+document.getElementById('r2').textContent='$ '+Math.round(customsAmt).toLocaleString();
+document.getElementById('r3').textContent='$ '+tr.toLocaleString();
+document.getElementById('r4').textContent='$ '+Math.round(vat).toLocaleString();
+document.getElementById('rTotal').textContent='$ '+Math.round(total).toLocaleString();
+}
+calc();
+</script>
+<footer class="site-footer">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <div class="footer-col-title">AUTOIMPORT</div>
+            <p class="text-muted" style="font-size:.85rem;line-height:1.7">პრემიუმ ვებ პლატფორმა. სრული ციფრული მხარდაჭერა.</p>
+        </div>
+        <div class="footer-col"><div class="footer-col-title">ნავიგაცია</div><ul><li><a href="index.html">ავტომობილები</a></li>
+<li><a href="calculator.html">კალკულатори</a></li></ul></div>
+        <div class="footer-col"><div class="footer-col-title">იურიდიული</div><ul><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">კონფიდენციალურობა</a></li>
+<li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">მომსახ. პირობები</a></li>
+<li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">Cookies</a></li></ul></div>
+        <div class="footer-col"><div class="footer-col-title">კონტაქტი</div><ul><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">📞 +995 32 000 000</a></li>
+<li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">✉️ info@autoimport.ge</a></li>
+<li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">🏢 თბილისი, ვაკე</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Premium Web Portfolio</span>
+        <a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo">
+            <span class="holo-dot"></span>ACHIKO10</a>
+    </div>
+</footer>
+<script>
+document.querySelector('.menu-toggle').addEventListener('click',function(){
+  document.querySelector('.site-nav').classList.toggle('open');
+});
+</script>
+
+
+</body>
+</html>

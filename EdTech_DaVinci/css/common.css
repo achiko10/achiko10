@@ -1,0 +1,87 @@
+/* COMMON.CSS - ACHIKO10 Portfolio Layer */
+
+/* --- ACHIKO10 Hologram Badge --- */
+.achiko-holo {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 4px 11px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background-image: linear-gradient(
+        90deg,
+        rgba(255,255,255,0.45) 0%,
+        rgba(255,255,255,1) 45%,
+        rgba(255,255,255,0.45) 90%
+    );
+    background-size: 250% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: achikoShimmer 3.5s linear infinite;
+    border: 1px solid transparent;
+    background-origin: border-box;
+}
+
+.achiko-holo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(90deg, #4ecdc4, #a78bfa, #f472b6, #4ecdc4);
+    background-size: 300% auto;
+    animation: achikoShimmer 3.5s linear infinite;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.achiko-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4ecdc4, #a78bfa);
+    animation: achikoPulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes achikoShimmer {
+    0%   { background-position: 0% center; }
+    100% { background-position: 300% center; }
+}
+@keyframes achikoPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.3; transform: scale(0.6); }
+}
+
+/* --- Typography Normalization (clamp = responsive, no !important) --- */
+h1 { font-size: clamp(1.8rem, 3vw + 0.8rem, 2.8rem) !important; line-height: 1.15 !important; }
+h2 { font-size: clamp(1.5rem, 2vw + 0.5rem, 2.1rem) !important; line-height: 1.2 !important; }
+h3 { font-size: clamp(1.15rem, 1.2vw + 0.5rem, 1.55rem) !important; line-height: 1.25 !important; }
+h4 { font-size: clamp(0.95rem, 0.8vw + 0.4rem, 1.25rem) !important; }
+p  { font-size: clamp(0.88rem, 0.4vw + 0.75rem, 1.02rem) !important; line-height: 1.7 !important; }
+
+/* --- Footer hologram row --- */
+.achiko-footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 18px;
+    margin-top: 18px;
+    border-top: 1px solid rgba(128,128,128,0.15);
+    font-size: 0.78rem;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+}

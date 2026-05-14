@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ACHIKO10 | Platinum Digital Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap');
+        
+        body, html { 
+            margin: 0; padding: 0; height: 100vh; overflow: hidden; 
+            background: #030303; color: #ffffff; font-family: 'Inter', sans-serif; 
+        }
+
+        .custom-scroll::-webkit-scrollbar { width: 4px; }
+        .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+        
+        .project-item {
+            transition: all 0.3s ease;
+            border-left: 2px solid transparent;
+            cursor: pointer;
+            position: relative;
+            padding: 1rem 1rem 1rem 1.5rem;
+            margin-bottom: 0.5rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: 0 12px 12px 0;
+        }
+        
+        .project-item::before {
+            content: '';
+            position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+            background: #00f2ff;
+            transform: scaleY(0); transition: transform 0.3s ease;
+            transform-origin: bottom;
+        }
+
+        .project-item:hover { background: rgba(255,255,255,0.05); }
+
+        .project-item.active { background: rgba(0,242,255,0.05); }
+        .project-item.active::before { transform: scaleY(1); }
+        .project-item.active .project-name { color: #ffffff; }
+        .project-item.active .project-category { color: #00f2ff; }
+        .project-item.active .project-arrow { opacity: 1; transform: translateX(0); }
+
+        .project-name { color: #94a3b8; transition: color 0.3s ease; }
+        .project-category { color: #64748b; transition: color 0.3s ease; }
+        .project-arrow { opacity: 0; transform: translateX(-10px); transition: all 0.3s ease; }
+
+        .showcase-image {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%; object-fit: cover;
+            opacity: 0; transition: opacity 0.8s ease-in-out, transform 3s ease-out;
+            transform: scale(1.05);
+        }
+        .showcase-image.active { opacity: 1; transform: scale(1); }
+
+        .progress-bar {
+            position: absolute; bottom: 0; left: 0; height: 3px; background: #00f2ff;
+            width: 0%; z-index: 50;
+        }
+        @keyframes fillProgress { from { width: 0%; } to { width: 100%; } }
+        .animate-progress { animation: fillProgress 5s linear forwards; }
+        
+        .georgian { font-weight: 600; letter-spacing: 0.02em; }
+        
+        .qr-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .qr-card:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 20px rgba(0,242,255,0.15); border-color: #00f2ff; }
+    </style>
+</head>
+<body class="flex flex-col w-full h-screen">
+
+    <header class="h-auto md:h-24 py-4 px-6 md:px-10 flex flex-col md:flex-row justify-between items-center z-50 border-b border-white/10 bg-gradient-to-b from-black to-black/80 backdrop-blur-xl shrink-0 gap-4 md:gap-0">
+        
+        <div class="flex items-center justify-between w-full md:w-auto gap-4 md:gap-10">
+            <div class="text-3xl md:text-4xl font-black italic tracking-tighter drop-shadow-[0_0_15px_rgba(0,242,255,0.3)]">ACHIKO<span class="text-[#00f2ff]">10</span></div>
+            <div class="hidden lg:flex flex-col border-l border-white/10 pl-10">
+                <span class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">System Status</span>
+                <span class="text-xs font-bold text-[#00f2ff] tracking-widest uppercase flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-[#00f2ff] animate-pulse"></span> Platinum Active
+                </span>
+            </div>
+            <a href="https://wa.me/995579166626" target="_blank" class="md:hidden flex items-center gap-2 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white px-5 py-2.5 rounded-full font-black text-[11px] uppercase tracking-widest shadow-[0_0_15px_rgba(37,211,102,0.4)]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> 
+                CALL NOW
+            </a>
+        </div>
+        
+        <!-- Center Premium Expandable QR Code (Desktop only) -->
+        <a href="https://github.com/achiko10" target="_blank" class="hidden md:flex items-center gap-4 p-1.5 pl-6 pr-1.5 bg-gradient-to-r from-white/5 to-transparent border border-white/10 rounded-full group cursor-pointer hover:border-[#00f2ff]/50 transition-all duration-500 relative backdrop-blur-md">
+            <div class="flex flex-col items-end justify-center">
+                <span class="text-[10px] text-[#00f2ff] uppercase font-black tracking-widest flex items-center gap-1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                    GITHUB
+                </span>
+                <span class="text-[8px] text-slate-400 font-bold uppercase tracking-[0.2em] mt-0.5">Connect & Scan</span>
+            </div>
+            
+            <!-- Default Small Icon Container -->
+            <div class="relative bg-black p-2 rounded-full border border-white/10 group-hover:border-[#00f2ff] group-hover:shadow-[0_0_15px_rgba(0,242,255,0.4)] transition-all duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white group-hover:text-[#00f2ff] transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                    <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                    <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                    <path d="M3 14h3v3H3z"></path>
+                    <path d="M8 14h3v3H8z"></path>
+                    <path d="M3 19h3v2H3z"></path>
+                    <path d="M8 19h3v2H8z"></path>
+                </svg>
+            </div>
+
+            <!-- Massive Holographic QR Code Popup (Hidden until hover) -->
+            <div class="absolute top-[130%] left-1/2 -translate-x-1/2 w-56 h-56 bg-black/90 backdrop-blur-2xl border border-[#00f2ff] rounded-2xl p-4 opacity-0 pointer-events-none group-hover:opacity-100 shadow-[0_20px_60px_rgba(0,242,255,0.4)] transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 z-[100] flex flex-col items-center justify-center">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://github.com/achiko10&bgcolor=000000&color=00f2ff&margin=2" alt="GitHub Premium QR" class="w-full h-full object-contain rounded-xl drop-shadow-[0_0_10px_rgba(0,242,255,0.5)]">
+            </div>
+        </a>
+
+        <div class="hidden md:flex items-center gap-10">
+            <div class="flex gap-10 lg:gap-16 text-[11px] font-bold uppercase tracking-widest text-slate-400">
+                <div class="flex flex-col"><span class="text-white">Expertise</span><span>UI/UX & Frontend</span></div>
+                <div class="flex flex-col"><span class="text-white">Region</span><span>Georgia</span></div>
+            </div>
+            <a href="https://wa.me/995579166626" target="_blank" class="ml-6 flex items-center gap-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white hover:text-white px-8 py-3.5 rounded-full transition-all shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:shadow-[0_0_30px_rgba(37,211,102,0.8)] hover:scale-105 border border-white/20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <span class="font-black text-sm tracking-wider">+995 579 166626</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-1 flex flex-col md:flex-row overflow-hidden bg-[#050505]">
+        <div class="w-full md:w-[55%] h-[40vh] md:h-full relative bg-black overflow-hidden z-10 group order-1 md:order-2 shrink-0">
+            <div id="progress-indicator" class="progress-bar"></div>
+            <div id="image-container" class="w-full h-full"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none z-20"></div>
+
+            <div class="absolute bottom-0 left-0 w-full p-6 md:p-16 z-30 flex flex-col justify-end pointer-events-none">
+                <div class="transform md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
+                    <div id="active-category" class="inline-block px-4 py-1.5 md:px-5 md:py-2 bg-white/10 backdrop-blur-md rounded-full text-[9px] md:text-[11px] text-[#00f2ff] uppercase tracking-widest font-bold mb-3 md:mb-6 pointer-events-auto border border-white/10">Category</div>
+                    <h2 id="active-title" class="text-3xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-6 md:mb-10 italic text-white drop-shadow-2xl leading-tight">PROJECT TITLE</h2>
+                    <a id="active-link" href="#" class="inline-flex items-center gap-4 md:gap-6 bg-[#00f2ff] text-black px-8 py-3 md:px-12 md:py-5 rounded-full font-black text-[10px] md:text-sm uppercase tracking-widest hover:bg-white hover:scale-105 transition-all shadow-[0_0_40px_rgba(0,242,255,0.4)] pointer-events-auto">
+                        Explore <span class="hidden md:inline">Full Project</span> 
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full md:w-[45%] flex-1 md:h-full flex flex-col border-t md:border-t-0 md:border-r border-white/10 z-20 order-2 md:order-1 relative">
+            <div class="p-6 md:p-8 pb-4 border-b border-white/5 bg-black/20 shrink-0 flex justify-between items-center">
+                <div>
+                    <h2 class="text-xl md:text-2xl font-black tracking-tighter uppercase text-white mb-1">Project Directory</h2>
+                    <p class="text-[9px] md:text-[11px] text-slate-500 font-bold uppercase tracking-widest">Select a project to view details</p>
+                </div>
+            </div>
+            
+            <div class="flex-1 overflow-y-auto p-4 md:p-8 custom-scroll relative">
+                <ul id="project-list" class="flex flex-col">
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="h-auto md:h-16 py-6 md:py-0 px-6 md:px-10 flex flex-col md:flex-row justify-between items-center z-50 border-t border-white/10 bg-black/80 shrink-0 gap-6 md:gap-0">
+        <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-[11px] font-bold text-slate-300 uppercase tracking-widest">
+            <a href="https://github.com/achiko10" target="_blank" class="hover:text-[#00f2ff] transition-all flex items-center gap-2.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                Github
+            </a>
+            <a href="https://www.linkedin.com/in/achi-mgebrishvili-41b9b8340" target="_blank" class="hover:text-[#00f2ff] transition-all flex items-center gap-2.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                Linkedin
+            </a>
+            <a href="https://x.com/MagicCryptoLand" target="_blank" class="hover:text-[#00f2ff] transition-all flex items-center gap-2.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                Twitter
+            </a>
+            <a href="https://www.facebook.com/share/18Rh8wVugB/" target="_blank" class="hover:text-[#00f2ff] transition-all flex items-center gap-2.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                Facebook
+            </a>
+            <a href="https://achiko.pythonanywhere.com" target="_blank" class="hover:text-[#00f2ff] transition-all flex items-center gap-2.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg>
+                Zenith Company
+            </a>
+        </div>
+        <div class="text-[9px] md:text-[10px] text-slate-500 font-bold italic tracking-widest uppercase text-center bg-white/5 px-4 py-2 rounded-full border border-white/10">
+            &copy; 2026 Achiko10. Optimized Platinum UI
+        </div>
+    </footer>
+
+    <script>
+        const projects = [
+            { id: 'autoimport', name: "AutoImport Premium", category: "Automotive Dashboard", image: "../assets/auto_import.png", path: "../AutoImport_Premium/index.html" },
+            { id: 'fintech', name: "Titan Finance", category: "Crypto Terminal", image: "../assets/fintech.png", path: "../FinTech_Titanium/index.html" },
+            { id: 'realestate', name: "Crystal Real Estate", category: "Luxury PropTech", image: "../assets/real_estate.png", path: "../RealEstate_Crystal/index.html" },
+            { id: 'b2b', name: "Bioluminescent B2B", category: "Data Ecosystem", image: "../assets/b2b.png", path: "../B2B_Bioluminescent/index.html" },
+            { id: 'eventlux', name: "Event Builder Lux", category: "Event Management", image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80", path: "../Event_Builder_Lux/index.html" },
+            { id: 'archedit', name: "Architecture Editorial", category: "Studio Portfolio", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80", path: "../Architecture_Editorial/index.html" },
+            { id: 'logistics', name: "Logistics AR", category: "Transport Tech", image: "../assets/logistics.png", path: "../Logistics_AR/index.html" },
+            { id: 'edtech', name: "DaVinci EdTech", category: "Education LMS", image: "../assets/edtech.png", path: "../EdTech_DaVinci/index.html" },
+            { id: 'fitness', name: "Fitness Bento Neon", category: "Health App", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80", path: "../Fitness_Bento_Neon/index.html" },
+            { id: 'toystore', name: "Clay Toy Store", category: "E-Commerce", image: "https://images.unsplash.com/photo-1558060370-d644479cb6f7?auto=format&fit=crop&w=1200&q=80", path: "../Clay_Toy_Store/index.html" },
+            { id: 'furniture', name: "Furniture Clay", category: "E-Commerce", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80", path: "../Furniture_Clay/index.html" },
+            { id: 'detailing', name: "Detailing Clay", category: "Service Booking", image: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1200&q=80", path: "../Detailing_Clay/index.html" },
+            { id: 'vetclinic', name: "Vet Clinic Toy", category: "Healthcare", image: "https://images.unsplash.com/photo-1628009368231-7bb7cbcb8127?auto=format&fit=crop&w=1200&q=80", path: "../Vet_Clinic_Toy/index.html" },
+            { id: 'horeca', name: "HoReCa Anime", category: "Restaurant UI", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80", path: "../HoReCa_Anime/index.html" },
+            { id: 'export', name: "Export Editorial", category: "Logistics", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80", path: "../Export_Editorial/index.html" }
+        ];
+
+        const listContainer = document.getElementById('project-list');
+        const imageContainer = document.getElementById('image-container');
+        const activeTitle = document.getElementById('active-title');
+        const activeCategory = document.getElementById('active-category');
+        const activeLink = document.getElementById('active-link');
+        const progressBar = document.getElementById('progress-indicator');
+        
+        let currentIndex = 0;
+        let autoPlayInterval;
+        const intervalTime = 5000;
+
+        projects.forEach((proj, index) => {
+            const li = document.createElement('li');
+            li.className = `project-item flex items-center justify-between pr-2 md:pr-4`;
+            li.innerHTML = `
+                <div>
+                    <div class="project-name text-lg md:text-2xl font-black italic tracking-tighter mb-0.5 md:mb-1 leading-tight">${proj.name}</div>
+                    <div class="project-category text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold georgian">${proj.category}</div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6 project-arrow text-[#00f2ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+            `;
+            
+            li.addEventListener('mouseenter', () => {
+                if(window.innerWidth >= 768) { 
+                    clearInterval(autoPlayInterval);
+                    activateProject(index);
+                }
+            });
+            li.addEventListener('mouseleave', () => {
+                if(window.innerWidth >= 768) {
+                    startAutoPlay();
+                }
+            });
+            li.addEventListener('click', () => {
+                if(window.innerWidth < 768) {
+                    if (currentIndex === index) {
+                        window.location.href = proj.path;
+                    } else {
+                        clearInterval(autoPlayInterval);
+                        activateProject(index);
+                        startAutoPlay();
+                    }
+                } else {
+                    window.location.href = proj.path;
+                }
+            });
+
+            listContainer.appendChild(li);
+
+            const img = document.createElement('img');
+            img.src = proj.image;
+            img.className = 'showcase-image';
+            img.id = `img-${index}`;
+            imageContainer.appendChild(img);
+        });
+
+        const listItems = document.querySelectorAll('.project-item');
+        const images = document.querySelectorAll('.showcase-image');
+
+        function activateProject(index) {
+            currentIndex = index;
+            const proj = projects[index];
+
+            listItems.forEach(item => item.classList.remove('active'));
+            listItems[index].classList.add('active');
+
+            const itemRect = listItems[index].getBoundingClientRect();
+            const containerRect = listContainer.getBoundingClientRect();
+            if (itemRect.bottom > containerRect.bottom || itemRect.top < containerRect.top) {
+                listItems[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+
+            images.forEach(img => img.classList.remove('active'));
+            images[index].classList.add('active');
+
+            activeTitle.textContent = proj.name;
+            activeCategory.textContent = proj.category;
+            activeLink.href = proj.path;
+
+            progressBar.classList.remove('animate-progress');
+            void progressBar.offsetWidth;
+            progressBar.classList.add('animate-progress');
+        }
+
+        function nextProject() {
+            let nextIndex = (currentIndex + 1) % projects.length;
+            activateProject(nextIndex);
+        }
+
+        function startAutoPlay() {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = setInterval(nextProject, intervalTime);
+        }
+
+        activateProject(0);
+        startAutoPlay();
+
+    </script>
+</body>
+</html>

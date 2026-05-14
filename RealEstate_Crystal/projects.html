@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>პროექტები | Crystal</title>
+    <meta name="description" content="პროექტები | Crystal - ACHIKO10 პრემიუმ პორტფოლიოს პროექტი.">
+<link rel="stylesheet" href="css/design.css">
+
+</head>
+<body>
+
+    <!-- ACHIKO10 GLOBAL PREMIUM BACK BAR -->
+    <div class="portfolio-bar-global shrink-0" style="background: linear-gradient(180deg, #050505 0%, rgba(5,5,5,0.9) 100%); backdrop-filter: blur(20px); padding: 16px 24px; display: flex; justify-content: center; align-items: center; position: relative; z-index: 99999; border-bottom: 1px solid rgba(0, 242, 255, 0.15); box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 32px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.4); border-radius: 50px; color: #fff; text-decoration: none; font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; box-shadow: 0 0 25px rgba(0, 242, 255, 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            ACHIKO10 პორტფოლიო
+        </a>
+    </div>
+
+<header class="site-header">
+<a href="index.html" class="site-logo">CRYSTAL</a>
+<nav class="site-nav" id="nav"><a href="index.html" >უძრავი ქონება</a><a href="projects.html" class='active'>პროექტები</a><a href="contact.html" >კონტაქტი</a></nav>
+<div class="header-actions"><a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="holo-dot"></span>ACHIKO10</a><a href="contact.html" class="btn btn-primary">კონსულტაცია</a></div>
+<button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+</header><main class="page-main">
+<h1 class="page-title">დეველოპერული პროექტები</h1>
+<div class="card-grid mt-24">
+  <div class="card"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" class="card-img" alt="New">
+  <div class="card-body"><div class="card-title">მწვანე უბანი — კრწანისი</div><div class="card-sub">ბარდება 2027-ში</div>
+  <div class="card-footer"><button class="btn btn-primary btn-full info-btn" data-name="მწვანე უბანი">გაიგე მეტი</button></div></div></div>
+  
+  <div class="card"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80" class="card-img" alt="Luxury">
+  <div class="card-body"><div class="card-title">Crystal Tower — საბურთალო</div><div class="card-sub">ბარდება 2026-ში</div>
+  <div class="card-footer"><button class="btn btn-primary btn-full info-btn" data-name="Crystal Tower">გაიგე მეტი</button></div></div></div>
+
+  <div class="card"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" class="card-img" alt="Villa">
+  <div class="card-body"><div class="card-title">Eco Villas — მცხეთა</div><div class="card-sub">დასრულებული</div>
+  <div class="card-footer"><button class="btn btn-primary btn-full info-btn" data-name="Eco Villas">გაიგე მეტი</button></div></div></div>
+</div>
+<div id="re-toast" style="display:none;position:fixed;bottom:2rem;right:2rem;background:#1a3a2a;color:#4ade80;border:1px solid #4ade80;border-radius:10px;padding:12px 20px;font-weight:700;font-size:.85rem;z-index:99999;">✓ საინფორმაციო ბროშურა გაიგზავნა!</div>
+</main>
+<script>
+document.querySelectorAll('.info-btn').forEach(btn => {
+  btn.onclick = function(){
+    var t = document.getElementById('re-toast');
+    t.textContent = '✓ ' + btn.dataset.name + ' — ბროშურა გაიგზავნა!';
+    t.style.display = 'block';
+    setTimeout(()=>t.style.display='none', 4500);
+  };
+});
+</script>
+<footer class="site-footer">
+<div class="footer-grid">
+<div class="footer-col"><div class="footer-col-title">CRYSTAL</div><p class="text-muted" style="font-size:.85rem;line-height:1.7">პრემიუმ ვებ პლატფორმა. სრული ციფრული მხარდაჭერა.</p></div>
+<div class="footer-col"><div class="footer-col-title">ნავიგაცია</div><ul><li><a href="index.html">უძრავი ქონება</a></li><li><a href="projects.html">პროექტები</a></li><li><a href="contact.html">კონტაქტი</a></li></ul></div>
+<div class="footer-col"><div class="footer-col-title">იურიდიული</div><ul><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">კონფიდენციალურობა</a></li><li><a href="#" style="pointer-events:none;opacity:0.55;cursor:not-allowed;">წესები</a></li></ul></div>
+<div class="footer-col"><div class="footer-col-title">კონტაქტი</div><ul><li>📞 +995 32 000 000</li><li>✉️ info@achiko10.ge</li><li>🏢 თბილისი</li></ul></div>
+</div>
+<div class="footer-bottom"><span>&copy; 2026 Premium Portfolio</span><a href="https://github.com/ACHIKO10" target="_blank" class="achiko-holo"><span class="holo-dot"></span>ACHIKO10</a></div>
+</footer>
+<script>window.addEventListener('click',function(e){if(!e.target.closest('.site-header'))document.getElementById('nav').classList.remove('open')})</script>
+
+
+</body>
+</html>
